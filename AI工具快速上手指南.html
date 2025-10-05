@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具快速上手指南 - 5分钟学会</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+            line-height: 1.8; color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px; margin: 0 auto; background: white;
+            border-radius: 20px; box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 60px 40px; text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+        header h1 { font-size: 2.8em; margin-bottom: 15px; }
+        header p { font-size: 1.3em; opacity: 0.95; }
+        .content { padding: 50px; }
+        h2 {
+            color: #667eea; font-size: 2.2em; margin: 50px 0 25px;
+            padding: 15px 0 15px 20px; border-left: 6px solid #667eea;
+        }
+        h3 {
+            color: #764ba2; font-size: 1.8em; margin: 35px 0 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e5e7eb 100%);
+            padding: 15px 20px; border-radius: 10px;
+        }
+        .step-box {
+            background: #f8f9ff; padding: 25px; margin: 20px 0;
+            border-left: 5px solid #10b981; border-radius: 10px;
+        }
+        .step-box h4 {
+            color: #10b981; font-size: 1.4em; margin-bottom: 15px;
+        }
+        .example {
+            background: #1e293b; color: #e2e8f0; padding: 20px;
+            border-radius: 10px; margin: 15px 0; font-family: 'Courier New', monospace;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px; border-left: 5px solid #f59e0b;
+            border-radius: 10px; margin: 20px 0;
+        }
+        .success {
+            background: linear-gradient(120deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 20px; border-left: 5px solid #10b981;
+            border-radius: 10px; margin: 20px 0; text-align: center;
+            font-size: 1.2em; font-weight: 600; color: #065f46;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 25px 0;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 18px; text-align: left; font-size: 1.1em;
+        }
+        td { padding: 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:hover { background: #f8f9ff; }
+        a { color: #667eea; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        .cta-button {
+            display: inline-block; padding: 15px 35px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white; border-radius: 30px; font-size: 1.2em;
+            font-weight: 600; text-decoration: none; margin: 10px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
+        }
+        .tip {
+            background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 15px 20px; border-left: 5px solid #3b82f6;
+            border-radius: 8px; margin: 15px 0;
+        }
+        ul, ol { margin-left: 30px; margin-top: 15px; }
+        li { margin: 12px 0; line-height: 1.9; }
+        .badge-free {
+            display: inline-block; background: #10b981; color: white;
+            padding: 5px 12px; border-radius: 15px; font-size: 0.9em;
+            font-weight: 600; margin: 0 5px;
+        }
+        .badge-paid {
+            display: inline-block; background: #f59e0b; color: white;
+            padding: 5px 12px; border-radius: 15px; font-size: 0.9em;
+            font-weight: 600; margin: 0 5px;
+        }
+        @media (max-width: 768px) {
+            .content { padding: 25px; }
+            header h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 AI工具快速上手指南</h1>
+            <p>5分钟学会 | 手把手教学 | 小白也能看懂</p>
+        </header>
+        
+        <div class="content">
+            <h2>🎯 你需要什么？快速选择</h2>
+            
+            <table>
+                <tr>
+                    <th style="width: 30%;">我想要</th>
+                    <th style="width: 35%;">用什么工具</th>
+                    <th style="width: 35%;">多少钱</th>
+                </tr>
+                <tr>
+                    <td>💬 聊天、写作、日常问答</td>
+                    <td><strong>Kimi</strong></td>
+                    <td><span class="badge-free">✅ 免费</span></td>
+                </tr>
+                <tr>
+                    <td>💻 写代码、编程</td>
+                    <td><strong>Cursor</strong></td>
+                    <td><span class="badge-paid">$20/月</span></td>
+                </tr>
+                <tr>
+                    <td>🎨 生成网页UI代码</td>
+                    <td><strong>v0.dev</strong></td>
+                    <td><span class="badge-free">部分免费</span></td>
+                </tr>
+                <tr>
+                    <td>🖼️ 做海报、PPT</td>
+                    <td><strong>Canva</strong></td>
+                    <td><span class="badge-free">免费版够用</span></td>
+                </tr>
+                <tr>
+                    <td>🎬 剪视频、加字幕</td>
+                    <td><strong>剪映</strong></td>
+                    <td><span class="badge-free">✅ 免费</span></td>
+                </tr>
+            </table>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
+                    立即开始 - 打开Kimi试试！
+                </a>
+            </div>
+            
+            <h2>📚 第一步：理解4个核心概念（2分钟）</h2>
+            
+            <div class="step-box">
+                <h4>1. MCP = 让AI能读你的文件</h4>
+                <p>就像给AI装了USB接口，AI可以直接读取你电脑的文件，不用复制粘贴</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>2. Agent = AI自动干活</h4>
+                <p>你说"修复所有bug"，AI自动：找bug → 修复 → 测试 → 生成报告</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>3. Prompt = 怎么跟AI说话</h4>
+                <p>❌ 差的："帮我写代码"</p>
+                <p>✅ 好的："用Python写一个读取Excel的函数，要有错误处理"</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>4. Rules = 让AI遵守规矩</h4>
+                <p>创建 .cursorrules 文件，写上你的规则，AI自动遵守。比如："所有代码必须有注释"</p>
+            </div>
+            
+            <h2>👶 完全小白：从Kimi开始</h2>
+            
+            <h3>工具：Kimi（完全免费）</h3>
+            
+            <div class="step-box">
+                <h4>第一步：打开网站</h4>
+                <ol>
+                    <li>打开浏览器</li>
+                    <li>输入网址：<a href="https://kimi.moonshot.cn" target="_blank">kimi.moonshot.cn</a></li>
+                    <li>按回车</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第二步：登录</h4>
+                <ol>
+                    <li>看到登录按钮，点击</li>
+                    <li>用手机号或微信登录</li>
+                    <li>登录成功</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第三步：开始使用</h4>
+                <p><strong>试试这些：</strong></p>
+                
+                <div class="example">
+                    例子1：让AI写周报<br/>
+                    输入："帮我写一份本周工作周报，包括：完成了用户登录功能开发、修复了3个bug、参加了2次会议"
+                </div>
+                
+                <div class="example">
+                    例子2：总结长文档<br/>
+                    点击上传按钮 → 选择PDF文件 → 问："总结这个文档的核心内容"
+                </div>
+                
+                <div class="example">
+                    例子3：翻译<br/>
+                    输入："把这段话翻译成英文：我们的产品已经上线了"
+                </div>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经学会用AI聊天了！
+            </div>
+            
+            <h2>👨‍💻 程序员：用Cursor写代码</h2>
+            
+            <h3>工具：Cursor（$20/月，最强编程工具）</h3>
+            
+            <div class="step-box">
+                <h4>第一步：下载安装</h4>
+                <ol>
+                    <li>访问：<a href="https://cursor.so" target="_blank">cursor.so</a></li>
+                    <li>点击 Download</li>
+                    <li>选择你的系统（Windows/Mac/Linux）</li>
+                    <li>下载完成后安装</li>
+                    <li>打开Cursor</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第二步：基础设置</h4>
+                <ol>
+                    <li>首次打开，选择"导入VS Code配置"（如果你用过VS Code）</li>
+                    <li>登录账号（用GitHub或Google登录）</li>
+                    <li>点击右上角设置图标</li>
+                    <li>选择AI模型：推荐选"Claude 4"</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第三步：创建.cursorrules文件</h4>
+                <ol>
+                    <li>在项目根目录创建文件：.cursorrules</li>
+                    <li>复制粘贴这个模板：</li>
+                </ol>
+                
+                <div class="example">
+# 我的代码规则<br/>
+- 所有代码必须有注释<br/>
+- 使用清晰的变量名<br/>
+- 函数要有完整的错误处理<br/>
+- 每个函数只做一件事
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <h4>第四步：开始写代码</h4>
+                
+                <p><strong>方法1：用Ctrl+L对话</strong></p>
+                <ol>
+                    <li>按 Ctrl+L（Mac是Cmd+L）</li>
+                    <li>输入："创建一个Python函数，读取Excel文件并返回数据"</li>
+                    <li>AI会生成完整代码</li>
+                    <li>点击"插入代码"按钮</li>
+                </ol>
+                
+                <p><strong>方法2：用Ctrl+K内联编辑</strong></p>
+                <ol>
+                    <li>写一段代码</li>
+                    <li>选中代码</li>
+                    <li>按 Ctrl+K（Mac是Cmd+K）</li>
+                    <li>输入："添加错误处理"</li>
+                    <li>AI自动修改代码</li>
+                </ol>
+                
+                <p><strong>方法3：用@符号引用文件</strong></p>
+                <div class="example">
+                    按Ctrl+L，然后输入：<br/>
+                    "@app.py 这个文件的登录逻辑有什么问题？"<br/><br/>
+                    AI会读取app.py文件并分析
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <strong>实际例子：创建用户注册接口</strong>
+                <ol>
+                    <li>按Ctrl+L</li>
+                    <li>输入："创建一个Express API接口 POST /register，接收email和password，验证邮箱格式，密码加密用bcrypt，保存到MongoDB，返回JWT token，添加完整错误处理"</li>
+                    <li>AI生成完整代码</li>
+                    <li>点击"插入代码"</li>
+                    <li>完成！</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                ✅ 你已经学会用AI写代码了！
+            </div>
+            
+            <h2>🎨 UI设计师：用v0.dev生成界面</h2>
+            
+            <h3>工具：v0.dev（免费200积分/月）</h3>
+            
+            <div class="step-box">
+                <h4>第一步：访问网站</h4>
+                <ol>
+                    <li>打开浏览器</li>
+                    <li>输入：<a href="https://v0.dev" target="_blank">v0.dev</a></li>
+                    <li>点击"Sign in"</li>
+                    <li>用GitHub账号登录</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第二步：生成UI</h4>
+                <div class="example">
+输入需求：<br/><br/>
+"创建一个登录页面<br/>
+- 用Next.js和Tailwind CSS<br/>
+- 有邮箱和密码输入框<br/>
+- 有"忘记密码"链接<br/>
+- 有Google登录按钮<br/>
+- 响应式设计<br/>
+- 深色模式支持"<br/><br/>
+等待生成 → 实时预览 → 满意后复制代码
+                </div>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经学会AI生成UI了！
+            </div>
+            
+            <h2>🖼️ 做设计：用Canva做海报/PPT</h2>
+            
+            <h3>工具：Canva（免费版够用）</h3>
+            
+            <div class="step-box">
+                <h4>简单4步</h4>
+                <ol>
+                    <li><strong>注册登录：</strong>访问 <a href="https://canva.com" target="_blank">canva.com</a>，用Google账号登录</li>
+                    <li><strong>选择模板：</strong>搜索"海报"或"PPT"，找到喜欢的模板</li>
+                    <li><strong>编辑：</strong>双击文字修改，点击图片替换，左侧添加元素</li>
+                    <li><strong>下载：</strong>点击右上角"下载"，选择格式，完成！</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经会用Canva做设计了！
+            </div>
+            
+            <h2>🎬 剪视频：用剪映加字幕</h2>
+            
+            <h3>工具：剪映（完全免费）</h3>
+            
+            <div class="step-box">
+                <h4>自动加字幕4步</h4>
+                <ol>
+                    <li><strong>下载：</strong>搜索"剪映"下载安装</li>
+                    <li><strong>导入：</strong>点击"开始创作"，选择视频</li>
+                    <li><strong>加字幕：</strong>点击"文字" → "识别字幕" → "自动识别"</li>
+                    <li><strong>导出：</strong>点击"导出"，选择1080P，完成！</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经会用剪映了！
+            </div>
+            
+            <h2>💡 实用技巧</h2>
+            
+            <div class="highlight">
+                <h4>怎么写好Prompt？公式：角色 + 任务 + 要求 + 格式</h4>
+                <div class="example">
+❌ 差的例子："帮我写代码"<br/><br/>
+
+✅ 好的例子：<br/>
+"你是一个Python专家。<br/>
+任务：创建一个爬虫<br/>
+要求：<br/>
+- 爬取新闻网站标题<br/>
+- 保存到CSV文件<br/>
+- 有完整错误处理<br/>
+- 添加注释<br/>
+格式：给我完整可运行的代码"
+                </div>
+            </div>
+            
+            <h2>📊 价格总结</h2>
+            
+            <table>
+                <tr>
+                    <th>工具</th>
+                    <th>免费版</th>
+                    <th>付费版</th>
+                    <th>推荐</th>
+                </tr>
+                <tr>
+                    <td><strong>Kimi</strong></td>
+                    <td><span class="badge-free">完全免费</span></td>
+                    <td>-</td>
+                    <td>小白必备</td>
+                </tr>
+                <tr>
+                    <td><strong>Cursor</strong></td>
+                    <td>有限制</td>
+                    <td><span class="badge-paid">$20/月</span></td>
+                    <td>程序员必备</td>
+                </tr>
+                <tr>
+                    <td><strong>v0.dev</strong></td>
+                    <td>200积分/月</td>
+                    <td><span class="badge-paid">$20/月</span></td>
+                    <td>UI开发推荐</td>
+                </tr>
+                <tr>
+                    <td><strong>Canva</strong></td>
+                    <td>够用</td>
+                    <td><span class="badge-paid">$13/月</span></td>
+                    <td>免费版就行</td>
+                </tr>
+                <tr>
+                    <td><strong>剪映</strong></td>
+                    <td><span class="badge-free">完全免费</span></td>
+                    <td>-</td>
+                    <td>视频必备</td>
+                </tr>
+            </table>
+            
+            <div class="tip">
+                <strong>推荐组合：</strong><br/>
+                • <strong>小白：</strong>Kimi（免费）+ Canva（免费）+ 剪映（免费）= <span class="badge-free">$0</span><br/>
+                • <strong>程序员：</strong>Cursor（$20/月）+ Kimi（免费）= <span class="badge-paid">$20/月</span><br/>
+                • <strong>全能：</strong>Cursor + v0.dev = <span class="badge-paid">$40/月</span>
+            </div>
+            
+            <h2>🎯 今天就开始！5分钟行动计划</h2>
+            
+            <div class="step-box">
+                <h4>现在就做：</h4>
+                <ol>
+                    <li>打开 <a href="https://kimi.moonshot.cn" target="_blank">kimi.moonshot.cn</a></li>
+                    <li>登录</li>
+                    <li>输入："教我如何用AI提升工作效率"</li>
+                    <li>开始对话</li>
+                </ol>
+                <p style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #10b981;">
+                    <strong>恭喜！你已经开始用AI了！</strong>
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0;">
+                <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
+                    🚀 立即开始 - 打开Kimi
+                </a>
+            </div>
+            
+            <div class="highlight" style="text-align: center; font-size: 1.3em;">
+                <strong>🎉 恭喜你看完了！</strong><br/>
+                <strong>记住：最好的学习方法就是动手试！</strong>
+            </div>
+        </div>
+        
+        <footer style="background: #1f2937; color: white; text-align: center; padding: 40px; border-radius: 0 0 20px 20px;">
+            <p style="font-size: 1.1em; margin-bottom: 10px;"><strong>📅 更新时间：2025年10月4日</strong></p>
+            <p style="font-size: 1em;">💬 有问题？直接问AI："我是新手，应该怎么开始用AI工具？"</p>
+        </footer>
+    </div>
+</body>
+</html>

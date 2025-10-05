@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具使用说明文档 - 2025最新版</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .quick-nav {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .quick-nav h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .role-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .role-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .role-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+        
+        .role-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .role-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .role-card a:hover {
+            background: #764ba2;
+        }
+        
+        .comparison-section {
+            margin: 40px 0;
+        }
+        
+        .comparison-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .comparison-section h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 30px 0 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9ff;
+        }
+        
+        .free-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .paid-badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .star-rating {
+            color: #fbbf24;
+            font-size: 1.2em;
+        }
+        
+        .scenario-table {
+            margin: 30px 0;
+        }
+        
+        .scenario-table td:first-child {
+            font-weight: 600;
+            color: #667eea;
+            width: 30%;
+        }
+        
+        .tool-name {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px;
+            border-left: 5px solid #fbbf24;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .highlight h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px 8px;
+            }
+        }
+        
+        .search-box {
+            margin: 20px 0;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1em;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            outline: none;
+            transition: border 0.3s;
+        }
+        
+        .search-box input:focus {
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI工具使用说明文档</h1>
+            <p>2025年最新版 - 帮助所有人快速掌握AI工具，效率翻倍！</p>
+        </header>
+        
+        <div class="content">
+            <!-- 快速导航 -->
+            <section class="quick-nav">
+                <h2>🚀 3秒钟找到你需要的工具</h2>
+                
+                <h3>👤 我是什么角色？</h3>
+                <div class="role-cards">
+                    <div class="role-card">
+                        <h3>👶 完全小白</h3>
+                        <p>只想用AI聊天、写文章</p>
+                        <a href="#xiaobai">→ 点击直达</a>
+                        <p style="margin-top: 15px; color: #10b981; font-weight: 600;">推荐：文心一言（免费）</p>
+                    </div>
+                    
+                    <div class="role-card">
+                        <h3>👨‍💻 程序员</h3>
+                        <p>写代码、调试、学习</p>
+                        <a href="#developer">→ 点击直达</a>
+                        <p style="margin-top: 15px; color: #10b981; font-weight: 600;">推荐：Cursor + Claude</p>
+                    </div>
+                    
+                    <div class="role-card">
+                        <h3>👨‍💼 产品经理</h3>
+                        <p>写PRD、做调研、会议纪要</p>
+                        <a href="#pm">→ 点击直达</a>
+                        <p style="margin-top: 15px; color: #10b981; font-weight: 600;">推荐：ChatGPT + Notion AI</p>
+                    </div>
+                    
+                    <div class="role-card">
+                        <h3>🎨 设计师</h3>
+                        <p>做图、剪视频、UI设计</p>
+                        <a href="#designer">→ 点击直达</a>
+                        <p style="margin-top: 15px; color: #10b981; font-weight: 600;">推荐：Canva + 剪映</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 场景快速匹配 -->
+            <section class="comparison-section">
+                <h2>🎯 我想做什么？场景快速匹配</h2>
+                
+                <table class="scenario-table">
+                    <thead>
+                        <tr>
+                            <th>你的需求</th>
+                            <th>推荐工具</th>
+                            <th>费用</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>💬 聊天、问问题、日常咨询</td>
+                            <td>文心一言 / 讯飞星火</td>
+                            <td><span class="free-badge">✅ 免费</span></td>
+                            <td><a href="#wenxin" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>✍️ 写文章、周报、邮件</td>
+                            <td>ChatGPT / 文心一言</td>
+                            <td><span class="free-badge">部分免费</span></td>
+                            <td><a href="#chatgpt" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>🎨 做海报、PPT、设计图</td>
+                            <td>Canva</td>
+                            <td><span class="free-badge">✅ 免费版够用</span></td>
+                            <td><a href="#canva" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>🎬 剪视频、加字幕</td>
+                            <td>剪映</td>
+                            <td><span class="free-badge">✅ 免费</span></td>
+                            <td><a href="#jianying" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>💻 写代码、学编程</td>
+                            <td>Cursor / GitHub Copilot</td>
+                            <td><span class="paid-badge">付费（学生免费）</span></td>
+                            <td><a href="#cursor" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>📊 做数据分析、图表</td>
+                            <td>ChatGPT Plus</td>
+                            <td><span class="paid-badge">$20/月</span></td>
+                            <td><a href="#chatgpt" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>🖼️ AI生成图片</td>
+                            <td>Midjourney / DALL·E 3</td>
+                            <td><span class="paid-badge">付费</span></td>
+                            <td><a href="#midjourney" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                        <tr>
+                            <td>🔍 搜索资料、查信息</td>
+                            <td>Perplexity AI</td>
+                            <td><span class="free-badge">部分免费</span></td>
+                            <td><a href="#perplexity" style="color: #667eea; font-weight: 600;">查看详情 →</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- AI工具对比总览 -->
+            <section class="comparison-section">
+                <h2>📊 所有AI工具对比总览</h2>
+                
+                <div class="highlight">
+                    <h4>💡 小白用户看这里！</h4>
+                    <p><strong>完全免费的工具：</strong>文心一言、讯飞星火、剪映 - 这三个完全够日常使用！</p>
+                    <p><strong>最推荐小白：</strong>文心一言（国内访问快，完全免费，中文理解好）</p>
+                </div>
+                
+                <h3 id="developer">🖥️ 编程/开发工具</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>工具名称</th>
+                            <th>核心功能</th>
+                            <th>编程能力</th>
+                            <th>价格</th>
+                            <th>上手难度</th>
+                            <th>推荐指数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tool-name">Cursor</td>
+                            <td>AI代码编辑器</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="paid-badge">$20/月</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Claude 3.7</td>
+                            <td>AI编程助手</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$20</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">GitHub Copilot</td>
+                            <td>代码补全</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                            <td><span class="paid-badge">$10/月</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Gemini 2.5 Pro</td>
+                            <td>多模态AI</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$20</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Tabnine</td>
+                            <td>智能补全</td>
+                            <td><span class="star-rating">⭐⭐⭐</span></td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$12</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Grok 3</td>
+                            <td>AI助手</td>
+                            <td><span class="star-rating">⭐⭐⭐</span></td>
+                            <td><span class="paid-badge">$16/月</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 id="pm">💼 产品经理工具</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>工具名称</th>
+                            <th>核心功能</th>
+                            <th>价格</th>
+                            <th>上手难度</th>
+                            <th>推荐指数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tool-name">ChatGPT</td>
+                            <td>全能对话助手</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$20</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Notion AI</td>
+                            <td>文档智能助手</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$10</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Miro AI</td>
+                            <td>可视化白板</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$8</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Otter.ai</td>
+                            <td>会议转录</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$17</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 id="designer">🎨 设计师工具</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>工具名称</th>
+                            <th>核心功能</th>
+                            <th>价格</th>
+                            <th>上手难度</th>
+                            <th>推荐指数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tool-name">Midjourney</td>
+                            <td>AI图像生成</td>
+                            <td><span class="paid-badge">$10-30/月</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Canva</td>
+                            <td>零基础设计</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$13</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">剪映</td>
+                            <td>视频剪辑</td>
+                            <td><span class="free-badge">✅ 免费</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Adobe Firefly</td>
+                            <td>Adobe AI工具集</td>
+                            <td><span class="paid-badge">$5/月起</span></td>
+                            <td>中等</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Runway ML</td>
+                            <td>AI视频编辑</td>
+                            <td><span class="paid-badge">$12-28/月</span></td>
+                            <td>中等</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">DALL·E 3</td>
+                            <td>OpenAI图像生成</td>
+                            <td><span class="paid-badge">$20/月</span></td>
+                            <td>简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 id="xiaobai">👶 小白/通用工具（推荐从这里开始！）</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>工具名称</th>
+                            <th>核心功能</th>
+                            <th>价格</th>
+                            <th>上手难度</th>
+                            <th>推荐指数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #fef3c7;">
+                            <td class="tool-name">文心一言 ⭐</td>
+                            <td>中文AI助手</td>
+                            <td><span class="free-badge">✅ 免费</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">讯飞星火</td>
+                            <td>语音+AI</td>
+                            <td><span class="free-badge">免费/付费</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Perplexity AI</td>
+                            <td>AI搜索引擎</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$20</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                        <tr>
+                            <td class="tool-name">Grammarly</td>
+                            <td>英文写作助手</td>
+                            <td><span class="free-badge">免费</span> / <span class="paid-badge">$12</span></td>
+                            <td>非常简单</td>
+                            <td><span class="star-rating">⭐⭐⭐⭐</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight">
+                    <h4>🎓 小白上手建议</h4>
+                    <p><strong>第1步：</strong>先用文心一言（yiyan.baidu.com），完全免费，试试问它问题、让它帮你写东西</p>
+                    <p><strong>第2步：</strong>如果需要做海报/PPT，用Canva（www.canva.com），有中文界面</p>
+                    <p><strong>第3步：</strong>如果要剪视频，下载剪映APP，一键加字幕超方便</p>
+                    <p><strong>记住：</strong>从免费的开始！等熟练了再考虑付费工具</p>
+                </div>
+            </section>
+            
+            <!-- 价格对比 -->
+            <section class="comparison-section">
+                <h2>💰 价格对比（2025年最新）</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>价格区间</th>
+                            <th>适合工具</th>
+                            <th>推荐人群</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="free-badge">完全免费</span></td>
+                            <td>文心一言、讯飞星火、剪映</td>
+                            <td>预算有限的小白用户</td>
+                        </tr>
+                        <tr>
+                            <td><span class="paid-badge">$0-10/月</span></td>
+                            <td>GitHub Copilot ($10)</td>
+                            <td>个人开发者、学生</td>
+                        </tr>
+                        <tr>
+                            <td><span class="paid-badge">$10-20/月</span></td>
+                            <td>ChatGPT, Claude, Cursor, Gemini (各$20)</td>
+                            <td>专业用户、重度使用者</td>
+                        </tr>
+                        <tr>
+                            <td><span class="paid-badge">$20+/月</span></td>
+                            <td>o1模型 ($200), 企业版工具</td>
+                            <td>企业团队、高级需求</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- 重要提示 -->
+            <section class="comparison-section">
+                <h2>⚠️ 使用前必读</h2>
+                <div class="highlight">
+                    <h4>数据安全提醒</h4>
+                    <p>• 不要上传公司机密代码或敏感信息</p>
+                    <p>• 个人使用没问题，企业使用需注意数据安全</p>
+                    <p>• 免费工具通常会用你的数据训练模型</p>
+                </div>
+                
+                <div class="highlight" style="background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%); border-left-color: #3b82f6;">
+                    <h4>学习建议</h4>
+                    <p>• AI是辅助工具，不是替代品</p>
+                    <p>• 先从简单的免费工具开始</p>
+                    <p>• 多试多练，每个工具都有学习曲线</p>
+                    <p>• 遇到问题可以问AI本身！</p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>📅 文档更新时间：2025年10月4日</p>
+            <p>💡 提示：AI工具更新很快，建议定期查看最新版本</p>
+            <p style="margin-top: 15px; opacity: 0.7;">祝大家使用AI工具愉快，效率翻倍！🚀</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // 表格行高亮
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.01)';
+                this.style.transition = 'transform 0.2s';
+            });
+            row.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具团队分享会 - 完整指南 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --light: #f9fafb;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 30px;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+        
+        header .subtitle {
+            font-size: 1.5em;
+            opacity: 0.95;
+            margin-top: 15px;
+        }
+        
+        header .meta {
+            margin-top: 30px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: var(--dark);
+            padding: 20px 60px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .content {
+            padding: 60px;
+        }
+        
+        .section {
+            margin: 80px 0;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 3em;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .concept-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 6px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .concept-card h3 {
+            color: var(--primary);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .concept-card h4 {
+            color: var(--secondary);
+            font-size: 1.3em;
+            margin: 25px 0 15px;
+        }
+        
+        .concept-card ul {
+            margin-left: 25px;
+        }
+        
+        .concept-card li {
+            margin: 12px 0;
+            line-height: 1.8;
+        }
+        
+        .example-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--success);
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+        }
+        
+        .tool-section {
+            margin: 60px 0;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-left: 8px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .tool-card:hover {
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.2);
+        }
+        
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .tool-header h3 {
+            color: var(--primary);
+            font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rating {
+            color: #fbbf24;
+            font-size: 1.8em;
+            letter-spacing: 3px;
+        }
+        
+        .tool-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .meta-item {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .meta-item h4 {
+            color: var(--secondary);
+            font-size: 1.1em;
+            margin-bottom: 12px;
+        }
+        
+        .feature-section {
+            margin: 35px 0;
+        }
+        
+        .feature-section h4 {
+            color: var(--secondary);
+            font-size: 1.6em;
+            margin: 30px 0 20px;
+            padding-left: 20px;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .feature-list {
+            margin-left: 30px;
+        }
+        
+        .feature-list li {
+            margin: 15px 0;
+            line-height: 1.9;
+            font-size: 1.05em;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 30px;
+            border-left: 6px solid var(--warning);
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #92400e;
+            margin-bottom: 18px;
+            font-size: 1.4em;
+        }
+        
+        .info-box {
+            background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 30px;
+            border-left: 6px solid #3b82f6;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .info-box h4 {
+            color: #1e40af;
+            margin-bottom: 18px;
+            font-size: 1.4em;
+        }
+        
+        .success-box {
+            background: linear-gradient(120deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 30px;
+            border-left: 6px solid var(--success);
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+        
+        .success-box h4 {
+            color: #065f46;
+            margin-bottom: 18px;
+            font-size: 1.4em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+        }
+        
+        thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 22px 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 20px 18px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        
+        tbody tr {
+            transition: all 0.2s;
+        }
+        
+        tbody tr:hover {
+            background: #f8f9ff;
+            transform: scale(1.005);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 18px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 3px;
+        }
+        
+        .badge-free {
+            background: var(--success);
+            color: white;
+        }
+        
+        .badge-paid {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .badge-partial {
+            background: #06b6d4;
+            color: white;
+        }
+        
+        .link-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            margin: 5px;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: translateY(-8px);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin-top: 80px;
+        }
+        
+        footer p {
+            margin: 12px 0;
+            opacity: 0.9;
+            font-size: 1.05em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .back-to-top, nav {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .content {
+                padding: 40px;
+            }
+            
+            .tool-card {
+                padding: 35px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .section-title {
+                font-size: 2.2em;
+            }
+            
+            .tool-header h3 {
+                font-size: 2em;
+            }
+            
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI工具团队分享会</h1>
+            <p class="subtitle">2025年最全AI工具指南 - 包含MCP、Agent、Prompt、Rules详解</p>
+            <p class="meta">📅 更新时间：2025年10月4日 | 📊 适用于：研发、产品、设计、运营团队</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#concepts">核心概念</a></li>
+                <li><a href="#dev-tools">编程工具</a></li>
+                <li><a href="#ui-tools">UI生成</a></li>
+                <li><a href="#general-tools">通用工具</a></li>
+                <li><a href="#design-tools">设计工具</a></li>
+                <li><a href="#pricing">价格对比</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <!-- 核心概念 -->
+            <section id="concepts" class="section">
+                <h2 class="section-title">📚 核心概念解释（必读）</h2>
+                
+                <p style="font-size: 1.2em; color: #666; margin-bottom: 40px;">
+                    在使用AI工具之前，先理解这4个核心概念，它们决定了你能否高效使用AI工具：
+                </p>
+                
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>1️⃣ MCP (Model Context Protocol)</h3>
+                        <h4>💡 是什么？</h4>
+                        <p>Anthropic开发的开放协议，让AI能连接外部数据源。<strong>就像给AI装了"USB接口"</strong>，可以插入各种工具和数据。</p>
+                        
+                        <h4>🎯 能做什么？</h4>
+                        <ul>
+                            <li>✅ 让Claude直接读取你的本地文件系统</li>
+                            <li>✅ 连接数据库（MySQL、PostgreSQL等）</li>
+                            <li>✅ 集成外部服务（GitHub、Notion、Google Drive）</li>
+                            <li>✅ 调用自定义API和工具</li>
+                            <li>✅ 实时获取最新数据</li>
+                        </ul>
+                        
+                        <div class="example-box">
+                            <strong>对比示例：</strong><br/>
+                            ❌ 没有MCP：复制代码 → 粘贴给AI → AI分析 → 你再粘贴回去<br/>
+                            ✅ 有MCP：让AI直接读取项目 → AI自动分析所有文件 → AI直接修改文件
+                        </div>
+                        
+                        <h4>🔧 支持MCP的工具：</h4>
+                        <ul>
+                            <li>Claude Desktop（原生支持）</li>
+                            <li>Cursor（通过MCP服务器）</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>2️⃣ AI Agent（AI代理）</h3>
+                        <h4>💡 是什么？</h4>
+                        <p>能<strong>自主规划、执行多步骤任务</strong>的AI系统。不只是回答问题，而是主动完成复杂任务。</p>
+                        
+                        <h4>🎯 能做什么？</h4>
+                        <ul>
+                            <li>✅ 自动分解复杂任务为多个步骤</li>
+                            <li>✅ 调用多个工具和API</li>
+                            <li>✅ 自我纠错和迭代优化</li>
+                            <li>✅ 并行处理多个子任务</li>
+                            <li>✅ 生成完整的解决方案</li>
+                        </ul>
+                        
+                        <div class="example-box">
+                            <strong>对比示例：</strong><br/>
+                            ❌ 普通AI：<br/>
+                            你："这段代码有bug吗？"<br/>
+                            AI："有，第12行空指针异常"<br/><br/>
+                            
+                            ✅ AI Agent：<br/>
+                            你："帮我修复项目中的所有bug并优化性能"<br/>
+                            AI Agent自动：<br/>
+                            1. 扫描所有代码文件<br/>
+                            2. 静态分析找出潜在bug<br/>
+                            3. 自动修复每个问题<br/>
+                            4. 运行测试验证修复<br/>
+                            5. 性能分析找出瓶颈<br/>
+                            6. 优化慢查询和算法<br/>
+                            7. 生成详细修复报告
+                        </div>
+                        
+                        <h4>🔧 支持Agent的工具：</h4>
+                        <ul>
+                            <li>Cursor（Background Agent）</li>
+                            <li>bolt.new（自动生成完整项目）</li>
+                            <li>GitHub Copilot Workspace</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>3️⃣ Prompt（提示词）</h3>
+                        <h4>💡 是什么？</h4>
+                        <p>你给AI的指令、问题或要求。<strong>决定了AI理解需求和输出质量的关键</strong>。</p>
+                        
+                        <h4>🎯 好Prompt的特征：</h4>
+                        <ul>
+                            <li>✅ 清晰具体的需求描述</li>
+                            <li>✅ 提供充足的上下文信息</li>
+                            <li>✅ 明确期望的输出格式</li>
+                            <li>✅ 包含约束条件和边界情况</li>
+                        </ul>
+                        
+                        <div class="example-box">
+                            <strong>对比示例：</strong><br/><br/>
+                            
+                            ❌ 差的Prompt：<br/>
+                            "帮我写个函数"<br/><br/>
+                            
+                            ✅ 好的Prompt：<br/>
+                            "用TypeScript写一个异步函数getUserById：<br/>
+                            - 输入：userId (string类型)<br/>
+                            - 功能：从PostgreSQL数据库查询用户信息<br/>
+                            - 输出：返回User对象（包含id, name, email字段）<br/>
+                            - 错误处理：用户不存在返回null，数据库错误抛出异常<br/>
+                            - 使用Prisma ORM<br/>
+                            - 添加JSDoc注释"
+                        </div>
+                        
+                        <h4>🔧 Prompt工程技巧：</h4>
+                        <ul>
+                            <li>角色扮演："你是一个资深的Python架构师..."</li>
+                            <li>分步指导："第一步...第二步...第三步..."</li>
+                            <li>Few-shot示例：提供2-3个示例让AI理解模式</li>
+                            <li>思维链："让我们一步步思考..."</li>
+                            <li>格式约束："用Markdown表格输出结果"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h3>4️⃣ Rules（规则/代码规范）</h3>
+                        <h4>💡 是什么？</h4>
+                        <p>给AI设定的行为规范和代码标准。在Cursor中是<strong>.cursorrules文件</strong>。让AI自动遵循团队的编码规范。</p>
+                        
+                        <h4>🎯 能做什么？</h4>
+                        <ul>
+                            <li>✅ 统一团队代码风格</li>
+                            <li>✅ 自动应用最佳实践</li>
+                            <li>✅ 强制类型安全</li>
+                            <li>✅ 禁止不安全的代码模式</li>
+                            <li>✅ 自定义命名规范</li>
+                        </ul>
+                        
+                        <div class="example-box">
+                            <strong>.cursorrules文件示例：</strong><br/><br/>
+                            
+                            # TypeScript项目规则<br/><br/>
+                            
+                            ## 代码风格<br/>
+                            - 使用4空格缩进，不用Tab<br/>
+                            - 所有函数必须有TypeScript类型注解<br/>
+                            - 变量名使用camelCase<br/><br/>
+                            
+                            ## 异步处理<br/>
+                            - 必须使用async/await，禁止使用回调函数<br/>
+                            - 所有Promise必须有错误处理<br/><br/>
+                            
+                            ## 安全<br/>
+                            - 禁止使用eval()<br/>
+                            - 禁止SQL字符串拼接，使用参数化查询
+                        </div>
+                        
+                        <h4>效果：</h4>
+                        <p>AI会自动生成符合规则的代码，团队代码风格保持一致！</p>
+                    </div>
+                </div>
+            </section>

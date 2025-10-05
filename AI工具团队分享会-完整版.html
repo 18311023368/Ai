@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具团队分享会 - 2025完整指南</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #667eea; --secondary: #764ba2; --success: #10b981;
+            --warning: #f59e0b; --dark: #1f2937; --light: #f9fafb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+            line-height: 1.8; color: #333;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            padding: 30px;
+        }
+        .container {
+            max-width: 1600px; margin: 0 auto; background: white;
+            border-radius: 20px; box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white; padding: 80px 60px; text-align: center;
+        }
+        header h1 { font-size: 3.5em; margin-bottom: 20px; }
+        nav {
+            background: var(--dark); padding: 20px; position: sticky; top: 0; z-index: 1000;
+        }
+        nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        nav a {
+            color: white; text-decoration: none; font-weight: 600;
+            padding: 10px 20px; border-radius: 8px; transition: all 0.3s;
+        }
+        nav a:hover { background: var(--primary); }
+        .content { padding: 60px; }
+        .section { margin: 60px 0; }
+        h2 {
+            color: var(--primary); font-size: 2.5em; margin: 40px 0 30px;
+            padding-bottom: 15px; border-bottom: 4px solid var(--primary);
+        }
+        h3 { color: var(--secondary); font-size: 2em; margin: 35px 0 20px; }
+        h4 { color: var(--primary); font-size: 1.4em; margin: 25px 0 15px; }
+        .tool-card {
+            background: white; border-radius: 15px; padding: 40px; margin: 30px 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 6px solid var(--primary);
+        }
+        .code-block {
+            background: #1e293b; color: #e2e8f0; padding: 20px;
+            border-radius: 10px; margin: 15px 0; overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px; border-left: 5px solid var(--warning);
+            border-radius: 10px; margin: 20px 0;
+        }
+        .info-box {
+            background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 20px; border-left: 5px solid #3b82f6;
+            border-radius: 10px; margin: 20px 0;
+        }
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        ul { margin-left: 30px; }
+        li { margin: 10px 0; line-height: 1.8; }
+        .back-to-top {
+            position: fixed; bottom: 40px; right: 40px;
+            background: var(--primary); color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8em; cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            opacity: 0; transition: all 0.3s;
+        }
+        .back-to-top.show { opacity: 1; }
+        .back-to-top:hover { transform: translateY(-8px); }
+        @media (max-width: 768px) {
+            .content { padding: 30px; }
+            header h1 { font-size: 2.5em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI工具团队分享会</h1>
+            <p style="font-size: 1.3em; margin-top: 15px;">2025年最全AI工具指南 - MCP、Agent、Prompt、Rules详解</p>
+            <p style="margin-top: 20px; font-size: 1.1em;">📅 2025年10月4日 | 📊 适用于研发、产品、设计团队</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#concepts">核心概念</a></li>
+                <li><a href="#dev-tools">编程工具</a></li>
+                <li><a href="#ui-tools">UI生成</a></li>
+                <li><a href="#general">通用工具</a></li>
+                <li><a href="#design">设计工具</a></li>
+                <li><a href="#pricing">价格</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+<p><h1>AI工具终极使用指南</h1></p><p>> 📌 **2025年10月最新版** - 涵盖所有主流AI工具，包含MCP、Agent、Prompt、Rules详解</p><p>---</p><p><h2 id="concepts">📚 核心概念解释 - 必读】</h2></p><p>在开始之前，先理解这些核心概念：</p><p><h3>1️⃣ MCP (Model Context Protocol) - 模型上下文协议</h3></p><p>**💡 是什么？**
+<ul>
+<li>Anthropic开发的开放协议，让AI能连接外部数据源</li>
+<li>就像给AI装了"USB接口"，可以插入各种工具和数据源</li>
+</ul></p><p>**🎯 能做什么？**
+<ul>
+<li>✅ 让Claude直接读取你的本地文件系统</li>
+<li>✅ 连接数据库（MySQL、PostgreSQL等）</li>
+<li>✅ 集成外部服务（GitHub、Notion、Google Drive）</li>
+<li>✅ 调用自定义API和工具</li>
+<li>✅ 实时获取最新数据</li>
+</ul></p><p>**📌 实际应用：**
+<div class="code-block">
+传统方式：
+你：复制代码 → 粘贴给AI → AI分析 → 你再粘贴回去</p><p>使用MCP：
+你：让AI直接读取项目 → AI自动分析所有文件 → AI直接修改文件
+</div></p><p>**🔧 支持MCP的工具：**
+<ul>
+<li>Claude Desktop (原生支持)</li>
+<li>Cursor (通过MCP服务器)</li>
+</ul></p><p>---</p><p><h3>2️⃣ AI Agent - AI代理</h3></p><p>**💡 是什么？**
+<ul>
+<li>能自主规划、执行多步骤任务的AI系统</li>
+<li>不只是回答问题，而是主动完成复杂任务</li>
+</ul></p><p>**🎯 能做什么？**
+<ul>
+<li>✅ 自动分解复杂任务为多个步骤</li>
+<li>✅ 调用多个工具和API</li>
+<li>✅ 自我纠错和迭代优化</li>
+<li>✅ 并行处理多个子任务</li>
+<li>✅ 生成完整的解决方案</li>
+</ul></p><p>**📌 实际应用：**
+<div class="code-block">
+普通AI对话：
+你："这段代码有bug吗？"
+AI："有，第12行空指针异常"
+你："怎么修？"
+AI："改成这样..."</p><p>AI Agent：
+你："帮我修复项目中的所有bug并优化性能"
+AI Agent自动：
+  1. 扫描所有代码文件
+  2. 静态分析找出潜在bug
+  3. 自动修复每个问题
+  4. 运行测试验证修复
+  5. 性能分析找出瓶颈
+  6. 优化慢查询和算法
+  7. 生成详细修复报告
+</div></p><p>**🔧 支持Agent的工具：**
+<ul>
+<li>Cursor (Background Agent)</li>
+<li>bolt.new (自动生成完整项目)</li>
+<li>GitHub Copilot Workspace</li>
+</ul></p><p>---</p><p><h3>3️⃣ Prompt - 提示词/指令</h3></p><p>**💡 是什么？**
+<ul>
+<li>你给AI的指令、问题或要求</li>
+<li>决定了AI理解需求和输出质量的关键</li>
+</ul></p><p>**🎯 好Prompt的特征：**
+<ul>
+<li>✅ 清晰具体的需求描述</li>
+<li>✅ 提供充足的上下文信息</li>
+<li>✅ 明确期望的输出格式</li>
+<li>✅ 包含约束条件和边界情况</li>
+</ul></p><p>**📌 对比示例：**</p><p>**❌ 差的Prompt：**
+<div class="code-block">
+"帮我写个函数"
+</div></p><p>**✅ 好的Prompt：**
+<div class="code-block">
+用TypeScript写一个异步函数getUserById：
+<ul>
+<li>输入：userId (string类型)</li>
+<li>功能：从PostgreSQL数据库查询用户信息</li>
+<li>输出：返回User对象（包含id, name, email字段）</li>
+<li>错误处理：用户不存在返回null，数据库错误抛出异常</li>
+<li>使用Prisma ORM</li>
+<li>添加JSDoc注释</li>
+</ul>
+</div></p><p>**🔧 Prompt工程技巧：**
+1. **角色扮演**："你是一个资深的Python架构师..."
+2. **分步指导**："第一步...第二步...第三步..."
+3. **Few-shot示例**：提供2-3个示例让AI理解模式
+4. **思维链**："让我们一步步思考..."
+5. **格式约束**："用Markdown表格输出结果"</p><p>---</p><p><h3>4️⃣ Rules - 规则/代码规范</h3></p><p>**💡 是什么？**
+<ul>
+<li>给AI设定的行为规范和代码标准</li>
+<li>在Cursor中是`.cursorrules`文件</li>
+<li>让AI自动遵循团队的编码规范</li>
+</ul></p><p>**🎯 能做什么？**
+<ul>
+<li>✅ 统一团队代码风格</li>
+<li>✅ 自动应用最佳实践</li>
+<li>✅ 强制类型安全</li>
+<li>✅ 禁止不安全的代码模式</li>
+<li>✅ 自定义命名规范</li>
+</ul></p><p>**📌 实际应用：**</p><p>**创建`.cursorrules`文件：**
+<div class="code-block">
+<h1>TypeScript项目规则</h1></p><p><h2>代码风格</h2>
+<ul>
+<li>使用4空格缩进，不用Tab</li>
+<li>所有函数必须有TypeScript类型注解</li>
+<li>变量名使用camelCase，常量用UPPER_SNAKE_CASE</li>
+<li>接口名以I开头，如IUser</li>
+</ul></p><p><h2>异步处理</h2>
+<ul>
+<li>必须使用async/await，禁止使用回调函数</li>
+<li>所有Promise必须有错误处理</li>
+</ul></p><p><h2>错误处理</h2>
+<ul>
+<li>使用try-catch包裹可能出错的代码</li>
+<li>自定义错误要继承Error类</li>
+<li>记录详细的错误日志</li>
+</ul></p><p><h2>安全</h2>
+<ul>
+<li>禁止使用eval()</li>
+<li>禁止SQL字符串拼接，使用参数化查询</li>
+<li>所有用户输入必须验证和清理</li>
+</ul></p><p><h2>测试</h2>
+<ul>
+<li>每个函数都要有单元测试</li>
+<li>测试覆盖率不低于80%</li>
+</ul></p><p><h2>注释</h2>
+<ul>
+<li>公共API必须有JSDoc注释</li>
+<li>复杂逻辑要有行内注释说明</li>
+</ul>
+</div></p><p>**效果：**
+<div class="code-block">typescript
+// AI会自动生成符合规则的代码</p><p>// ✅ 符合规则
+async function getUserById(userId: string): Promise<IUser | null> {
+  try {
+    const user = await db.user.findUnique({
+      where: { id: userId }
+    });
+    return user;
+  } catch (error) {
+    logger.error('Failed to get user', { userId, error });
+    throw new DatabaseError('User query failed');
+  }
+}</p><p>// ❌ AI不会生成违反规则的代码
+function getUser(id, callback) {  // 违反：没类型、用回调
+  db.query("SELECT * FROM users WHERE id=" + id, callback);  // 违反：SQL注入风险
+}
+</div></p><p>---</p><p><h2>🚀 【快速导航】</h2></p><p><h3>👤 按角色选择</h3></p><p>| 角色 | 推荐工具 | 直达链接 |
+|-----|---------|---------|
+| 👶 完全小白 | Kimi（免费） | [跳转](#小白工具) |
+| 👨‍💻 程序员 | Cursor + Claude 4 | [跳转](#编程工具) |
+| 🎨 UI设计师 | v0.dev + Stitch | [跳转](#UI生成) |
+| 👨‍💼 产品经理 | ChatGPT + Notion AI | [跳转](#产品工具) |
+| 🎬 视频/设计 | Sora 2 + 剪映 | [跳转](#设计工具) |</p><p>---</p><p><h2>📊 【工具对比总览】</h2></p><p><div id="编程工具"></div></p><p><h3 id="dev-tools">🖥️ 编程开发工具（程序员必备）</h3></p><p><h4>1. Cursor - AI原生代码编辑器 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>基于VS Code深度定制，AI功能原生集成</li>
+<li>支持多模型切换（Claude 4、GPT-4o、Gemini 2.5等）</li>
+<li>`Ctrl+K` 内联编辑，`Ctrl+L` 对话式编程</li>
+<li>`@符号` 引用文件/文件夹上下文</li>
+<li>**Background Agent** 自动化处理复杂任务</li>
+</ul></p><p>**🤖 MCP支持：**
+<ul>
+<li>✅ 通过MCP服务器连接外部数据源</li>
+<li>✅ 读取本地文件系统</li>
+<li>✅ 连接数据库和API</li>
+<li>配置方式：在设置中添加MCP服务器配置</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>**Background Agent模式**：并行处理多个任务</li>
+<li>示例："帮我重构整个项目使用TypeScript"</li>
+<li>Agent会：扫描文件 → 逐个转换 → 修复类型错误 → 更新配置</li>
+<li>**自动化PR生成**：从Issue描述自动实现功能并提交PR</li>
+<li>**跨文件重构**：智能理解依赖关系，批量修改</li>
+</ul></p><p>**✍️ Prompt最佳实践：**
+<div class="code-block">
+❌ 差的："优化这段代码"</p><p>✅ 好的："重构这个函数，要求：
+1. 使用async/await替代Promise.then
+2. 添加完整的错误处理
+3. 优化数据库查询，减少N+1问题
+4. 添加TypeScript类型注解
+5. 保持原有功能不变"
+</div></p><p>**📋 Rules配置：**
+创建 `.cursorrules` 文件：
+<div class="code-block">
+<h1>项目: E-commerce API</h1>
+<h1>技术栈: Node.js + TypeScript + Prisma + PostgreSQL</h1></p><p><h2>代码规范</h2>
+<ul>
+<li>使用TypeScript strict模式</li>
+<li>所有异步函数使用async/await</li>
+<li>接口命名: I前缀，如IUser, IProduct</li>
+<li>枚举命名: 大写下划线，如USER_STATUS</li>
+<li>文件命名: kebab-case, 如user-service.ts</li>
+</ul></p><p><h2>架构模式</h2>
+<ul>
+<li>使用三层架构: Controller -> Service -> Repository</li>
+<li>每层独立测试</li>
+<li>依赖注入使用tsyringe</li>
+</ul></p><p><h2>数据库</h2>
+<ul>
+<li>使用Prisma ORM</li>
+<li>所有查询必须有类型安全</li>
+<li>复杂查询写成raw SQL并注明原因</li>
+</ul></p><p><h2>错误处理</h2>
+<ul>
+<li>自定义错误类: AppError, ValidationError, DatabaseError</li>
+<li>Controller层捕获错误并返回HTTP状态码</li>
+<li>记录所有错误到日志系统</li>
+</ul></p><p><h2>安全</h2>
+<ul>
+<li>所有API需要认证中间件</li>
+<li>输入验证使用zod</li>
+<li>防止SQL注入，使用参数化查询</li>
+<li>敏感数据不输出到日志</li>
+</ul></p><p><h2>测试</h2>
+<ul>
+<li>单元测试覆盖率>80%</li>
+<li>使用Jest框架</li>
+<li>Mock外部依赖</li>
+</ul>
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 快速理解陌生代码库（@folders整个项目）</li>
+<li>✅ 实时代码补全和生成</li>
+<li>✅ 大规模代码重构</li>
+<li>✅ Bug定位和修复</li>
+<li>✅ 代码审查和安全检查</li>
+<li>✅ 自动化测试生成</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：基础代码补全，有使用次数限制</li>
+<li>**Pro版**：$20/月，无限使用所有模型，优先响应，支持Background Agent</li>
+<li>**Team版**：$40/月/人，团队协作 + 代码库索引 + 共享Rules</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://cursor.so" target="_blank">https://cursor.so</a></li>
+<li>支持平台：Windows / macOS / Linux</li>
+<li>下载后直接安装，可导入VS Code配置</li>
+</ul></p><p>**📌 高级使用技巧：**
+1. **使用@符号精准引用**：
+<ul>
+<li>`@filename.ts` - 引用单个文件</li>
+<li>`@folders src/` - 引用整个目录</li>
+<li>`@docs README.md` - 引用文档</li>
+</ul></p><p>2. **组合使用Ctrl+K和Ctrl+L**：
+<ul>
+<li>Ctrl+K：快速局部修改</li>
+<li>Ctrl+L：复杂问题讨论和方案设计</li>
+</ul></p><p>3. **Background Agent工作流**：
+   <div class="code-block">
+   1. 创建详细的任务描述
+   2. 启动Background Agent
+   3. Agent自动分解任务并执行
+   4. 实时查看进度
+   5. Review并合并修改
+   </div></p><p>---</p><p><h4>2. Claude 4 Sonnet - 最强编程AI ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>Anthropic 2025最新模型，编程能力业界最强</li>
+<li>**200K tokens** 超长上下文（约15万字代码）</li>
+<li>支持多模态（代码、文档、图表、PDF、图片）</li>
+<li>**思维链推理**：展示思考过程</li>
+<li>**Projects功能**：管理长期项目知识库</li>
+</ul></p><p>**🤖 MCP支持：**
+<ul>
+<li>✅ **原生支持MCP**（Anthropic自己开发的协议）</li>
+<li>✅ Claude Desktop可配置MCP服务器</li>
+<li>✅ 连接文件系统、数据库、API</li>
+<li>配置文件位置：</li>
+<li>macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`</li>
+<li>Windows: `%APPDATA%\Claude\claude_desktop_config.json`</li>
+</ul></p><p>**MCP配置示例：**
+<div class="code-block">json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "your_token_here"
+      }
+    }
+  }
+}
+</div></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>**多步骤推理**：自动分解复杂任务</li>
+<li>**工具调用**：通过MCP调用外部工具</li>
+<li>**自我纠错**：发现错误自动修正</li>
+<li>示例：</li>
+</ul>
+  <div class="code-block">
+  你："帮我创建一个完整的用户认证系统"
+  
+  Claude Agent会：
+  1. 设计数据库schema
+  2. 生成Prisma模型
+  3. 实现JWT认证逻辑
+  4. 创建注册/登录API
+  5. 添加密码加密
+  6. 编写单元测试
+  7. 生成API文档
+  </div></p><p>**✍️ Prompt工程：**</p><p>**Claude特别擅长的Prompt模式：**</p><p>1. **XML标签结构化**：
+<div class="code-block">xml
+<task>
+  <context>
+    我有一个Express项目，需要添加用户认证
+  </context>
+  <requirements>
+<ul>
+<li>使用JWT token</li>
+<li>密码要bcrypt加密</li>
+<li>支持刷新token</li>
+<li>包含权限验证中间件</li>
+</ul>
+  </requirements>
+  <constraints>
+<ul>
+<li>使用TypeScript</li>
+<li>遵循RESTful规范</li>
+<li>错误处理要完善</li>
+</ul>
+  </constraints>
+  <output_format>
+    1. 先给出整体架构说明
+    2. 然后逐个文件提供代码
+    3. 最后给出测试用例
+  </output_format>
+</task>
+</div></p><p>2. **角色+思维链**：
+<div class="code-block">
+你是一位拥有20年经验的系统架构师。</p><p>请分析这段代码的性能问题，并提供优化方案。</p><p>请按以下步骤思考：
+1. 识别性能瓶颈
+2. 分析根本原因
+3. 提出多个优化方案
+4. 比较各方案优缺点
+5. 给出推荐方案和实现代码
+</div></p><p>3. **Few-shot示例**：
+<div class="code-block">
+我需要你把函数转换为TypeScript：</p><p>示例1：
+输入：function add(a, b) { return a + b; }
+输出：function add(a: number, b: number): number { return a + b; }</p><p>示例2：
+输入：async function getUser(id) { return await db.users.find(id); }
+输出：async function getUser(id: string): Promise<User> { 
+  return await db.users.find(id); 
+}</p><p>现在请转换：
+[你的代码]
+</div></p><p>**📋 Projects功能（相当于持久化Rules）：**
+<ul>
+<li>创建Project存储项目知识</li>
+<li>包含：代码规范、架构文档、API文档</li>
+<li>Claude会记住Project中的所有信息</li>
+<li>适合长期维护的项目</li>
+</ul></p><p>**Project示例结构：**
+<div class="code-block">
+Project: E-commerce Platform</p><p>文档1: 架构设计
+<ul>
+<li>微服务架构</li>
+<li>使用gRPC通信</li>
+<li>PostgreSQL + Redis</li>
+<li>Docker部署</li>
+</ul></p><p>文档2: 代码规范
+[粘贴你的.cursorrules内容]</p><p>文档3: API文档
+[粘贴OpenAPI规范]</p><p>文档4: 数据库Schema
+[粘贴Prisma schema]
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 代码深度审查（性能、安全、可维护性）</li>
+<li>✅ 系统架构设计和技术选型</li>
+<li>✅ 大规模代码重构（处理整个代码库）</li>
+<li>✅ 复杂Bug深度诊断</li>
+<li>✅ API文档和技术文档生成</li>
+<li>✅ 代码学习和教学（解释复杂概念）</li>
+<li>✅ 算法设计和优化</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：约50次对话/天，使用Claude 4 Sonnet</li>
+<li>**Pro版**：$20/月，5倍使用量，支持所有模型，包含Projects功能</li>
+<li>**API版**：按Token计费，$3输入/$15输出（每百万tokens）</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>网页版：<a href="https://claude.ai" target="_blank">https://claude.ai</a></li>
+<li>Claude Desktop：<a href="https://claude.ai/download" target="_blank">https://claude.ai/download</a></li>
+<li>API文档：<a href="https://docs.anthropic.com" target="_blank">https://docs.anthropic.com</a></li>
+</ul></p><p>**📌 高级使用技巧：**</p><p>1. **超长上下文利用**：
+<ul>
+<li>一次性粘贴整个代码库（200K tokens ≈ 约30个文件）</li>
+<li>上传完整技术文档PDF</li>
+<li>让Claude理解整个项目后再提问</li>
+</ul></p><p>2. **多模态应用**：
+<ul>
+<li>上传架构图让Claude分析设计</li>
+<li>上传错误截图让Claude诊断</li>
+<li>上传数据库ER图让Claude生成Schema</li>
+</ul></p><p>3. **MCP实战**：
+   <div class="code-block">
+   配置MCP后：
+   "读取我的GitHub仓库所有Issue"
+   "分析我项目的数据库结构"
+   "查看我最近的Git提交"
+   </div></p><p>---</p><p><h4>3. GitHub Copilot - 实时代码补全 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>OpenAI Codex驱动，实时代码建议</li>
+<li>深度GitHub集成，理解数百万开源项目模式</li>
+<li>支持30+主流IDE</li>
+<li>支持80+编程语言</li>
+<li>**Copilot Chat**：在IDE内对话式编程</li>
+</ul></p><p>**🤖 MCP支持：**
+<ul>
+<li>❌ 不直接支持MCP</li>
+<li>✅ 通过GitHub生态间接访问仓库数据</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>**Copilot Workspace**（新功能）：</li>
+<li>基于GitHub Issue自动生成PR</li>
+<li>自动规划实现步骤</li>
+<li>跨文件修改和测试</li>
+<li>**多文件编辑**：理解项目上下文，修改相关文件</li>
+</ul></p><p>**✍️ Prompt技巧（通过注释）：**</p><p>**在代码中用注释作为Prompt：**
+<div class="code-block">typescript
+// 创建一个React组件，展示用户列表
+// 需求：
+// 1. 从API获取用户数据
+// 2. 支持分页，每页10条
+// 3. 支持搜索功能
+// 4. 点击用户显示详情弹窗
+// 5. 使用TypeScript和Hooks</p><p>// Copilot会自动生成完整组件代码
+</div></p><p>**函数名作为Prompt：**
+<div class="code-block">python
+def calculate_user_monthly_subscription_revenue_with_discounts(
+    user_id: str,
+    month: int,
+    year: int,
+    apply_promotional_codes: bool = True
+):
+    # Copilot会根据函数名生成完整实现
+</div></p><p>**📋 Rules配置：**
+<ul>
+<li>通过 `.gitattributes` 和注释引导</li>
+<li>在项目根目录创建 `CONVENTIONS.md`</li>
+<li>Copilot会学习项目风格</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 快速编写样板代码（CRUD、API调用）</li>
+<li>✅ 根据注释自动实现函数</li>
+<li>✅ 自动生成单元测试</li>
+<li>✅ 学习新技术和API用法</li>
+<li>✅ 代码片段快速生成</li>
+<li>✅ 重复代码模式识别</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**个人版**：$10/月</li>
+<li>**企业版**：$19/月/人，支持代码隐私保护</li>
+<li>**学生/教师**：✅ 免费（需GitHub Education认证）</li>
+<li>**开源维护者**：✅ 免费（需认证）</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>订阅：<a href="https://github.com/features/copilot" target="_blank">https://github.com/features/copilot</a></li>
+<li>支持IDE：VS Code、IntelliJ IDEA、PyCharm、Neovim、Visual Studio</li>
+<li>安装：在IDE扩展商店搜索"GitHub Copilot"</li>
+</ul></p><p>**📌 高级使用技巧：**</p><p>1. **多行补全**：
+<ul>
+<li>按 `Tab` 接受建议</li>
+<li>按 `Alt+]` 查看下一个建议</li>
+<li>按 `Ctrl+Enter` 查看多个建议</li>
+</ul></p><p>2. **Copilot Chat使用**：
+   <div class="code-block">
+   /explain - 解释选中代码
+   /fix - 修复bug
+   /tests - 生成测试
+   /doc - 生成文档
+   </div></p><p>3. **上下文优化**：
+<ul>
+<li>打开相关文件让Copilot学习项目风格</li>
+<li>在注释中提供详细需求</li>
+</ul></p><p>---</p><p><h4>4. Gemini 2.5 Pro - Google多模态AI ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>Google 2025最新模型</li>
+<li>**200万tokens** 超长上下文（业界最长，约150万字）</li>
+<li>强大多模态能力（文本、图片、视频、音频、代码）</li>
+<li>深度集成Google生态（Gmail、Drive、Docs、Colab）</li>
+<li>实时联网搜索</li>
+</ul></p><p>**🤖 MCP支持：**
+<ul>
+<li>❌ 不支持MCP协议</li>
+<li>✅ 通过Google API访问Google服务</li>
+<li>✅ Gemini Extensions连接Gmail、Drive等</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>**多模态推理**：同时处理代码、图片、文档</li>
+<li>**工具调用**：通过Extensions调用Google服务</li>
+<li>**代码执行**：在Google Colab中执行Python代码</li>
+<li>示例：</li>
+</ul>
+  <div class="code-block">
+  你："分析我Drive里的项目代码和架构图，给出优化建议"
+  
+  Gemini会：
+  1. 读取Drive中的代码文件
+  2. 分析架构图图片
+  3. 理解项目结构
+  4. 提供详细优化方案
+  5. 生成改进后的代码
+  </div></p><p>**✍️ Prompt最佳实践：**</p><p>**利用超长上下文：**
+<div class="code-block">
+我要上传我整个项目的代码（50个文件，约100万字）</p><p>[上传所有文件]</p><p>现在请：
+1. 分析整体架构设计
+2. 找出所有潜在bug
+3. 检查安全漏洞
+4. 提供性能优化建议
+5. 生成完整的重构方案
+</div></p><p>**多模态Prompt：**
+<div class="code-block">
+[上传：代码文件 + 架构图 + 需求文档PDF + 数据库ER图]</p><p>请基于这些材料：
+1. 验证代码是否符合架构设计
+2. 检查是否满足需求文档
+3. 优化数据库设计
+4. 提供改进建议
+</div></p><p>**📋 Rules配置：**
+<ul>
+<li>在对话开始时设定规则</li>
+<li>使用System Instruction（类似.cursorrules）</li>
+</ul></p><p>**System Instruction示例：**
+<div class="code-block">
+你是一个Google Cloud架构专家。</p><p>代码规范：
+<ul>
+<li>使用Python 3.11+</li>
+<li>遵循Google Python Style Guide</li>
+<li>使用type hints</li>
+<li>文档字符串使用Google风格</li>
+</ul></p><p>架构偏好：
+<ul>
+<li>优先使用Google Cloud服务</li>
+<li>使用Cloud Run部署</li>
+<li>数据库用Cloud SQL</li>
+<li>缓存用Memorystore</li>
+</ul></p><p>安全要求：
+<ul>
+<li>所有API使用IAM认证</li>
+<li>敏感数据加密</li>
+<li>遵循最小权限原则</li>
+</ul>
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 超大型项目分析（整个代码库）</li>
+<li>✅ 技术文档PDF快速提取信息（上传几百页文档）</li>
+<li>✅ 架构图分析和优化建议</li>
+<li>✅ 多文件代码审查</li>
+<li>✅ 视频教程内容提取和代码实现</li>
+<li>✅ 跨语言代码转换</li>
+<li>✅ Google Cloud项目开发</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：Gemini 2.0 Flash，有使用限制</li>
+<li>**Gemini Advanced**：$19.99/月，Gemini 2.5 Pro，2TB Google One存储</li>
+<li>**API版**：$1.25输入/$5输出（每百万tokens）</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>网页版：<a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a></li>
+<li>Google Colab集成：<a href="https://colab.google" target="_blank">https://colab.google</a></li>
+<li>API文档：<a href="https://ai.google.dev/docs" target="_blank">https://ai.google.dev/docs</a></li>
+</ul></p><p>**📌 高级使用技巧：**</p><p>1. **超长上下文策略**：
+   <div class="code-block">
+   第一次对话：上传所有项目代码
+   后续对话：Gemini已记住所有代码，直接提问
+   
+   "找出所有API接口"
+   "分析数据库查询性能"
+   "生成项目文档"
+   </div></p><p>2. **多模态组合**：
+<ul>
+<li>上传设计稿 + 代码，验证实现一致性</li>
+<li>上传错误日志截图，快速定位问题</li>
+<li>上传技术视频，提取代码和知识点</li>
+</ul></p><p>3. **Google生态集成**：
+   <div class="code-block">
+   "读取我Gmail中的bug报告"
+   "分析Drive中的需求文档"
+   "在Colab中运行这段代码"
+   </div></p><p>---</p><p><h4>5. Grok 4 - xAI最新模型 ⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>Elon Musk的xAI团队开发</li>
+<li>与X平台（Twitter）深度集成</li>
+<li>**实时联网**，获取最新技术动态</li>
+<li>回答风格幽默、不枯燥</li>
+<li>Grok 4性能大幅提升</li>
+</ul></p><p>**🤖 MCP支持：**
+<ul>
+<li>❌ 不支持MCP</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>**实时信息检索**：搜索X平台最新技术讨论</li>
+<li>**趋势分析**：追踪技术社区动态</li>
+<li>适合了解新技术和最佳实践</li>
+</ul></p><p>**✍️ Prompt建议：**
+<div class="code-block">
+// 利用Grok的实时能力
+"最近一周AI编程工具有什么重大更新？"
+"React 19正式版发布了吗？有哪些新特性？"
+"开发者社区对Rust的看法如何？"
+</div></p><p>**📋 Rules配置：**
+<ul>
+<li>在对话开始时设定</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 了解最新技术趋势和新闻</li>
+<li>✅ 代码生成和调试</li>
+<li>✅ 技术问题解答</li>
+<li>✅ 创意编程方案</li>
+<li>✅ 技术社区观点获取</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**需要X Premium+订阅**：$16/月（包含X平台所有Premium功能）</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>方式1：<a href="https://x.com" target="_blank">https://x.com</a> - 登录后侧边栏找到Grok</li>
+<li>方式2：<a href="https://grok.x.ai" target="_blank">https://grok.x.ai</a></li>
+<li>需要X Premium+会员</li>
+</ul></p><p>---</p><p><div id="UI生成"></div></p><p><h3 id="ui-tools">🎨 UI代码生成工具（前端开发神器）</h3></p><p><h4>1. v0.dev - Vercel官方UI生成器 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>Vercel官方出品，专注前端UI生成</li>
+<li>生成高质量React/Next.js/TypeScript代码</li>
+<li>支持Tailwind CSS、shadcn/ui组件库</li>
+<li>实时预览，一键复制代码</li>
+<li>生成的代码可直接用于生产环境</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>理解设计稿自动生成代码</li>
+<li>支持迭代优化</li>
+<li>自动处理响应式布局</li>
+</ul></p><p>**✍️ Prompt技巧：**
+<div class="code-block">
+❌ 差的："做个登录页面"</p><p>✅ 好的："创建一个现代风格的登录页面
+要求：
+<ul>
+<li>使用Next.js 14 App Router</li>
+<li>Tailwind CSS样式</li>
+<li>包含邮箱、密码输入框</li>
+<li>Google和GitHub第三方登录按钮</li>
+<li>响应式设计，支持手机端</li>
+<li>深色模式支持</li>
+<li>表单验证用react-hook-form + zod</li>
+<li>添加加载状态和错误提示</li>
+<li>参考Vercel登录页设计风格"</li>
+</ul>
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 快速搭建页面UI界面</li>
+<li>✅ 生成React组件代码</li>
+<li>✅ 创建表单、卡片、导航等组件</li>
+<li>✅ 快速原型开发</li>
+<li>✅ 学习React和Tailwind最佳实践</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：200积分/月（约20-30个组件）</li>
+<li>**付费版**：$20/月，5000积分/月</li>
+<li>每次生成消耗约10积分</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://v0.dev" target="_blank">https://v0.dev</a></li>
+<li>需要Vercel账号（GitHub登录即可）</li>
+<li>网页直接使用，无需安装</li>
+</ul></p><p>---</p><p><h4>2. Stitch - Google设计转代码工具 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>Google官方出品，Figma到代码的桥梁</li>
+<li>AI理解设计稿，生成高质量代码</li>
+<li>支持React、Vue、Angular</li>
+<li>Material Design风格原生支持</li>
+<li>保持设计和代码同步</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>自动识别设计组件</li>
+<li>智能生成响应式代码</li>
+<li>理解设计规范自动应用</li>
+</ul></p><p>**✍️ 使用流程：**
+<div class="code-block">
+1. 在Figma中设计UI
+2. 使用Stitch插件
+3. 选择要导出的组件
+4. AI自动生成代码
+5. 一键复制到项目中
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ Figma设计稿转代码</li>
+<li>✅ 设计系统实现</li>
+<li>✅ UI组件库开发</li>
+<li>✅ 保持设计与代码一致</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：基础功能</li>
+<li>**Pro版**：定价见官网</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://stitch.withgoogle.com" target="_blank">https://stitch.withgoogle.com</a></li>
+<li>Figma插件商店搜索"Stitch"</li>
+</ul></p><p>---</p><p><h4>3. bolt.new - StackBlitz全栈应用生成 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>StackBlitz出品，生成完整Web应用</li>
+<li>支持React、Vue、Node.js等技术栈</li>
+<li>在线IDE环境，实时运行预览</li>
+<li>持续对话修改完善</li>
+<li>支持导出项目代码</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>自动生成完整项目结构</li>
+<li>前后端同时生成</li>
+<li>自动配置依赖和构建工具</li>
+</ul></p><p>**✍️ Prompt示例：**
+<div class="code-block">
+"创建一个任务管理Web应用：</p><p>前端：
+<ul>
+<li>React + TypeScript + Vite</li>
+<li>Tailwind CSS样式</li>
+<li>用户可以添加、编辑、删除任务</li>
+<li>任务有状态：待办、进行中、已完成</li>
+<li>支持拖拽排序</li>
+<li>本地存储用localStorage</li>
+</ul></p><p>后端（可选）：
+<ul>
+<li>Node.js + Express</li>
+<li>SQLite数据库</li>
+<li>RESTful API</li>
+<li>JWT认证</li>
+</ul></p><p>请生成完整可运行的项目"
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 生成完整的全栈应用</li>
+<li>✅ 快速搭建项目骨架</li>
+<li>✅ 创建Landing Page</li>
+<li>✅ 构建管理后台</li>
+<li>✅ 教学演示和原型验证</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：有使用次数限制</li>
+<li>**付费版**：$20/月，无限使用</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://bolt.new" target="_blank">https://bolt.new</a></li>
+<li>浏览器直接使用</li>
+</ul></p><p>---</p><p><h4>4. Lovable (GPT Engineer) - AI全栈开发 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>从自然语言描述生成完整应用</li>
+<li>支持React、Next.js、Supabase</li>
+<li>自动部署到云端</li>
+<li>可视化编辑界面</li>
+</ul></p><p>**✍️ Prompt示例：**
+<div class="code-block">
+"创建一个SaaS订阅管理系统：</p><p>功能：
+1. 用户注册和登录
+2. 订阅套餐选择（月付/年付）
+3. Stripe支付集成
+4. 用户仪表板（使用情况、账单）
+5. 管理后台（用户管理、数据统计）</p><p>技术栈：
+<ul>
+<li>Next.js 14</li>
+<li>Supabase（数据库和认证）</li>
+<li>Stripe（支付）</li>
+<li>Tailwind CSS</li>
+<li>TypeScript</li>
+</ul></p><p>请生成完整项目并部署"
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 快速构建MVP产品</li>
+<li>✅ 创建SaaS应用原型</li>
+<li>✅ 全栈项目搭建</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**Hobby版**：$29/月</li>
+<li>**Pro版**：$99/月</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://lovable.dev" target="_blank">https://lovable.dev</a></li>
+</ul></p><p>---</p><p><h4>5. Replit Agent - 在线AI协作开发 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>在线IDE + AI编程助手</li>
+<li>支持50+编程语言</li>
+<li>实时协作，多人同时编辑</li>
+<li>内置部署功能</li>
+</ul></p><p>**🎯 AI Agent能力：**
+<ul>
+<li>自动配置开发环境</li>
+<li>智能安装依赖</li>
+<li>一键部署到生产</li>
+</ul></p><p>**✍️ 使用方式：**
+<div class="code-block">
+在Replit中问AI：
+"创建一个Express API服务器，有用户CRUD接口"
+"添加JWT认证"
+"部署到生产环境"
+</div></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 在线协作开发</li>
+<li>✅ 编程教学和学习</li>
+<li>✅ 快速验证想法</li>
+<li>✅ API开发和测试</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：有资源限制</li>
+<li>**Core版**：$7/月</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://replit.com" target="_blank">https://replit.com</a></li>
+</ul></p><p>---</p><p><div id="小白工具"></div></p><p><h3 id="general">👶 小白/通用AI工具（推荐从这里开始）</h3></p><p><h4>1. Kimi - 月之暗面超长上下文AI ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>国产AI，月之暗面（Moonshot AI）出品</li>
+<li>**200万字**超长上下文（约4本《红楼梦》）</li>
+<li>可以一次性读完整本书、长论文</li>
+<li>中文理解能力极强</li>
+<li>**完全免费**，无使用限制</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 长文档阅读和总结（论文、报告、合同）</li>
+<li>✅ 学习资料整理（上传PDF、Word）</li>
+<li>✅ 日常聊天问答</li>
+<li>✅ 写作辅助（文章、报告、总结）</li>
+<li>✅ 翻译（中英互译）</li>
+<li>✅ 代码解释和学习</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>✅ **完全免费**，无任何限制！</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://kimi.moonshot.cn" target="_blank">https://kimi.moonshot.cn</a></li>
+<li>无需科学上网</li>
+<li>支持手机号/微信登录</li>
+</ul></p><p>---</p><p><h4>2. 通义千问 - 阿里云多模态AI ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>阿里云出品</li>
+<li>支持多模态（文字、图片、文档）</li>
+<li>深度集成阿里生态</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 办公文档处理</li>
+<li>✅ 图片理解和分析</li>
+<li>✅ 代码辅助</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：功能完整</li>
+<li>**Plus版**：¥60/月</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://tongyi.aliyun.com" target="_blank">https://tongyi.aliyun.com</a></li>
+</ul></p><p>---</p><p><h4>3. 豆包 - 字节跳动AI助手 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>字节跳动出品</li>
+<li>完全免费，无限制</li>
+<li>响应速度快</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 日常聊天</li>
+<li>✅ 写作辅助</li>
+<li>✅ 知识问答</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>✅ **完全免费**</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://doubao.com" target="_blank">https://doubao.com</a></li>
+</ul></p><p>---</p><p><div id="设计工具"></div></p><p><h3 id="design">🎨 设计/图像/视频工具</h3></p><p><h4>1. Sora 2 - OpenAI视频生成 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>OpenAI 2025最新视频生成模型</li>
+<li>从文字描述生成高质量视频</li>
+<li>支持最长60秒视频</li>
+<li>物理规律准确，运动流畅</li>
+<li>支持多种视频风格</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 文字生成视频</li>
+<li>✅ 产品宣传片</li>
+<li>✅ 教学演示视频</li>
+<li>✅ 创意视频制作</li>
+<li>✅ 概念验证</li>
+</ul></p><p>**✍️ Prompt示例：**
+<div class="code-block">
+"创建一个30秒的产品宣传视频：</p><p>场景：现代化办公室
+镜头：从窗外推进，展示团队在使用我们的软件
+风格：商业广告风格，明亮温暖色调
+音乐：轻快的背景音乐
+文字：产品名称和Slogan
+分辨率：1920x1080"
+</div></p><p>**💰 收费情况：**
+<ul>
+<li>定价待官方公布</li>
+<li>预计包含在ChatGPT Pro订阅中</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://openai.com/sora" target="_blank">https://openai.com/sora</a></li>
+<li>需要等待正式发布</li>
+</ul></p><p>---</p><p><h4>2. 剪映 - 视频剪辑AI工具 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>字节跳动出品</li>
+<li>**自动识别语音生成字幕**</li>
+<li>智能剪辑，一键成片</li>
+<li>**完全免费**</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ 短视频制作</li>
+<li>✅ Vlog剪辑</li>
+<li>✅ 会议录屏加字幕</li>
+<li>✅ 自动去水印</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>✅ **完全免费**</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>搜索"剪映"下载APP</li>
+<li>支持Windows、macOS、iOS、Android</li>
+</ul></p><p>---</p><p><h4>3. Canva - 零基础设计工具 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<ul>
+<li>零基础也能做设计</li>
+<li>海量模板</li>
+<li>AI辅助设计</li>
+</ul></p><p>**🎯 适用任务：**
+<ul>
+<li>✅ PPT制作</li>
+<li>✅ 海报设计</li>
+<li>✅ 社交媒体内容</li>
+</ul></p><p>**💰 收费情况：**
+<ul>
+<li>**免费版**：够用</li>
+<li>**Pro版**：$12.99/月</li>
+</ul></p><p>**🌐 访问方式：**
+<ul>
+<li>官网：<a href="https://www.canva.com" target="_blank">https://www.canva.com</a></li>
+</ul></p><p>---</p><p><h2 id="pricing">💰 价格汇总</h2></p><p>| 价格 | 工具 |
+|-----|------|
+| **✅ 完全免费** | Kimi、豆包、剪映、通义千问免费版 |
+| **$10/月** | GitHub Copilot |
+| **$20/月** | Cursor Pro、Claude Pro、ChatGPT Plus、Gemini Advanced、v0.dev、bolt.new |
+| **$29+/月** | Lovable、Midjourney Pro |</p><p>---</p><p><h2>📚 【学习资源】</h2></p><p><ul>
+<li>[Cursor文档](<a href="https://docs.cursor.sh)" target="_blank">https://docs.cursor.sh)</a></li>
+<li>[Claude MCP文档](<a href="https://docs.anthropic.com/mcp)" target="_blank">https://docs.anthropic.com/mcp)</a></li>
+<li>[Prompt工程指南](<a href="https://www.promptingguide.ai)" target="_blank">https://www.promptingguide.ai)</a></li>
+</ul></p><p>---</p><p>**最后更新：2025年10月4日**</p>
+        </div>
+        
+        <footer style="background: var(--dark); color: white; text-align: center; padding: 50px; margin-top: 60px;">
+            <p style="font-size: 1.2em; margin-bottom: 15px;"><strong>📅 最后更新：2025年10月4日</strong></p>
+            <p style="font-size: 1.1em;">💡 AI工具更新很快，建议定期查看最新版本</p>
+            <p style="margin-top: 25px; font-size: 1.2em;">祝大家使用AI工具愉快，效率翻倍！🚀</p>
+        </footer>
+    </div>
+    
+    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+    
+    <script>
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            btn.classList.toggle('show', window.pageYOffset > 300);
+        });
+    </script>
+</body>
+</html>
