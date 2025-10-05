@@ -138,7 +138,6 @@
         <nav>
             <ul>
                 <li><a href="#quick-select">快速选择</a></li>
-                <li><a href="#concepts">核心概念</a></li>
                 <li><a href="#beginner">小白工具</a></li>
                 <li><a href="#developer">编程工具</a></li>
                 <li><a href="#ui-tools">UI生成</a></li>
@@ -194,29 +193,6 @@
                 <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
                     立即开始 - 打开Kimi试试！
                 </a>
-            </div>
-            
-            <h2 id="concepts">📚 第一步：理解4个核心概念（2分钟）</h2>
-            
-            <div class="step-box">
-                <h4>1. MCP = 让AI能读你的文件</h4>
-                <p>就像给AI装了USB接口，AI可以直接读取你电脑的文件，不用复制粘贴</p>
-            </div>
-            
-            <div class="step-box">
-                <h4>2. Agent = AI自动干活</h4>
-                <p>你说"修复所有bug"，AI自动：找bug → 修复 → 测试 → 生成报告</p>
-            </div>
-            
-            <div class="step-box">
-                <h4>3. Prompt = 怎么跟AI说话</h4>
-                <p>❌ 差的："帮我写代码"</p>
-                <p>✅ 好的："用Python写一个读取Excel的函数，要有错误处理"</p>
-            </div>
-            
-            <div class="step-box">
-                <h4>4. Rules = 让AI遵守规矩</h4>
-                <p>创建 .cursorrules 文件，写上你的规则，AI自动遵守。比如："所有代码必须有注释"</p>
             </div>
             
             <h2 id="beginner">👶 完全小白：从Kimi开始</h2>
@@ -486,6 +462,75 @@ Claude会：分析性能瓶颈 → 找出潜在bug → 给出优化方案 → �
                 • 新手首选：<strong>GitHub Copilot</strong>（最便宜，$10/月）<br/>
                 • 深度开发：<strong>Cursor + Claude 4</strong>（组合使用最强）<br/>
                 • 超大项目：<strong>Gemini 2.5 Pro</strong>（能处理最多代码）
+            </div>
+            
+            <h3>💡 程序员进阶：理解4个核心概念</h3>
+            
+            <div class="info-box" style="background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%); padding: 20px; border-left: 5px solid #3b82f6; border-radius: 10px; margin: 20px 0;">
+                <p><strong>📌 提示：</strong>以下概念是为了让你更好地使用AI编程工具，不理解也不影响基本使用！</p>
+            </div>
+            
+            <div class="step-box">
+                <h4>1. MCP (Model Context Protocol) = 让AI能读你的文件</h4>
+                <p><strong>简单理解：</strong>就像给AI装了"USB接口"，AI可以直接读取你电脑的文件，不用复制粘贴</p>
+                <p><strong>实际作用：</strong></p>
+                <ul>
+                    <li>Cursor通过MCP读取整个项目文件夹</li>
+                    <li>Claude Desktop通过MCP连接数据库</li>
+                    <li>不用手动复制代码，AI自动理解项目结构</li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>2. Agent = AI自动干活</h4>
+                <p><strong>简单理解：</strong>你说"修复所有bug"，AI自动完成：找bug → 修复 → 测试 → 生成报告</p>
+                <p><strong>实际作用：</strong></p>
+                <ul>
+                    <li>Cursor的Background Agent可以自动重构整个项目</li>
+                    <li>bolt.new可以自动生成完整Web应用</li>
+                    <li>不是简单回答问题，而是真正完成任务</li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>3. Prompt = 怎么跟AI说话</h4>
+                <p><strong>简单理解：</strong>就是你给AI的指令，说得越清楚，AI做得越好</p>
+                <p><strong>对比：</strong></p>
+                <div class="example">
+❌ 差的Prompt："帮我写代码"<br/>
+→ AI不知道写什么，随便给个例子<br/><br/>
+
+✅ 好的Prompt："用Python写一个读取Excel文件的函数，要求：<br/>
+• 输入文件路径<br/>
+• 返回DataFrame<br/>
+• 处理文件不存在的错误<br/>
+• 添加函数注释"<br/>
+→ AI生成精确符合需求的代码
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <h4>4. Rules (.cursorrules) = 让AI遵守规矩</h4>
+                <p><strong>简单理解：</strong>创建 .cursorrules 文件，写上你的编码规范，AI自动遵守</p>
+                <p><strong>实际作用：</strong></p>
+                <ul>
+                    <li>统一团队代码风格（4空格 or 2空格？）</li>
+                    <li>强制类型注解（TypeScript strict模式）</li>
+                    <li>自动添加错误处理</li>
+                    <li>禁止不安全的代码（eval、SQL注入）</li>
+                </ul>
+                <div class="example">
+示例 .cursorrules 文件：<br/>
+# 我的代码规则<br/>
+- 所有代码必须有注释<br/>
+- 使用TypeScript strict模式<br/>
+- 函数要有完整的错误处理<br/>
+- 变量名要有意义，不用a、b、c
+                </div>
+            </div>
+            
+            <div class="tip">
+                <strong>💡 记住：</strong>这些概念是让你用得更好，但不理解也能正常使用工具。慢慢实践中就能理解了！
             </div>
             
             <h2 id="ui-tools">🎨 UI设计师：用v0.dev生成界面</h2>
