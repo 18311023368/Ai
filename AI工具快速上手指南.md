@@ -155,118 +155,31 @@ gemini "写一个bash脚本，批量重命名文件"
 
 ---
 
-### 🎁 免费工具4：TRAE（对标Cursor的免费神器）⭐⭐⭐⭐⭐
+### 🎁 免费工具4：TRAE（AI编程助手）⭐⭐⭐⭐
 
 **💡 什么是TRAE？**
 ```
-TRAE = The Revolutionary AI Editor
-- 开源免费，对标Cursor
-- 完整的AI编程能力
-- 支持多种AI模型切换
-- 本地运行，数据安全
-- 社区活跃，持续更新
+- AI编程辅助工具
+- 支持多种编程语言
+- 帮助提升编程效率
 ```
 
-**第一步：安装TRAE**
-```bash
-# 方式1：通过npm安装
-npm install -g trae-cli
-
-# 方式2：下载桌面版
-访问：trae.ai
-下载对应系统版本（Windows/Mac/Linux）
+**使用方式：**
+```
+1. 访问官网：trae.ai
+2. 注册登录
+3. 根据官网指引使用
 ```
 
-**第二步：配置AI模型**
-```bash
-# 启动TRAE
-trae
-
-# 首次使用，配置AI模型
-1. 打开设置（Ctrl+,）
-2. 选择AI Provider：
-   - OpenAI（需要API key）
-   - Claude（需要API key）
-   - 本地模型（Ollama）
-   - Gemini（Google免费）
-3. 保存配置
+**主要功能：**
+```
+- 代码生成和补全
+- 代码优化建议
+- Bug修复辅助
+- 支持多种编程场景
 ```
 
-**第三步：开始使用（类似Cursor）**
-
-**功能1：AI对话编程（Ctrl+L）**
-```
-1. 按 Ctrl+L 打开AI聊天
-2. 输入："创建一个Express API，带用户认证"
-3. AI自动生成完整代码
-4. 一键插入到编辑器
-```
-
-**功能2：内联代码编辑（Ctrl+K）**
-```
-1. 选中一段代码
-2. 按 Ctrl+K
-3. 输入："添加错误处理和日志"
-4. AI自动重构代码
-```
-
-**功能3：@引用文件**
-```
-输入："@app.py 这个文件的安全问题在哪？"
-TRAE会读取文件并分析
-```
-
-**功能4：多文件重构**
-```
-输入："把这个项目从JavaScript改成TypeScript"
-TRAE自动：
-1. 分析所有文件
-2. 逐个转换
-3. 更新配置
-4. 修复类型错误
-```
-
-**实战案例：创建完整的REST API**
-```
-步骤1：按Ctrl+L，输入：
-"创建一个Node.js REST API项目
-- Express框架
-- MongoDB数据库
-- JWT认证
-- 用户CRUD操作
-- 完整错误处理
-- 单元测试"
-
-步骤2：TRAE自动生成：
-- package.json
-- server.js
-- routes/users.js
-- models/User.js
-- middleware/auth.js
-- tests/user.test.js
-- .env.example
-
-步骤3：运行项目
-npm install
-npm start
-
-完成！完整的API已经运行！
-```
-
-**TRAE vs Cursor对比**
-
-| 功能 | TRAE | Cursor |
-|-----|------|--------|
-| 价格 | ✅ 完全免费 | $20/月 |
-| AI对话 | ✅ 支持 | ✅ 支持 |
-| 内联编辑 | ✅ 支持 | ✅ 支持 |
-| @引用文件 | ✅ 支持 | ✅ 支持 |
-| 多模型切换 | ✅ 支持 | ✅ 支持 |
-| 开源 | ✅ 是 | ❌ 否 |
-| 本地运行 | ✅ 可以 | ❌ 云端 |
-| 数据隐私 | ✅ 本地 | ⚠️ 云端 |
-
-**✅ TRAE = 免费版Cursor，功能完整，适合所有程序员！**
+**✅ 访问 trae.ai 了解更多详情！**
 
 ---
 

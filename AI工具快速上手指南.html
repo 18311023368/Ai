@@ -155,147 +155,27 @@ gemini<span class="w"> </span><span class="s2">&quot;写一个bash脚本，批�
 
 <p><strong>✅ 程序员最爱，终端直接用AI！</strong></p>
 <hr />
-<h3 id="4traecursor">🎁 免费工具4：TRAE（对标Cursor的免费神器）⭐⭐⭐⭐⭐</h3>
+<h3 id="4traeai">🎁 免费工具4：TRAE（AI编程助手）⭐⭐⭐⭐</h3>
 <p><strong>💡 什么是TRAE？</strong></p>
-<div class="codehilite"><pre><span></span><code>TRAE = The Revolutionary AI Editor
-- 开源免费，对标Cursor
-- 完整的AI编程能力
-- 支持多种AI模型切换
-- 本地运行，数据安全
-- 社区活跃，持续更新
+<div class="codehilite"><pre><span></span><code>- AI编程辅助工具
+- 支持多种编程语言
+- 帮助提升编程效率
 </code></pre></div>
 
-<p><strong>第一步：安装TRAE</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 方式1：通过npm安装</span>
-npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>trae-cli
-
-<span class="c1"># 方式2：下载桌面版</span>
-访问：trae.ai
-下载对应系统版本（Windows/Mac/Linux）
+<p><strong>使用方式：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">访问官网</span><span class="err">：</span><span class="n">trae</span><span class="mf">.</span><span class="n">ai</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">注册登录</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">根据官网指引使用</span>
 </code></pre></div>
 
-<p><strong>第二步：配置AI模型</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 启动TRAE</span>
-trae
-
-<span class="c1"># 首次使用，配置AI模型</span>
-<span class="m">1</span>.<span class="w"> </span>打开设置（Ctrl+,）
-<span class="m">2</span>.<span class="w"> </span>选择AI<span class="w"> </span>Provider：
-<span class="w">   </span>-<span class="w"> </span>OpenAI（需要API<span class="w"> </span>key）
-<span class="w">   </span>-<span class="w"> </span>Claude（需要API<span class="w"> </span>key）
-<span class="w">   </span>-<span class="w"> </span>本地模型（Ollama）
-<span class="w">   </span>-<span class="w"> </span>Gemini（Google免费）
-<span class="m">3</span>.<span class="w"> </span>保存配置
+<p><strong>主要功能：</strong></p>
+<div class="codehilite"><pre><span></span><code>- 代码生成和补全
+- 代码优化建议
+- Bug修复辅助
+- 支持多种编程场景
 </code></pre></div>
 
-<p><strong>第三步：开始使用（类似Cursor）</strong></p>
-<p><strong>功能1：AI对话编程（Ctrl+L）</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">按</span><span class="w"> </span><span class="n">Ctrl</span><span class="o">+</span><span class="n">L</span><span class="w"> </span><span class="n">打开AI聊天</span>
-<span class="mf">2.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="s">&quot;创建一个Express API，带用户认证&quot;</span>
-<span class="mf">3.</span><span class="w"> </span><span class="n">AI自动生成完整代码</span>
-<span class="mf">4.</span><span class="w"> </span><span class="n">一键插入到编辑器</span>
-</code></pre></div>
-
-<p><strong>功能2：内联代码编辑（Ctrl+K）</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">选中一段代码</span>
-<span class="mf">2.</span><span class="w"> </span><span class="n">按</span><span class="w"> </span><span class="n">Ctrl</span><span class="o">+</span><span class="n">K</span>
-<span class="mf">3.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="s">&quot;添加错误处理和日志&quot;</span>
-<span class="mf">4.</span><span class="w"> </span><span class="n">AI自动重构代码</span>
-</code></pre></div>
-
-<p><strong>功能3：@引用文件</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">输入</span><span class="err">：</span><span class="ss">&quot;@app.py 这个文件的安全问题在哪？&quot;</span>
-<span class="n">TRAE会读取文件并分析</span>
-</code></pre></div>
-
-<p><strong>功能4：多文件重构</strong></p>
-<div class="codehilite"><pre><span></span><code>输入：&quot;把这个项目从JavaScript改成TypeScript&quot;
-TRAE自动：
-1. 分析所有文件
-2. 逐个转换
-3. 更新配置
-4. 修复类型错误
-</code></pre></div>
-
-<p><strong>实战案例：创建完整的REST API</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="nx">步骤1</span><span class="err">：</span><span class="nx">按Ctrl</span><span class="o">+</span><span class="nx">L</span><span class="err">，</span><span class="nx">输入</span><span class="err">：</span>
-<span class="s">&quot;创建一个Node.js REST API项目</span>
-<span class="s">- Express框架</span>
-<span class="s">- MongoDB数据库</span>
-<span class="s">- JWT认证</span>
-<span class="s">- 用户CRUD操作</span>
-<span class="s">- 完整错误处理</span>
-<span class="s">- 单元测试&quot;</span>
-
-<span class="nx">步骤2</span><span class="err">：</span><span class="nx">TRAE自动生成</span><span class="err">：</span>
-<span class="o">-</span><span class="w"> </span><span class="kn">package</span><span class="p">.</span><span class="nx">json</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">server</span><span class="p">.</span><span class="nx">js</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">routes</span><span class="o">/</span><span class="nx">users</span><span class="p">.</span><span class="nx">js</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">models</span><span class="o">/</span><span class="nx">User</span><span class="p">.</span><span class="nx">js</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">middleware</span><span class="o">/</span><span class="nx">auth</span><span class="p">.</span><span class="nx">js</span>
-<span class="o">-</span><span class="w"> </span><span class="nx">tests</span><span class="o">/</span><span class="nx">user</span><span class="p">.</span><span class="nx">test</span><span class="p">.</span><span class="nx">js</span>
-<span class="o">-</span><span class="w"> </span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">example</span>
-
-<span class="nx">步骤3</span><span class="err">：</span><span class="nx">运行项目</span>
-<span class="nx">npm</span><span class="w"> </span><span class="nx">install</span>
-<span class="nx">npm</span><span class="w"> </span><span class="nx">start</span>
-
-<span class="nx">完成</span><span class="err">！</span><span class="nx">完整的API已经运行</span><span class="err">！</span>
-</code></pre></div>
-
-<p><strong>TRAE vs Cursor对比</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>TRAE</th>
-<th>Cursor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>价格</td>
-<td>✅ 完全免费</td>
-<td>$20/月</td>
-</tr>
-<tr>
-<td>AI对话</td>
-<td>✅ 支持</td>
-<td>✅ 支持</td>
-</tr>
-<tr>
-<td>内联编辑</td>
-<td>✅ 支持</td>
-<td>✅ 支持</td>
-</tr>
-<tr>
-<td>@引用文件</td>
-<td>✅ 支持</td>
-<td>✅ 支持</td>
-</tr>
-<tr>
-<td>多模型切换</td>
-<td>✅ 支持</td>
-<td>✅ 支持</td>
-</tr>
-<tr>
-<td>开源</td>
-<td>✅ 是</td>
-<td>❌ 否</td>
-</tr>
-<tr>
-<td>本地运行</td>
-<td>✅ 可以</td>
-<td>❌ 云端</td>
-</tr>
-<tr>
-<td>数据隐私</td>
-<td>✅ 本地</td>
-<td>⚠️ 云端</td>
-</tr>
-</tbody>
-</table>
-<p><strong>✅ TRAE = 免费版Cursor，功能完整，适合所有程序员！</strong></p>
+<p><strong>✅ 访问 trae.ai 了解更多详情！</strong></p>
 <hr />
 <h3 id="5codexopenai">🎁 免费工具5：Codex（OpenAI代码模型）</h3>
 <p><strong>💡 什么是Codex？</strong></p>
