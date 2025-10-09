@@ -305,119 +305,33 @@ TRAE会：
 **💡 什么是Codex？**
 ```
 - OpenAI专门训练的代码AI模型
-- GitHub Copilot的核心技术
-- 精通100+编程语言
-- 理解自然语言转代码
-- 代码补全、生成、解释、翻译
+- 支持多种编程语言
+- 自然语言转代码
 ```
 
-**使用方式1：GitHub Copilot（推荐）**
+**官方网站**
+```
+访问：https://openai.com/zh-Hans-CN/codex/
+了解最新功能和使用方法
+```
 
-**第一步：安装GitHub Copilot**
+**主要使用方式：GitHub Copilot**
+
+**第一步：安装**
 ```
 1. 访问：github.com/features/copilot
-2. 点击"Start free trial"
-3. 学生/教师免费，其他$10/月
-4. 在VS Code安装Copilot插件
+2. 订阅服务（学生免费，其他$10/月）
+3. 在VS Code安装Copilot插件
 ```
 
-**第二步：开始使用**
+**第二步：使用**
 ```
-1. 打开VS Code
-2. 写注释描述需求
-3. Copilot自动补全代码
-4. 按Tab接受建议
-```
-
-**实际例子：**
-```python
-# 创建一个函数，从API获取天气数据并缓存
-def get_weather_data(city):
-    # Copilot自动生成完整实现：
-    # - 调用天气API
-    # - Redis缓存
-    # - 错误处理
-    # - 返回数据
+1. 写注释描述需求
+2. Copilot自动补全代码
+3. 按Tab接受建议
 ```
 
-**第三步：高级用法**
-```
-# 写函数签名，Copilot自动实现
-async function getUserById(id: string): Promise<User> {
-    // Copilot补全完整代码
-}
-
-# 写测试用例
-describe('User Service', () => {
-    it('should create a user', async () => {
-        // Copilot生成测试代码
-    });
-});
-```
-
----
-
-**使用方式2：通过OpenAI API（高级）**
-
-**第一步：获取API Key**
-```
-1. 访问：platform.openai.com
-2. 注册账号
-3. 生成API Key
-4. 复制保存
-```
-
-**第二步：使用Codex API**
-```python
-import openai
-
-openai.api_key = "你的API_KEY"
-
-# 调用Codex生成代码
-response = openai.Completion.create(
-    model="gpt-4",  # 或使用专门的代码模型
-    prompt="写一个Python爬虫，爬取新闻网站标题",
-    max_tokens=500,
-    temperature=0
-)
-
-print(response.choices[0].text)
-```
-
-**第三步：实际应用**
-```python
-# 代码解释器
-def explain_code(code):
-    prompt = f"解释这段代码:\n{code}"
-    response = openai.Completion.create(
-        model="gpt-4",
-        prompt=prompt,
-        max_tokens=300
-    )
-    return response.choices[0].text
-
-# 代码转换
-def convert_code(code, from_lang, to_lang):
-    prompt = f"把这段{from_lang}代码转换成{to_lang}:\n{code}"
-    response = openai.Completion.create(
-        model="gpt-4",
-        prompt=prompt,
-        max_tokens=500
-    )
-    return response.choices[0].text
-
-# Bug修复
-def fix_bug(code, error):
-    prompt = f"修复这个错误:\n代码:\n{code}\n\n错误:\n{error}"
-    response = openai.Completion.create(
-        model="gpt-4",
-        prompt=prompt,
-        max_tokens=500
-    )
-    return response.choices[0].text
-```
-
-**Copilot快捷键**
+**快捷键**
 ```
 Tab         - 接受建议
 Alt+]       - 下一个建议
@@ -425,7 +339,7 @@ Alt+[       - 上一个建议
 Ctrl+Enter  - 查看所有建议
 ```
 
-**✅ 学生免费！专业开发者$10/月！**
+**✅ 访问官网了解最新功能：https://openai.com/zh-Hans-CN/codex/**
 
 ---
 
