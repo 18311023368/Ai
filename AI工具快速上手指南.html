@@ -1,37 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI工具快速上手指南</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.8;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}.container{max-width:1000px;margin:0 auto;background:white;padding:40px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}h1{color:#667eea;font-size:2.5em;margin-bottom:20px;padding-bottom:15px;border-bottom:3px solid #667eea}h2{color:#764ba2;font-size:2em;margin-top:40px;margin-bottom:20px;padding-left:15px;border-left:5px solid #667eea}h3{color:#555;font-size:1.5em;margin-top:30px;margin-bottom:15px}h4{color:#666;font-size:1.2em;margin-top:20px;margin-bottom:10px}p{margin-bottom:15px}ul,ol{margin-left:30px;margin-bottom:15px}li{margin-bottom:8px}table{width:100%;border-collapse:collapse;margin:20px 0;box-shadow:0 2px 10px rgba(0,0,0,0.1)}th{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:15px;text-align:left;font-weight:600}td{padding:12px 15px;border-bottom:1px solid #eee}tr:hover{background-color:#f5f5f5}code{background-color:#f4f4f4;padding:2px 6px;border-radius:3px;font-family:'Courier New',monospace;color:#e83e8c}pre{background-color:#f4f4f4;padding:15px;border-radius:8px;overflow-x:auto;margin:15px 0}pre code{background:none;padding:0;color:#333}blockquote{border-left:4px solid #667eea;background-color:#f9f9f9;padding:15px 20px;margin:20px 0;font-style:italic}a{color:#667eea;text-decoration:none;transition:color 0.3s;border-bottom:1px dashed #667eea}a:hover{color:#764ba2;border-bottom:1px solid #764ba2}hr{border:none;border-top:2px solid #eee;margin:30px 0}.nav-box{background:#f8f9ff;padding:20px;border-radius:10px;margin:20px 0;border-left:4px solid #667eea}.nav-box h3{color:#667eea;margin-top:10px;margin-bottom:10px}.nav-box ul{list-style:none;margin-left:0}.nav-box li{margin-bottom:5px;padding-left:20px;position:relative}.nav-box li:before{content:"▸";position:absolute;left:0;color:#667eea}@media (max-width:768px){.container{padding:20px}h1{font-size:2em}h2{font-size:1.5em}}.back-to-top{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:transform 0.3s;text-decoration:none;font-size:24px;border:none}.back-to-top:hover{transform:translateY(-5px)}</style></head><body><div class="container"><h1 id="ai">AI工具快速上手指南</h1>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI工具快速上手指南</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.8;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}.container{max-width:1000px;margin:0 auto;background:white;padding:40px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}h1{color:#667eea;font-size:2.5em;margin-bottom:20px;padding-bottom:15px;border-bottom:3px solid #667eea}h2{color:#764ba2;font-size:2em;margin-top:40px;margin-bottom:20px;padding-left:15px;border-left:5px solid #667eea}h3{color:#555;font-size:1.5em;margin-top:30px;margin-bottom:15px}h4{color:#666;font-size:1.2em;margin-top:20px;margin-bottom:10px}p{margin-bottom:15px}ul,ol{margin-left:30px;margin-bottom:15px}li{margin-bottom:8px}table{width:100%;border-collapse:collapse;margin:20px 0;box-shadow:0 2px 10px rgba(0,0,0,0.1)}th{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:15px;text-align:left;font-weight:600}td{padding:12px 15px;border-bottom:1px solid #eee}tr:hover{background-color:#f5f5f5}code{background-color:#f4f4f4;padding:2px 6px;border-radius:3px;font-family:'Courier New',monospace;color:#e83e8c}pre{background-color:#f4f4f4;padding:15px;border-radius:8px;overflow-x:auto;margin:15px 0}pre code{background:none;padding:0;color:#333}blockquote{border-left:4px solid #667eea;background-color:#f9f9f9;padding:15px 20px;margin:20px 0;font-style:italic}a{color:#667eea;text-decoration:none;transition:color 0.3s}a:hover{color:#764ba2;text-decoration:underline}hr{border:none;border-top:2px solid #eee;margin:30px 0}@media (max-width:768px){.container{padding:20px}h1{font-size:2em}h2{font-size:1.5em}}.back-to-top{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:transform 0.3s;text-decoration:none;font-size:24px}.back-to-top:hover{transform:translateY(-5px)}</style></head><body><div class="container"><h1 id="ai">AI工具快速上手指南</h1>
 <blockquote>
 <p>📌 <strong>5分钟学会用AI工具</strong> - 手把手教学，小白也能看懂</p>
 </blockquote>
 <hr />
-<h2 id="_1">📚 快捷导航</h2>
-<h3 id="_2">🎁 免费编程工具（强烈推荐！）</h3>
-<ul>
-<li><a href="#免费工具1ai-studiogoogle出品完全免费">AI Studio</a> - Google免费AI，无限制使用</li>
-<li><a href="#免费工具2grokxai出品实时联网">Grok</a> - xAI免费，实时联网</li>
-<li><a href="#免费工具3gemini-cli命令行工具">Gemini CLI</a> - 命令行AI工具</li>
-<li><a href="#免费工具4trae未来对标cursor的ai编程工具">TRAE</a> - 对标Cursor的免费工具</li>
-<li><a href="#免费工具5codexopenai新一代ai编程助手">Codex</a> - OpenAI编程助手（包含在ChatGPT Plus中）</li>
-<li><a href="#免费工具6claudeanthropic-ai助手">Claude</a> - Anthropic AI，200K超长上下文</li>
-</ul>
-<h3 id="_3">💎 进阶工具</h3>
-<ul>
-<li><a href="#进阶工具cursor20月最强编程工具">Cursor</a> - 最强AI编程工具（$20/月）</li>
-</ul>
-<h3 id="ui">🎨 UI和设计工具</h3>
-<ul>
-<li><a href="#前端开发用stitch生成ui界面">Stitch</a> - Google免费UI生成</li>
-<li><a href="#做设计用canva做海报ppt">Canva</a> - 零基础设计工具</li>
-</ul>
-<h3 id="_4">🎬 视频工具</h3>
-<ul>
-<li><a href="#剪视频用剪映加字幕">剪映</a> - 免费视频剪辑</li>
-</ul>
-<h3 id="_5">👶 日常通用</h3>
-<ul>
-<li><a href="#完全小白从kimi开始">Kimi</a> - 200万字超长上下文，完全免费</li>
-</ul>
-<hr />
-<h2 id="_6">🎯 你需要什么？快速选择</h2>
+<h2 id="_1">🎯 你需要什么？快速选择</h2>
 <table>
 <thead>
 <tr>
@@ -891,8 +863,8 @@ AI立即生成 → 完美布局 → 直接使用
 
 <p><strong>✅ 完成！你已经会用Canva做设计了！</strong></p>
 <hr />
-<h2 id="_7">🎬 剪视频：用剪映加字幕</h2>
-<h3 id="_8">工具：剪映（完全免费）</h3>
+<h2 id="_2">🎬 剪视频：用剪映加字幕</h2>
+<h3 id="_3">工具：剪映（完全免费）</h3>
 <p><strong>第一步：下载安装</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">搜索</span><span class="s">&quot;剪映&quot;</span>
 <span class="mf">2.</span><span class="w"> </span><span class="n">下载电脑版或手机APP</span>
@@ -922,7 +894,7 @@ AI立即生成 → 完美布局 → 直接使用
 
 <p><strong>✅ 完成！你已经会用剪映了！</strong></p>
 <hr />
-<h2 id="_9">💡 实用技巧</h2>
+<h2 id="_4">💡 实用技巧</h2>
 <h3 id="1-prompt">1. 怎么写好Prompt？</h3>
 <p><strong>公式：角色 + 任务 + 要求 + 格式</strong></p>
 <div class="codehilite"><pre><span></span><code>❌ 差的例子：
@@ -960,7 +932,7 @@ AI立即生成 → 完美布局 → 直接使用
 </code></pre></div>
 
 <hr />
-<h2 id="_10">📊 价格总结</h2>
+<h2 id="_5">📊 价格总结</h2>
 <table>
 <thead>
 <tr>
@@ -1028,7 +1000,7 @@ AI立即生成 → 完美布局 → 直接使用
 <p><strong>💎 进阶组合：</strong>
 - <strong>专业开发：</strong> Cursor（$20/月）+ 免费工具 = <strong>$20/月</strong></p>
 <hr />
-<h2 id="_11">⚠️ 注意事项</h2>
+<h2 id="_6">⚠️ 注意事项</h2>
 <h3 id="1">1. 不要上传的东西</h3>
 <div class="codehilite"><pre><span></span><code>❌ 公司机密代码
 ❌ 客户隐私数据
@@ -1051,7 +1023,7 @@ AI立即生成 → 完美布局 → 直接使用
 </code></pre></div>
 
 <hr />
-<h2 id="_12">🎯 今天就开始！</h2>
+<h2 id="_7">🎯 今天就开始！</h2>
 <h3 id="5">5分钟行动计划：</h3>
 <p><strong>现在就做（小白）：</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开</span><span class="w"> </span><span class="n">kimi</span><span class="mf">.</span><span class="n">moonshot</span><span class="mf">.</span><span class="n">cn</span>
@@ -1093,7 +1065,7 @@ AI立即生成 → 完美布局 → 直接使用
 </code></pre></div>
 
 <hr />
-<h2 id="_13">📚 学习资源</h2>
+<h2 id="_8">📚 学习资源</h2>
 <p><strong>视频教程（B站搜索）：</strong>
 - "Cursor教程新手入门"
 - "Kimi使用教程"
@@ -1105,7 +1077,7 @@ AI立即生成 → 完美布局 → 直接使用
 - Stitch：stitch.withgoogle.com
 - Cursor：cursor.so</p>
 <hr />
-<h2 id="_14">❓ 常见问题</h2>
+<h2 id="_9">❓ 常见问题</h2>
 <p><strong>Q1: 我是小白，从哪开始？</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="n">A</span><span class="o">:</span><span class="w"> </span><span class="err">从</span><span class="n">Kimi开始</span><span class="err">！完全免费，打开网页就能用。</span>
 <span class="w">   </span><span class="err">第一步：</span><span class="n">kimi</span><span class="o">.</span><span class="na">moonshot</span><span class="o">.</span><span class="na">cn</span>
@@ -1140,7 +1112,7 @@ AI立即生成 → 完美布局 → 直接使用
 <p><strong>记住：最好的学习方法就是动手试！</strong></p>
 <hr />
 <hr />
-<h2 id="_15">🌟 核心推荐（全免费）</h2>
+<h2 id="_10">🌟 核心推荐（全免费）</h2>
 <p><strong>编程开发：</strong>
 - ✅ AI Studio（Google免费AI）
 - ✅ Grok（实时联网）
