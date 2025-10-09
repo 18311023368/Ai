@@ -4,6 +4,31 @@
 
 ---
 
+## 📚 快捷导航
+
+### 🎁 免费编程工具（强烈推荐！）
+- [AI Studio](#免费工具1ai-studiogoogle出品完全免费) - Google免费AI，无限制使用
+- [Grok](#免费工具2grokxai出品实时联网) - xAI免费，实时联网
+- [Gemini CLI](#免费工具3gemini-cli命令行工具) - 命令行AI工具
+- [TRAE](#免费工具4trae未来对标cursor的ai编程工具) - 对标Cursor的免费工具
+- [Codex](#免费工具5codexopenai新一代ai编程助手) - OpenAI编程助手（包含在ChatGPT Plus中）
+- [Claude](#免费工具6claudeanthropic-ai助手) - Anthropic AI，200K超长上下文
+
+### 💎 进阶工具
+- [Cursor](#进阶工具cursor20月最强编程工具) - 最强AI编程工具（$20/月）
+
+### 🎨 UI和设计工具
+- [Stitch](#前端开发用stitch生成ui界面) - Google免费UI生成
+- [Canva](#做设计用canva做海报ppt) - 零基础设计工具
+
+### 🎬 视频工具
+- [剪映](#剪视频用剪映加字幕) - 免费视频剪辑
+
+### 👶 日常通用
+- [Kimi](#完全小白从kimi开始) - 200万字超长上下文，完全免费
+
+---
+
 ## 🎯 你需要什么？快速选择
 
 | 我想要 | 用什么工具 | 多少钱 |
