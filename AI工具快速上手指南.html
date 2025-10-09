@@ -3,1178 +3,798 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI工具快速上手指南 - 5分钟学会</title>
+    <title>AI工具快速上手指南 - 5分钟学会用AI</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
-            line-height: 1.8; color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
         }
+        
         .container {
-            max-width: 1000px; margin: 0 auto; background: white;
-            border-radius: 20px; box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 60px 40px; text-align: center;
-            border-radius: 20px 20px 0 0;
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
         }
-        header h1 { font-size: 2.8em; margin-bottom: 15px; }
-        header p { font-size: 1.3em; opacity: 0.95; }
-        nav {
-            background: #1f2937; padding: 20px; position: sticky; top: 0; z-index: 1000;
+        
+        h2 {
+            color: #764ba2;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        h3 {
+            color: #555;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none; display: flex; gap: 15px; flex-wrap: wrap;
-            justify-content: center; max-width: 1200px; margin: 0 auto;
-        }
-        nav a {
-            color: white; text-decoration: none; font-weight: 600;
-            padding: 10px 20px; border-radius: 8px; transition: all 0.3s;
-            font-size: 0.95em;
-        }
-        nav a:hover { background: #667eea; transform: translateY(-2px); }
-        .back-to-top {
-            position: fixed; bottom: 40px; right: 40px;
-            background: #667eea; color: white;
-            width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8em; cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            opacity: 0; transition: all 0.3s; text-decoration: none;
-        }
-        .back-to-top.show { opacity: 1; }
-        .back-to-top:hover { transform: translateY(-8px); }
-        .content { padding: 50px; }
-        h2 {
-            color: #667eea; font-size: 2.2em; margin: 50px 0 25px;
-            padding: 15px 0 15px 20px; border-left: 6px solid #667eea;
-        }
-        h3 {
-            color: #764ba2; font-size: 1.8em; margin: 35px 0 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e5e7eb 100%);
-            padding: 15px 20px; border-radius: 10px;
-        }
-        .step-box {
-            background: #f8f9ff; padding: 25px; margin: 20px 0;
-            border-left: 5px solid #10b981; border-radius: 10px;
-        }
-        .step-box h4 {
-            color: #10b981; font-size: 1.4em; margin-bottom: 15px;
-        }
-        .example {
-            background: #1e293b; color: #e2e8f0; padding: 20px;
-            border-radius: 10px; margin: 15px 0; font-family: 'Courier New', monospace;
-        }
-        .highlight {
-            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
-            padding: 20px; border-left: 5px solid #f59e0b;
-            border-radius: 10px; margin: 20px 0;
-        }
-        .success {
-            background: linear-gradient(120deg, #d1fae5 0%, #a7f3d0 100%);
-            padding: 20px; border-left: 5px solid #10b981;
-            border-radius: 10px; margin: 20px 0; text-align: center;
-            font-size: 1.2em; font-weight: 600; color: #065f46;
-        }
-        table {
-            width: 100%; border-collapse: collapse; margin: 25px 0;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;
-        }
+        
         th {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; padding: 18px; text-align: left; font-size: 1.1em;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
         }
-        td { padding: 15px; border-bottom: 1px solid #f0f0f0; }
-        tr:hover { background: #f8f9ff; }
-        a { color: #667eea; text-decoration: none; font-weight: 600; }
-        a:hover { text-decoration: underline; }
-        .cta-button {
-            display: inline-block; padding: 15px 35px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white; border-radius: 30px; font-size: 1.2em;
-            font-weight: 600; text-decoration: none; margin: 10px;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            transition: all 0.3s;
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
         }
-        .cta-button:hover {
-            transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+        
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #333;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        a {
+            color: #667eea;
             text-decoration: none;
+            transition: color 0.3s;
         }
-        .tip {
-            background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
-            padding: 15px 20px; border-left: 5px solid #3b82f6;
-            border-radius: 8px; margin: 15px 0;
+        
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
         }
-        ul, ol { margin-left: 30px; margin-top: 15px; }
-        li { margin: 12px 0; line-height: 1.9; }
-        .badge-free {
-            display: inline-block; background: #10b981; color: white;
-            padding: 5px 12px; border-radius: 15px; font-size: 0.9em;
-            font-weight: 600; margin: 0 5px;
+        
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 30px 0;
         }
-        .badge-paid {
-            display: inline-block; background: #f59e0b; color: white;
-            padding: 5px 12px; border-radius: 15px; font-size: 0.9em;
-            font-weight: 600; margin: 0 5px;
+        
+        .free-badge {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
         }
+        
         @media (max-width: 768px) {
-            .content { padding: 25px; }
-            header h1 { font-size: 2em; }
-            h2 { font-size: 1.8em; }
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🚀 AI工具快速上手指南</h1>
-            <p>5分钟学会 | 手把手教学 | 小白也能看懂</p>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#quick-select">快速选择</a></li>
-                <li><a href="#beginner">小白工具</a></li>
-                <li><a href="#developer">编程工具</a></li>
-                <li><a href="#pm-tools">产品经理</a></li>
-                <li><a href="#ui-tools">UI生成</a></li>
-                <li><a href="#design">设计工具</a></li>
-                <li><a href="#video">视频工具</a></li>
-                <li><a href="#pricing">价格对比</a></li>
-                <li><a href="#guide">选择指南</a></li>
-            </ul>
-        </nav>
-        
-        <div class="content">
-            <h2 id="quick-select">🎯 你需要什么？快速选择</h2>
-            
-            <table>
-                <tr>
-                    <th style="width: 30%;">我想要</th>
-                    <th style="width: 35%;">用什么工具</th>
-                    <th style="width: 35%;">多少钱</th>
-                </tr>
-                <tr>
-                    <td>💬 聊天、写作、日常问答</td>
-                    <td><strong>Kimi / 通义千问 / 豆包</strong></td>
-                    <td><span class="badge-free">✅ 免费</span></td>
-                </tr>
-                <tr>
-                    <td>💻 写代码、编程</td>
-                    <td><strong>Cursor / Claude 4 / GitHub Copilot</strong></td>
-                    <td><span class="badge-paid">$10-20/月</span></td>
-                </tr>
-                <tr>
-                    <td>👨‍💼 产品经理、写PRD</td>
-                    <td><strong>ChatGPT / Claude 4 / Notion AI</strong></td>
-                    <td><span class="badge-paid">$10-20/月</span></td>
-                </tr>
-                <tr>
-                    <td>🎨 生成网页UI代码</td>
-                    <td><strong>v0.dev / bolt.new / Lovable</strong></td>
-                    <td><span class="badge-free">部分免费</span></td>
-                </tr>
-                <tr>
-                    <td>🖼️ 做海报、PPT</td>
-                    <td><strong>Canva</strong></td>
-                    <td><span class="badge-free">免费版够用</span></td>
-                </tr>
-                <tr>
-                    <td>🎬 剪视频、加字幕</td>
-                    <td><strong>剪映</strong></td>
-                    <td><span class="badge-free">✅ 免费</span></td>
-                </tr>
-                <tr>
-                    <td>🎥 AI生成视频</td>
-                    <td><strong>Sora 2</strong></td>
-                    <td><span class="badge-paid">待定</span></td>
-                </tr>
-            </table>
-            
-            <div style="text-align: center; margin: 40px 0;">
-                <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
-                    立即开始 - 打开Kimi试试！
-                </a>
-            </div>
-            
-            <h2 id="beginner">👶 完全小白：从Kimi开始</h2>
-            
-            <h3>工具：Kimi（完全免费）</h3>
-            
-            <div class="step-box">
-                <h4>第一步：打开网站</h4>
-                <ol>
-                    <li>打开浏览器</li>
-                    <li>输入网址：<a href="https://kimi.moonshot.cn" target="_blank">kimi.moonshot.cn</a></li>
-                    <li>按回车</li>
-                </ol>
-            </div>
-            
-            <div class="step-box">
-                <h4>第二步：登录</h4>
-                <ol>
-                    <li>看到登录按钮，点击</li>
-                    <li>用手机号或微信登录</li>
-                    <li>登录成功</li>
-                </ol>
-            </div>
-            
-            <div class="step-box">
-                <h4>第三步：开始使用</h4>
-                <p><strong>试试这些：</strong></p>
-                
-                <div class="example">
-                    例子1：让AI写周报<br/>
-                    输入："帮我写一份本周工作周报，包括：完成了用户登录功能开发、修复了3个bug、参加了2次会议"
-                </div>
-                
-                <div class="example">
-                    例子2：总结长文档<br/>
-                    点击上传按钮 → 选择PDF文件 → 问："总结这个文档的核心内容"
-                </div>
-                
-                <div class="example">
-                    例子3：翻译<br/>
-                    输入："把这段话翻译成英文：我们的产品已经上线了"
-                </div>
-            </div>
-            
-            <div class="success">
-                ✅ 完成！你已经学会用AI聊天了！
-            </div>
-            
-            <h3>其他免费工具：通义千问 & 豆包</h3>
-            
-            <div class="step-box">
-                <h4>通义千问（阿里云出品）</h4>
-                <p>🌐 访问：<a href="https://tongyi.aliyun.com" target="_blank">tongyi.aliyun.com</a></p>
-                <p><strong>特点：</strong>支持图片理解、文档处理，深度集成阿里生态</p>
-                <p><strong>适合：</strong>办公文档处理、图片分析、代码辅助</p>
-                
-                <p><strong>快速上手：</strong></p>
-                <ol>
-                    <li>打开 tongyi.aliyun.com</li>
-                    <li>用阿里云账号或淘宝账号登录</li>
-                    <li>试试上传一张图片，问："这张图片里有什么？"</li>
-                    <li>或上传PDF文档，问："总结一下要点"</li>
-                </ol>
-                <p><span class="badge-free">完全免费</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>豆包（字节跳动出品）</h4>
-                <p>🌐 访问：<a href="https://doubao.com" target="_blank">doubao.com</a></p>
-                <p><strong>特点：</strong>响应速度快，无限制使用</p>
-                <p><strong>适合：</strong>日常聊天、写作辅助、知识问答</p>
-                
-                <p><strong>快速上手：</strong></p>
-                <ol>
-                    <li>打开 doubao.com</li>
-                    <li>用手机号或抖音账号登录</li>
-                    <li>直接开始聊天，试试问："帮我写一封请假邮件"</li>
-                </ol>
-                <p><span class="badge-free">完全免费</span></p>
-            </div>
-            
-            <div class="tip">
-                <strong>💡 小贴士：</strong>这三个工具都免费，可以都试试，看哪个更适合你！
-            </div>
-            
-            <h2 id="developer">👨‍💻 程序员：用Cursor写代码</h2>
-            
-            <h3>工具：Cursor（$20/月，最强编程工具）</h3>
-            
-            <div class="step-box">
-                <h4>第一步：下载安装</h4>
-                <ol>
-                    <li>访问：<a href="https://cursor.so" target="_blank">cursor.so</a></li>
-                    <li>点击 Download</li>
-                    <li>选择你的系统（Windows/Mac/Linux）</li>
-                    <li>下载完成后安装</li>
-                    <li>打开Cursor</li>
-                </ol>
-            </div>
-            
-            <div class="step-box">
-                <h4>第二步：基础设置</h4>
-                <ol>
-                    <li>首次打开，选择"导入VS Code配置"（如果你用过VS Code）</li>
-                    <li>登录账号（用GitHub或Google登录）</li>
-                    <li>点击右上角设置图标</li>
-                    <li>选择AI模型：推荐选"Claude 4"</li>
-                </ol>
-            </div>
-            
-            <div class="step-box">
-                <h4>第三步：创建.cursorrules文件</h4>
-                <ol>
-                    <li>在项目根目录创建文件：.cursorrules</li>
-                    <li>复制粘贴这个模板：</li>
-                </ol>
-                
-                <div class="example">
-# 我的代码规则<br/>
-- 所有代码必须有注释<br/>
-- 使用清晰的变量名<br/>
-- 函数要有完整的错误处理<br/>
-- 每个函数只做一件事
-                </div>
-            </div>
-            
-            <div class="step-box">
-                <h4>第四步：开始写代码</h4>
-                
-                <p><strong>方法1：用Ctrl+L对话</strong></p>
-                <ol>
-                    <li>按 Ctrl+L（Mac是Cmd+L）</li>
-                    <li>输入："创建一个Python函数，读取Excel文件并返回数据"</li>
-                    <li>AI会生成完整代码</li>
-                    <li>点击"插入代码"按钮</li>
-                </ol>
-                
-                <p><strong>方法2：用Ctrl+K内联编辑</strong></p>
-                <ol>
-                    <li>写一段代码</li>
-                    <li>选中代码</li>
-                    <li>按 Ctrl+K（Mac是Cmd+K）</li>
-                    <li>输入："添加错误处理"</li>
-                    <li>AI自动修改代码</li>
-                </ol>
-                
-                <p><strong>方法3：用@符号引用文件</strong></p>
-                <div class="example">
-                    按Ctrl+L，然后输入：<br/>
-                    "@app.py 这个文件的登录逻辑有什么问题？"<br/><br/>
-                    AI会读取app.py文件并分析
-                </div>
-            </div>
-            
-            <div class="highlight">
-                <strong>实际例子：创建用户注册接口</strong>
-                <ol>
-                    <li>按Ctrl+L</li>
-                    <li>输入："创建一个Express API接口 POST /register，接收email和password，验证邮箱格式，密码加密用bcrypt，保存到MongoDB，返回JWT token，添加完整错误处理"</li>
-                    <li>AI生成完整代码</li>
-                    <li>点击"插入代码"</li>
-                    <li>完成！</li>
-                </ol>
-            </div>
-            
-            <div class="success">
-                ✅ 你已经学会用AI写代码了！
-            </div>
-            
-            <h3>其他编程工具推荐</h3>
-            
-            <div class="step-box">
-                <h4>1. Claude 4 Sonnet - 最强编程AI</h4>
-                <p>🌐 访问：<a href="https://claude.ai" target="_blank">claude.ai</a></p>
-                <p><strong>特点：</strong>200K超长上下文，能处理整个代码库，支持MCP协议</p>
-                <p><strong>适合：</strong>代码审查、架构设计、大规模重构、深度Bug分析</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>注册登录：</strong>访问 claude.ai → 用Google账号登录</li>
-                    <li><strong>粘贴代码：</strong>复制你的代码，粘贴到对话框</li>
-                    <li><strong>提问：</strong>问"这段代码有什么问题？如何优化？"</li>
-                </ol>
-                
-                <div class="example">
-实战例子：<br/>
-粘贴一个函数 → 问"这个函数性能如何？有没有bug？"<br/>
-Claude会：分析性能瓶颈 → 找出潜在bug → 给出优化方案 → 提供改进代码
-                </div>
-                
-                <p><span class="badge-free">免费50次/天</span> <span class="badge-paid">$20/月 Pro版</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>2. GitHub Copilot - 实时代码补全</h4>
-                <p>🌐 访问：<a href="https://github.com/features/copilot" target="_blank">github.com/features/copilot</a></p>
-                <p><strong>特点：</strong>在VS Code/IntelliJ里实时提示代码，学习你的代码风格</p>
-                <p><strong>适合：</strong>快速写代码、生成单元测试、学习新API</p>
-                
-                <p><strong>快速上手4步：</strong></p>
-                <ol>
-                    <li><strong>订阅：</strong>访问 github.com/features/copilot → 点击"Start free trial"</li>
-                    <li><strong>安装插件：</strong>在VS Code扩展商店搜索"GitHub Copilot" → 安装</li>
-                    <li><strong>登录：</strong>插件会提示登录GitHub账号</li>
-                    <li><strong>开始使用：</strong>写注释"// 创建一个读取JSON文件的函数" → Copilot自动生成 → 按Tab接受</li>
-                </ol>
-                
-                <div class="example">
-实战技巧：<br/>
-• 按 Tab 接受建议<br/>
-• 按 Alt+] 查看下一个建议<br/>
-• 按 Ctrl+Enter 查看多个建议选项<br/>
-• 写详细的注释，Copilot会生成更准确的代码
-                </div>
-                
-                <p><span class="badge-paid">$10/月</span> <span class="badge-free">学生免费</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>3. Gemini 2.5 Pro - Google超长上下文</h4>
-                <p>🌐 访问：<a href="https://gemini.google.com" target="_blank">gemini.google.com</a></p>
-                <p><strong>特点：</strong>200万tokens超长上下文（业界最长），多模态能力强</p>
-                <p><strong>适合：</strong>超大项目分析、技术文档提取、Google Cloud开发</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>登录：</strong>访问 gemini.google.com → 用Google账号登录</li>
-                    <li><strong>上传文件：</strong>点击附件按钮 → 上传整个项目的多个文件（50+个都行）</li>
-                    <li><strong>分析：</strong>问"分析这个项目的架构设计"或"找出所有bug"</li>
-                </ol>
-                
-                <div class="example">
-独特优势：<br/>
-• 能一次处理整个大型项目（比Claude更长）<br/>
-• 可以上传PDF技术文档，几百页都没问题<br/>
-• 支持图片、视频分析
-                </div>
-                
-                <p><span class="badge-free">部分免费</span> <span class="badge-paid">$20/月 Advanced版</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>4. Grok 4 - 实时联网AI</h4>
-                <p>🌐 访问：<a href="https://x.com" target="_blank">x.com</a></p>
-                <p><strong>特点：</strong>实时获取最新技术动态，与X平台深度集成</p>
-                <p><strong>适合：</strong>了解技术趋势、查找最新解决方案、社区观点</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>订阅：</strong>登录 x.com → 点击 Premium → 选择 Premium+ (包含Grok)</li>
-                    <li><strong>打开Grok：</strong>左侧边栏找到 Grok 图标并点击</li>
-                    <li><strong>开始提问：</strong>问"最近一周AI编程工具有什么新动态？"</li>
-                </ol>
-                
-                <div class="example">
-独特优势：<br/>
-• 实时联网，获取最新信息<br/>
-• 能看到X平台上开发者的讨论<br/>
-• 适合问"某个技术现在业界怎么看？"
-                </div>
-                
-                <p><span class="badge-paid">$16/月（含X Premium+）</span></p>
-            </div>
-            
-            <div class="tip">
-                <strong>💡 选择建议：</strong><br/>
-                • 新手首选：<strong>GitHub Copilot</strong>（最便宜，$10/月）<br/>
-                • 深度开发：<strong>Cursor + Claude 4</strong>（组合使用最强）<br/>
-                • 超大项目：<strong>Gemini 2.5 Pro</strong>（能处理最多代码）
-            </div>
-            
-            <h3>💡 程序员进阶：理解4个核心概念</h3>
-            
-            <div class="info-box" style="background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%); padding: 20px; border-left: 5px solid #3b82f6; border-radius: 10px; margin: 20px 0;">
-                <p><strong>📌 提示：</strong>以下概念是为了让你更好地使用AI编程工具，不理解也不影响基本使用！</p>
-            </div>
-            
-            <div class="step-box">
-                <h4>1. MCP (Model Context Protocol) = 让AI能读你的文件</h4>
-                <p><strong>简单理解：</strong>就像给AI装了"USB接口"，AI可以直接读取你电脑的文件，不用复制粘贴</p>
-                <p><strong>实际作用：</strong></p>
-                <ul>
-                    <li>Cursor通过MCP读取整个项目文件夹</li>
-                    <li>Claude Desktop通过MCP连接数据库</li>
-                    <li>不用手动复制代码，AI自动理解项目结构</li>
-                </ul>
-            </div>
-            
-            <div class="step-box">
-                <h4>2. Agent = AI自动干活</h4>
-                <p><strong>简单理解：</strong>你说"修复所有bug"，AI自动完成：找bug → 修复 → 测试 → 生成报告</p>
-                <p><strong>实际作用：</strong></p>
-                <ul>
-                    <li>Cursor的Background Agent可以自动重构整个项目</li>
-                    <li>bolt.new可以自动生成完整Web应用</li>
-                    <li>不是简单回答问题，而是真正完成任务</li>
-                </ul>
-            </div>
-            
-            <div class="step-box">
-                <h4>3. Prompt = 怎么跟AI说话</h4>
-                <p><strong>简单理解：</strong>就是你给AI的指令，说得越清楚，AI做得越好</p>
-                <p><strong>对比：</strong></p>
-                <div class="example">
-❌ 差的Prompt："帮我写代码"<br/>
-→ AI不知道写什么，随便给个例子<br/><br/>
+        <h1 id="ai">AI工具快速上手指南</h1>
+<blockquote>
+<p>📌 <strong>5分钟学会用AI工具</strong> - 手把手教学，小白也能看懂</p>
+</blockquote>
+<hr />
+<h2 id="_1">🎯 你需要什么？快速选择</h2>
+<table>
+<thead>
+<tr>
+<th>我想要</th>
+<th>用什么工具</th>
+<th>多少钱</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>💬 聊天、写作、日常问答</td>
+<td><strong>Kimi</strong></td>
+<td>✅ 免费</td>
+</tr>
+<tr>
+<td>💻 写代码、编程</td>
+<td><strong>AI Studio / Grok</strong></td>
+<td>✅ 免费</td>
+</tr>
+<tr>
+<td>💻 高级编程</td>
+<td><strong>Cursor</strong></td>
+<td>$20/月</td>
+</tr>
+<tr>
+<td>🎨 设计稿转代码</td>
+<td><strong>Stitch</strong></td>
+<td>✅ 免费</td>
+</tr>
+<tr>
+<td>🖼️ 做海报、PPT</td>
+<td><strong>Canva</strong></td>
+<td>免费版够用</td>
+</tr>
+<tr>
+<td>🎬 剪视频、加字幕</td>
+<td><strong>剪映</strong></td>
+<td>✅ 免费</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="42">📚 第一步：理解4个核心概念（2分钟）</h2>
+<h3 id="1-mcp-ai">1. MCP = 让AI能读你的文件</h3>
+<div class="codehilite"><pre><span></span><code>就像给AI装了USB接口
+AI可以直接读取你电脑的文件，不用复制粘贴
+</code></pre></div>
 
-✅ 好的Prompt："用Python写一个读取Excel文件的函数，要求：<br/>
-• 输入文件路径<br/>
-• 返回DataFrame<br/>
-• 处理文件不存在的错误<br/>
-• 添加函数注释"<br/>
-→ AI生成精确符合需求的代码
-                </div>
-            </div>
-            
-            <div class="step-box">
-                <h4>4. Rules (.cursorrules) = 让AI遵守规矩</h4>
-                <p><strong>简单理解：</strong>创建 .cursorrules 文件，写上你的编码规范，AI自动遵守</p>
-                <p><strong>实际作用：</strong></p>
-                <ul>
-                    <li>统一团队代码风格（4空格 or 2空格？）</li>
-                    <li>强制类型注解（TypeScript strict模式）</li>
-                    <li>自动添加错误处理</li>
-                    <li>禁止不安全的代码（eval、SQL注入）</li>
-                </ul>
-                <div class="example">
-示例 .cursorrules 文件：<br/>
-# 我的代码规则<br/>
-- 所有代码必须有注释<br/>
-- 使用TypeScript strict模式<br/>
-- 函数要有完整的错误处理<br/>
-- 变量名要有意义，不用a、b、c
-                </div>
-            </div>
-            
-            <div class="tip">
-                <strong>💡 记住：</strong>这些概念是让你用得更好，但不理解也能正常使用工具。慢慢实践中就能理解了！
-            </div>
-            
-            <h2 id="pm-tools">👨‍💼 产品经理：用ChatGPT写PRD</h2>
-            
-            <h3>工具：ChatGPT（$20/月）</h3>
-            
-            <div class="step-box">
-                <h4>第一步：注册登录</h4>
-                <ol>
-                    <li>访问：<a href="https://chatgpt.com" target="_blank">chatgpt.com</a></li>
-                    <li>用Google账号或邮箱注册</li>
-                    <li>订阅ChatGPT Plus（$20/月，推荐）</li>
-                </ol>
-            </div>
-            
-            <div class="step-box">
-                <h4>第二步：写PRD（产品需求文档）</h4>
-                <div class="example">
-输入给ChatGPT：<br/><br/>
-"我要做一个任务管理应用，帮我写一份完整的PRD，包括：<br/>
-1. 产品概述和目标用户<br/>
-2. 核心功能列表（任务创建、编辑、删除、状态管理、优先级）<br/>
-3. 用户故事（As a user, I want to...）<br/>
-4. 页面流程图<br/>
-5. 功能优先级排序<br/>
-6. 验收标准"<br/><br/>
-→ ChatGPT会生成完整的PRD文档
-                </div>
-            </div>
-            
-            <div class="step-box">
-                <h4>第三步：迭代优化</h4>
-                <p>继续对话：</p>
-                <ul>
-                    <li>"补充移动端的交互设计"</li>
-                    <li>"增加团队协作功能"</li>
-                    <li>"生成技术实现建议"</li>
-                </ul>
-            </div>
-            
-            <div class="success">
-                ✅ 完成！一份完整的PRD就生成了！
-            </div>
-            
-            <h3>其他产品经理工具推荐</h3>
-            
-            <div class="step-box">
-                <h4>1. Claude 4 - 深度分析和长文档处理</h4>
-                <p>🌐 访问：<a href="https://claude.ai" target="_blank">claude.ai</a></p>
-                <p><strong>特点：</strong>200K超长上下文，适合处理复杂PRD、竞品分析</p>
-                <p><strong>适合：</strong>竞品分析、用户调研报告整理、长篇需求文档</p>
-                
-                <p><strong>快速上手：</strong></p>
-                <ol>
-                    <li>上传竞品的产品文档或网页截图</li>
-                    <li>问："分析这个产品的核心功能和用户体验"</li>
-                    <li>获得详细的竞品分析报告</li>
-                </ol>
-                
-                <div class="example">
-实战：竞品分析<br/>
-上传3个竞品的资料 → 问"对比分析这3个产品的优缺点，给出我们的差异化建议"
-                </div>
-                
-                <p><span class="badge-free">免费50次/天</span> <span class="badge-paid">$20/月</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>2. Notion AI - 项目管理和文档协作</h4>
-                <p>🌐 访问：<a href="https://notion.so" target="_blank">notion.so</a></p>
-                <p><strong>特点：</strong>文档管理+AI写作，团队协作利器</p>
-                <p><strong>适合：</strong>会议纪要、项目规划、知识库管理、团队协作</p>
-                
-                <p><strong>快速上手：</strong></p>
-                <ol>
-                    <li>创建Notion账号（免费）</li>
-                    <li>创建一个页面，点击"Ask AI"</li>
-                    <li>让AI帮你生成会议模板、项目计划、产品路线图</li>
-                </ol>
-                
-                <div class="example">
-实用场景：<br/>
-• "根据会议录音生成会议纪要"<br/>
-• "创建产品迭代计划模板"<br/>
-• "整理用户反馈为需求列表"<br/>
-• "生成Sprint规划表"
-                </div>
-                
-                <p><span class="badge-free">基础免费</span> <span class="badge-paid">$10/月含AI</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>3. Gamma - 快速生成产品演示PPT</h4>
-                <p>🌐 访问：<a href="https://gamma.app" target="_blank">gamma.app</a></p>
-                <p><strong>特点：</strong>AI自动生成精美PPT，无需设计经验</p>
-                <p><strong>适合：</strong>产品演示、提案、季度汇报、投资路演</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>访问：</strong>打开 gamma.app → 注册登录</li>
-                    <li><strong>输入大纲：</strong>"产品路演PPT：任务管理应用，包括痛点分析、解决方案、核心功能、商业模式、团队介绍"</li>
-                    <li><strong>生成：</strong>AI自动生成完整PPT → 选择模板 → 导出</li>
-                </ol>
-                
-                <div class="example">
-实战例子：<br/>
-输入："Q4产品规划汇报，包括：<br/>
-• 上季度成果回顾<br/>
-• 用户增长数据<br/>
-• 下季度功能规划<br/>
-• 资源需求"<br/><br/>
-→ Gamma生成精美的汇报PPT
-                </div>
-                
-                <p><span class="badge-free">免费400积分</span> <span class="badge-paid">$15/月</span></p>
-            </div>
-            
-            <div class="tip">
-                <strong>💡 产品经理工具组合建议：</strong><br/>
-                • <strong>日常工作：</strong>ChatGPT（写PRD、需求分析）+ Notion AI（文档管理）<br/>
-                • <strong>深度分析：</strong>Claude 4（竞品分析、用户调研）<br/>
-                • <strong>汇报演示：</strong>Gamma（快速做PPT）<br/>
-                • <strong>预算方案：</strong>免费版Notion + ChatGPT Plus ($20/月)
-            </div>
-            
-            <h2 id="ui-tools">🎨 UI设计师：用v0.dev生成界面</h2>
-            
-            <h3>工具：v0.dev（免费200积分/月）</h3>
-            
-            <div class="step-box">
-                <h4>第一步：访问网站</h4>
-                <ol>
-                    <li>打开浏览器</li>
-                    <li>输入：<a href="https://v0.dev" target="_blank">v0.dev</a></li>
-                    <li>点击"Sign in"</li>
-                    <li>用GitHub账号登录</li>
-                </ol>
-            </div>
-            
-            <div class="step-box">
-                <h4>第二步：生成UI</h4>
-                <div class="example">
-输入需求：<br/><br/>
-"创建一个登录页面<br/>
-- 用Next.js和Tailwind CSS<br/>
-- 有邮箱和密码输入框<br/>
-- 有"忘记密码"链接<br/>
-- 有Google登录按钮<br/>
-- 响应式设计<br/>
-- 深色模式支持"<br/><br/>
-等待生成 → 实时预览 → 满意后复制代码
-                </div>
-            </div>
-            
-            <div class="success">
-                ✅ 完成！你已经学会AI生成UI了！
-            </div>
-            
-            <h3>其他UI生成工具推荐</h3>
-            
-            <div class="step-box">
-                <h4>1. bolt.new - 全栈应用生成器</h4>
-                <p>🌐 访问：<a href="https://bolt.new" target="_blank">bolt.new</a></p>
-                <p><strong>特点：</strong>生成完整的Web应用，前后端一起生成，在线运行预览</p>
-                <p><strong>适合：</strong>快速搭建完整项目、创建Landing Page、构建管理后台</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>访问：</strong>直接打开 bolt.new（无需注册即可试用）</li>
-                    <li><strong>描述需求：</strong>输入"创建一个待办事项应用，用React+TypeScript+Tailwind"</li>
-                    <li><strong>运行：</strong>AI自动生成 → 实时预览 → 点击"Download"下载代码</li>
-                </ol>
-                
-                <div class="example">
-实战例子：<br/>
-输入："创建一个博客网站，有首页、文章列表、文章详情，用Next.js"<br/>
-→ bolt.new自动生成完整项目 → 在线运行 → 满意后下载
-                </div>
-                
-                <p><span class="badge-free">有限制</span> <span class="badge-paid">$20/月无限用</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>2. Lovable (GPT Engineer) - AI全栈开发</h4>
-                <p>🌐 访问：<a href="https://lovable.dev" target="_blank">lovable.dev</a></p>
-                <p><strong>特点：</strong>从自然语言描述生成完整SaaS应用，自动部署</p>
-                <p><strong>适合：</strong>快速构建MVP产品、创建SaaS应用原型</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>注册：</strong>访问 lovable.dev → 用GitHub账号登录</li>
-                    <li><strong>描述需求：</strong>详细说明你的项目，如“创建一个任务管理SaaS，有用户认证、任务CRUD、团队协作”</li>
-                    <li><strong>生成部署：</strong>AI自动生成项目 → 实时预览 → 一键部署上线</li>
-                </ol>
-                
-                <div class="example">
-适合场景：<br/>
-• 创业者快速验证想法<br/>
-• 48小时做MVP原型<br/>
-• 非技术人员做产品
-                </div>
-                
-                <p><span class="badge-paid">$29/月起</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>3. Stitch - AI生成UI工具</h4>
-                <p>🌐 访问：<a href="https://stitch.withgoogle.com" target="_blank">stitch.withgoogle.com</a></p>
-                <p><strong>特点：</strong>Google出品，AI直接生成UI界面代码</p>
-                <p><strong>适合：</strong>快速生成UI组件、界面设计、原型开发</p>
-                
-                <p><strong>快速上手3步：</strong></p>
-                <ol>
-                    <li><strong>访问：</strong>打开 stitch.withgoogle.com</li>
-                    <li><strong>描述UI：</strong>输入“创建一个用户资料卡片，包含头像、姓名、邮箱、编辑按钮”</li>
-                    <li><strong>生成：</strong>AI生成UI → 实时预览 → 复制代码到项目</li>
-                </ol>
-                
-                <div class="example">
-Google风格：<br/>
-• 生成的UI符合Material Design<br/>
-• 代码质量高，直接可用<br/>
-• 支持React、Vue、Angular
-                </div>
-                
-                <p><span class="badge-free">基础免费</span></p>
-            </div>
-            
-            <div class="step-box">
-                <h4>4. Replit Agent - 在线协作开发</h4>
-                <p>🌐 访问：<a href="https://replit.com" target="_blank">replit.com</a></p>
-                <p><strong>特点：</strong>在线IDE + AI助手，支持50+编程语言，实时协作</p>
-                <p><strong>适合：</strong>在线协作、编程学习、API开发测试</p>
-                
-                <p><strong>快速上手4步：</strong></p>
-                <ol>
-                    <li><strong>注册：</strong>访问 replit.com → 用Google或GitHub账号登录</li>
-                    <li><strong>创建项目：</strong>点击"Create Repl" → 选择语言（如Python、Node.js）</li>
-                    <li><strong>问AI：</strong>点击AI图标 → 输入“创建一个Express API服务器”</li>
-                    <li><strong>运行：</strong>点击"Run" → 实时看到效果 → 可一键部署</li>
-                </ol>
-                
-                <div class="example">
-适合场景：<br/>
-• 学习新语言，无需本地配置<br/>
-• 团队实时协作写代码<br/>
-• 快速测试API
-                </div>
-                
-                <p><span class="badge-free">有限制</span> <span class="badge-paid">$7/月</span></p>
-            </div>
-            
-            <div class="tip">
-                <strong>💡 选择建议：</strong><br/>
-                • UI组件生成：<strong>v0.dev</strong>（适合生成单个组件）<br/>
-                • 完整应用：<strong>bolt.new</strong>（适合生成整个项目）<br/>
-                • AI生成UI：<strong>Stitch</strong>（Google出品，快速生成）<br/>
-                • 在线学习：<strong>Replit</strong>（适合学习和练习）
-            </div>
-            
-            <h2 id="design">🖼️ 做设计：用Canva做海报/PPT</h2>
-            
-            <h3>工具：Canva（免费版够用）</h3>
-            
-            <div class="step-box">
-                <h4>简单4步</h4>
-                <ol>
-                    <li><strong>注册登录：</strong>访问 <a href="https://canva.com" target="_blank">canva.com</a>，用Google账号登录</li>
-                    <li><strong>选择模板：</strong>搜索"海报"或"PPT"，找到喜欢的模板</li>
-                    <li><strong>编辑：</strong>双击文字修改，点击图片替换，左侧添加元素</li>
-                    <li><strong>下载：</strong>点击右上角"下载"，选择格式，完成！</li>
-                </ol>
-            </div>
-            
-            <div class="success">
-                ✅ 完成！你已经会用Canva做设计了！
-            </div>
-            
-            <h2 id="video">🎬 剪视频：用剪映加字幕</h2>
-            
-            <h3>工具：剪映（完全免费）</h3>
-            
-            <div class="step-box">
-                <h4>自动加字幕4步</h4>
-                <ol>
-                    <li><strong>下载：</strong>搜索"剪映"下载安装</li>
-                    <li><strong>导入：</strong>点击"开始创作"，选择视频</li>
-                    <li><strong>加字幕：</strong>点击"文字" → "识别字幕" → "自动识别"</li>
-                    <li><strong>导出：</strong>点击"导出"，选择1080P，完成！</li>
-                </ol>
-            </div>
-            
-            <div class="success">
-                ✅ 完成！你已经会用剪映了！
-            </div>
-            
-            <h3>AI视频生成：Sora 2</h3>
-            
-            <div class="step-box">
-                <h4>Sora 2 - OpenAI文字生成视频</h4>
-                <p>🌐 访问：<a href="https://openai.com/sora" target="_blank">openai.com/sora</a></p>
-                <p><strong>特点：</strong>从文字描述直接生成高质量视频，最长60秒，物理规律准确</p>
-                <p><strong>适合：</strong>产品宣传片、教学演示视频、创意视频制作</p>
-                
-                <p><strong>快速上手3步（待正式发布）：</strong></p>
-                <ol>
-                    <li><strong>访问：</strong>打开 openai.com/sora（需要订阅ChatGPT Pro）</li>
-                    <li><strong>描述视频：</strong>详细描述你想要的视频内容、风格、镜头</li>
-                    <li><strong>生成下载：</strong>AI生成视频 → 预览效果 → 满意后下载</li>
-                </ol>
-                
-                <p><strong>Prompt示例：</strong></p>
-                <div class="example">
-输入描述：<br/>
-"创建一个30秒的产品宣传视频：<br/>
-- 场景：现代化办公室，阳光透过落地窗<br/>
-- 镜头：从窗外缓慢推进，展示团队在使用我们的软件协作<br/>
-- 风格：商业广告风格，明亮温暖色调<br/>
-- 音乐：轻快的背景音乐<br/>
-- 文字：最后显示产品名称和Slogan<br/>
-- 分辨率：1920x1080"<br/><br/>
-→ Sora生成视频 → 预览 → 下载使用
-                </div>
-                
-                <div class="example">
-写好Prompt的技巧：<br/>
-• 描述具体场景和环境<br/>
-• 说明镜头运动（推拉摇移）<br/>
-• 指定风格和色调<br/>
-• 说明时长和分辨率
-                </div>
-                
-                <p><span class="badge-paid">价格待定</span>（可能包含在ChatGPT Pro $20/月中）</p>
-            </div>
-            
-            <div class="tip">
-                <strong>💡 视频工具选择：</strong><br/>
-                • 剪辑现有视频：<strong>剪映</strong>（加字幕、剪辑、特效）<br/>
-                • 从零生成视频：<strong>Sora 2</strong>（文字直接生成视频）<br/>
-                • 组合使用：用Sora生成素材，再用剪映剪辑
-            </div>
-            
-            <h2>💡 实用技巧</h2>
-            
-            <div class="highlight">
-                <h4>怎么写好Prompt？公式：角色 + 任务 + 要求 + 格式</h4>
-                <div class="example">
-❌ 差的例子："帮我写代码"<br/><br/>
+<h3 id="2-agent-ai">2. Agent = AI自动干活</h3>
+<div class="codehilite"><pre><span></span><code>你说&quot;修复所有bug&quot;
+AI自动：找bug → 修复 → 测试 → 生成报告
+</code></pre></div>
 
-✅ 好的例子：<br/>
-"你是一个Python专家。<br/>
-任务：创建一个爬虫<br/>
-要求：<br/>
-- 爬取新闻网站标题<br/>
-- 保存到CSV文件<br/>
-- 有完整错误处理<br/>
-- 添加注释<br/>
-格式：给我完整可运行的代码"
-                </div>
-            </div>
-            
-            <h2 id="pricing">📊 价格总结</h2>
-            
-            <table>
-                <tr>
-                    <th>类别</th>
-                    <th>工具</th>
-                    <th>免费版</th>
-                    <th>付费版</th>
-                    <th>推荐度</th>
-                </tr>
-                <tr>
-                    <td rowspan="3"><strong>聊天/通用</strong></td>
-                    <td><strong>Kimi</strong></td>
-                    <td><span class="badge-free">完全免费</span></td>
-                    <td>-</td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>通义千问</strong></td>
-                    <td><span class="badge-free">完全免费</span></td>
-                    <td>¥60/月</td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>豆包</strong></td>
-                    <td><span class="badge-free">完全免费</span></td>
-                    <td>-</td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td rowspan="5"><strong>编程开发</strong></td>
-                    <td><strong>Cursor</strong></td>
-                    <td>有限制</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Claude 4</strong></td>
-                    <td>50次/天</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>GitHub Copilot</strong></td>
-                    <td>-</td>
-                    <td><span class="badge-paid">$10/月</span></td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Gemini 2.5 Pro</strong></td>
-                    <td>有限制</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Grok 4</strong></td>
-                    <td>-</td>
-                    <td><span class="badge-paid">$16/月</span></td>
-                    <td>⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td rowspan="4"><strong>产品经理</strong></td>
-                    <td><strong>ChatGPT</strong></td>
-                    <td>有限制</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Claude 4</strong></td>
-                    <td>50次/天</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Notion AI</strong></td>
-                    <td><span class="badge-free">基础免费</span></td>
-                    <td><span class="badge-paid">$10/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Gamma</strong></td>
-                    <td>400积分</td>
-                    <td><span class="badge-paid">$15/月</span></td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td rowspan="5"><strong>UI生成</strong></td>
-                    <td><strong>v0.dev</strong></td>
-                    <td>200积分/月</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>bolt.new</strong></td>
-                    <td>有限制</td>
-                    <td><span class="badge-paid">$20/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Lovable</strong></td>
-                    <td>-</td>
-                    <td><span class="badge-paid">$29/月</span></td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Stitch</strong></td>
-                    <td><span class="badge-free">基础免费</span></td>
-                    <td>待定</td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Replit Agent</strong></td>
-                    <td>有限制</td>
-                    <td><span class="badge-paid">$7/月</span></td>
-                    <td>⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>设计</strong></td>
-                    <td><strong>Canva</strong></td>
-                    <td>够用</td>
-                    <td><span class="badge-paid">$13/月</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td rowspan="2"><strong>视频</strong></td>
-                    <td><strong>剪映</strong></td>
-                    <td><span class="badge-free">完全免费</span></td>
-                    <td>-</td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-                <tr>
-                    <td><strong>Sora 2</strong></td>
-                    <td>-</td>
-                    <td><span class="badge-paid">待定</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                </tr>
-            </table>
-            
-            <div class="tip">
-                <strong>💰 推荐组合方案：</strong><br/><br/>
-                <strong>1. 完全免费方案（$0/月）</strong><br/>
-                • Kimi/通义千问/豆包（聊天写作）+ Canva（设计）+ 剪映（视频）<br/>
-                • 适合：小白、学生、预算有限<br/><br/>
-                
-                <strong>2. 入门程序员（$10/月）</strong><br/>
-                • GitHub Copilot（$10/月）+ Kimi（免费）+ Claude 4免费版<br/>
-                • 适合：初学编程、学生开发者<br/><br/>
-                
-                <strong>3. 产品经理（$20-30/月）</strong><br/>
-                • ChatGPT Plus（$20/月）+ Notion AI（$10/月）+ Gamma免费版<br/>
-                • 适合：产品经理、项目经理、运营<br/><br/>
-                
-                <strong>4. 专业程序员（$20-40/月）</strong><br/>
-                • Cursor Pro（$20/月）+ Claude 4 Pro（$20/月）+ v0.dev（免费版）<br/>
-                • 适合：全职开发者、创业者<br/><br/>
-                
-                <strong>5. 全栈创业者（$40-60/月）</strong><br/>
-                • Cursor（$20/月）+ bolt.new（$20/月）+ Claude 4（$20/月）<br/>
-                • 适合：独立开发、快速MVP<br/><br/>
-                
-                <strong>6. 终极全能（$60+/月）</strong><br/>
-                • Cursor + Claude 4 + Gemini Advanced + bolt.new + Lovable<br/>
-                • 适合：专业团队、高频使用
-            </div>
-            
-            <h2 id="guide">🎯 快速选择：我该用哪个？</h2>
-            
-            <div class="highlight">
-                <h4>根据你的需求快速选择：</h4>
-                
-                <p><strong>🆓 如果你想完全免费：</strong></p>
-                <ul>
-                    <li>聊天写作 → <strong>Kimi</strong>（超长上下文，200万字）</li>
-                    <li>日常使用 → <strong>通义千问</strong>或<strong>豆包</strong></li>
-                    <li>设计海报 → <strong>Canva</strong>免费版</li>
-                    <li>剪辑视频 → <strong>剪映</strong></li>
-                </ul>
-                
-                <p><strong>💻 如果你是程序员：</strong></p>
-                <ul>
-                    <li>预算少（$10/月）→ <strong>GitHub Copilot</strong></li>
-                    <li>深度开发（$20/月）→ <strong>Cursor</strong>或<strong>Claude 4</strong></li>
-                    <li>超大项目 → <strong>Gemini 2.5 Pro</strong>（200万tokens）</li>
-                    <li>最强组合 → <strong>Cursor + Claude 4</strong>（$40/月）</li>
-                </ul>
-                
-                <p><strong>👨‍💼 如果你是产品经理：</strong></p>
-                <ul>
-                    <li>写PRD文档 → <strong>ChatGPT</strong>或<strong>Claude 4</strong></li>
-                    <li>竞品分析 → <strong>Claude 4</strong>（超长上下文）</li>
-                    <li>项目管理 → <strong>Notion AI</strong>（$10/月）</li>
-                    <li>做汇报PPT → <strong>Gamma</strong>（快速生成）</li>
-                    <li>最佳组合 → <strong>ChatGPT + Notion AI</strong>（$30/月）</li>
-                </ul>
-                
-                <p><strong>🎨 如果你做UI/前端：</strong></p>
-                <ul>
-                    <li>生成组件 → <strong>v0.dev</strong></li>
-                    <li>完整应用 → <strong>bolt.new</strong></li>
-                    <li>AI生成UI → <strong>Stitch</strong>（Google出品）</li>
-                    <li>快速MVP → <strong>Lovable</strong></li>
-                </ul>
-                
-                <p><strong>🎬 如果你做视频：</strong></p>
-                <ul>
-                    <li>剪辑加字幕 → <strong>剪映</strong>（免费）</li>
-                    <li>AI生成视频 → <strong>Sora 2</strong>（待上线）</li>
-                </ul>
-            </div>
-            
-            <h2>🎯 今天就开始！5分钟行动计划</h2>
-            
-            <div class="step-box">
-                <h4>现在就做：</h4>
-                <ol>
-                    <li>打开 <a href="https://kimi.moonshot.cn" target="_blank">kimi.moonshot.cn</a></li>
-                    <li>登录</li>
-                    <li>输入："教我如何用AI提升工作效率"</li>
-                    <li>开始对话</li>
-                </ol>
-                <p style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #10b981;">
-                    <strong>恭喜！你已经开始用AI了！</strong>
-                </p>
-            </div>
-            
-            <div style="text-align: center; margin: 50px 0;">
-                <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
-                    🚀 立即开始 - 打开Kimi
-                </a>
-            </div>
-            
-            <div class="highlight" style="text-align: center; font-size: 1.3em;">
-                <strong>🎉 恭喜你看完了！</strong><br/>
-                <strong>记住：最好的学习方法就是动手试！</strong>
-            </div>
-        </div>
-        
-        <footer style="background: #1f2937; color: white; text-align: center; padding: 40px; border-radius: 0 0 20px 20px;">
-            <p style="font-size: 1.1em; margin-bottom: 10px;"><strong>📅 更新时间：2025年10月4日</strong></p>
-            <p style="font-size: 1em;">💬 有问题？直接问AI："我是新手，应该怎么开始用AI工具？"</p>
-        </footer>
+<h3 id="3-prompt-ai">3. Prompt = 怎么跟AI说话</h3>
+<div class="codehilite"><pre><span></span><code>❌ 差的：&quot;帮我写代码&quot;
+✅ 好的：&quot;用Python写一个读取Excel的函数，要有错误处理&quot;
+</code></pre></div>
+
+<h3 id="4-rules-ai">4. Rules = 让AI遵守规矩</h3>
+<div class="codehilite"><pre><span></span><code>创建 .cursorrules 文件
+写上你的规则，AI自动遵守
+比如：&quot;所有代码必须有注释&quot;
+</code></pre></div>
+
+<hr />
+<h2 id="kimi">👶 完全小白：从Kimi开始</h2>
+<h3 id="kimi_1">工具：Kimi（完全免费）</h3>
+<p><strong>第一步：打开网站</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开浏览器</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">输入网址</span><span class="err">：</span><span class="n">kimi</span><span class="mf">.</span><span class="n">moonshot</span><span class="mf">.</span><span class="n">cn</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">按回车</span>
+</code></pre></div>
+
+<p><strong>第二步：登录</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">看到登录按钮</span><span class="err">，</span><span class="n">点击</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">用手机号或微信登录</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">登录成功</span>
+</code></pre></div>
+
+<p><strong>第三步：开始使用</strong></p>
+<div class="codehilite"><pre><span></span><code>试试这些：
+
+例子1：让AI写周报
+输入：&quot;帮我写一份本周工作周报，包括：完成了用户登录功能开发、修复了3个bug、参加了2次会议&quot;
+
+例子2：总结长文档
+点击上传按钮 → 选择PDF文件 → 问：&quot;总结这个文档的核心内容&quot;
+
+例子3：翻译
+输入：&quot;把这段话翻译成英文：我们的产品已经上线了&quot;
+</code></pre></div>
+
+<p><strong>✅ 完成！你已经学会用AI聊天了！</strong></p>
+<hr />
+<h2 id="ai_1">👨‍💻 程序员：从免费AI开始</h2>
+<h3 id="1ai-studiogoogle">🎁 免费工具1：AI Studio（Google出品，完全免费）</h3>
+<p><strong>第一步：打开网站</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开浏览器</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">输入网址</span><span class="err">：</span><span class="n">aistudio</span><span class="mf">.</span><span class="kr">go</span><span class="n">ogle</span><span class="mf">.</span><span class="n">com</span><span class="o">/</span><span class="n">prompts</span><span class="o">/</span><span class="kr">new</span><span class="n">_chat</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">登录Google账号</span>
+</code></pre></div>
+
+<p><strong>第二步：开始写代码</strong></p>
+<div class="codehilite"><pre><span></span><code>试试这些：
+
+例子1：生成Python代码
+输入：&quot;写一个Python函数，读取CSV文件并统计每列的数据&quot;
+
+例子2：调试代码
+输入：&quot;这段代码为什么报错？[粘贴你的代码]&quot;
+
+例子3：代码解释
+输入：&quot;解释这段JavaScript代码做了什么：[粘贴代码]&quot;
+</code></pre></div>
+
+<p><strong>✅ 完全免费，无限制使用！</strong></p>
+<hr />
+<h3 id="2grokxai">🎁 免费工具2：Grok（xAI出品，实时联网）</h3>
+<p><strong>第一步：访问网站</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开</span><span class="err">：</span><span class="n">grok</span><span class="mf">.</span><span class="n">com</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">用X账号登录</span><span class="err">（</span><span class="n">Twitter账号</span><span class="err">）</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">开始使用</span>
+</code></pre></div>
+
+<p><strong>第二步：写代码</strong></p>
+<div class="codehilite"><pre><span></span><code>特点：能联网查最新技术
+
+例子1：查最新库用法
+输入：&quot;React 19的最新特性是什么？给我代码示例&quot;
+
+例子2：生成代码
+输入：&quot;用最新的Next.js 15创建一个API路由&quot;
+</code></pre></div>
+
+<p><strong>✅ 完全免费，还能实时联网！</strong></p>
+<hr />
+<h3 id="3gemini-cli">🎁 免费工具3：Gemini CLI（命令行工具）</h3>
+<p><strong>安装</strong></p>
+<div class="codehilite"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@google/generative-ai-cli
+</code></pre></div>
+
+<p><strong>使用</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 直接在终端问AI</span>
+gemini<span class="w"> </span><span class="s2">&quot;怎么用git撤销最后一次提交？&quot;</span>
+
+<span class="c1"># 生成代码</span>
+gemini<span class="w"> </span><span class="s2">&quot;写一个bash脚本，批量重命名文件&quot;</span>
+</code></pre></div>
+
+<p><strong>✅ 程序员最爱，终端直接用AI！</strong></p>
+<hr />
+<h3 id="4trae">🎁 免费工具4：TRAE（轻量级编程助手）</h3>
+<p><strong>特点：</strong></p>
+<div class="codehilite"><pre><span></span><code>- 轻量级、启动快
+- 专注编程场景
+- 代码补全和建议
+- 完全免费
+</code></pre></div>
+
+<p><strong>使用场景：</strong></p>
+<div class="codehilite"><pre><span></span><code>- 快速代码片段生成
+- Bug修复建议
+- 代码重构辅助
+</code></pre></div>
+
+<hr />
+<h3 id="5codexopenai">🎁 免费工具5：Codex（OpenAI代码模型）</h3>
+<p><strong>什么是Codex？</strong></p>
+<div class="codehilite"><pre><span></span><code>- OpenAI专门的代码AI
+- GitHub Copilot的底层技术
+- 理解多种编程语言
+</code></pre></div>
+
+<p><strong>怎么用？</strong></p>
+<div class="codehilite"><pre><span></span><code>方式1：GitHub Copilot（$10/月，学生免费）
+方式2：通过OpenAI API使用
+</code></pre></div>
+
+<p><strong>✅ 学生免费使用GitHub Copilot！</strong></p>
+<hr />
+<h3 id="cursor20">💎 进阶工具：Cursor（$20/月，最强编程工具）</h3>
+<p><strong>第一步：下载安装</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="err">访问：</span><span class="n">cursor</span><span class="o">.</span><span class="n">so</span>
+<span class="mf">2.</span><span class="w"> </span><span class="err">点击</span><span class="w"> </span><span class="n">Download</span>
+<span class="mf">3.</span><span class="w"> </span><span class="err">选择你的系统（</span><span class="n">Windows</span><span class="o">/</span><span class="n">Mac</span><span class="o">/</span><span class="n">Linux</span><span class="err">）</span>
+<span class="mf">4.</span><span class="w"> </span><span class="err">下载完成后安装</span>
+<span class="mf">5.</span><span class="w"> </span><span class="err">打开</span><span class="n">Cursor</span>
+</code></pre></div>
+
+<p><strong>第二步：基础设置</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">首次打开</span><span class="err">，</span><span class="n">选择</span><span class="s">&quot;导入VS Code配置&quot;</span><span class="err">（</span><span class="n">如果你用过VS</span><span class="w"> </span><span class="n">Code</span><span class="err">）</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">登录账号</span><span class="err">（</span><span class="n">用GitHub或Google登录</span><span class="err">）</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">点击右上角设置图标</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">选择AI模型</span><span class="err">：</span><span class="n">推荐选</span><span class="s">&quot;Claude 4&quot;</span>
+</code></pre></div>
+
+<p><strong>第三步：创建.cursorrules文件</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">在项目根目录创建文件</span><span class="err">：</span><span class="mf">.</span><span class="n">cursorrules</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">复制粘贴这个模板</span><span class="err">：</span>
+
+<span class="err">#</span><span class="w"> </span><span class="n">我的代码规则</span>
+<span class="o">-</span><span class="w"> </span><span class="n">所有代码必须有注释</span>
+<span class="o">-</span><span class="w"> </span><span class="n">使用清晰的变量名</span>
+<span class="o">-</span><span class="w"> </span><span class="n">函数要有完整的错误处理</span>
+<span class="o">-</span><span class="w"> </span><span class="n">每个函数只做一件事</span>
+</code></pre></div>
+
+<p><strong>第四步：开始写代码</strong></p>
+<p><strong>方法1：用Ctrl+L对话</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">按</span><span class="w"> </span><span class="n">Ctrl</span><span class="o">+</span><span class="n">L</span><span class="err">（</span><span class="n">Mac是Cmd</span><span class="o">+</span><span class="n">L</span><span class="err">）</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="s">&quot;创建一个Python函数，读取Excel文件并返回数据&quot;</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">AI会生成完整代码</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">点击</span><span class="s">&quot;插入代码&quot;</span><span class="n">按钮</span>
+</code></pre></div>
+
+<p><strong>方法2：用Ctrl+K内联编辑</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">写一段代码</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">选中代码</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">按</span><span class="w"> </span><span class="n">Ctrl</span><span class="o">+</span><span class="n">K</span><span class="err">（</span><span class="n">Mac是Cmd</span><span class="o">+</span><span class="n">K</span><span class="err">）</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="s">&quot;添加错误处理&quot;</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">AI自动修改代码</span>
+</code></pre></div>
+
+<p><strong>方法3：用@符号引用文件</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">按Ctrl</span><span class="o">+</span><span class="n">L</span><span class="err">，</span><span class="n">然后输入</span><span class="err">：</span>
+<span class="ss">&quot;@app.py 这个文件的登录逻辑有什么问题？&quot;</span>
+
+<span class="n">AI会读取app</span><span class="p">.</span><span class="n">py文件并分析</span>
+</code></pre></div>
+
+<p><strong>实际例子：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">任务：创建一个用户注册接口</span>
+
+<span class="err">步骤：</span>
+<span class="mf">1.</span><span class="w"> </span><span class="err">按</span><span class="n">Ctrl</span><span class="o">+</span><span class="n">L</span>
+<span class="mf">2.</span><span class="w"> </span><span class="err">输入：</span>
+<span class="w">   </span><span class="s">&quot;创建一个Express API接口 POST /register</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">接收</span><span class="n">email和password</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">验证邮箱格式</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">密码加密用</span><span class="n">bcrypt</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">保存到</span><span class="n">MongoDB</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">返回</span><span class="n">JWT</span><span class="w"> </span><span class="n">token</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">添加完整错误处理</span><span class="s">&quot;</span>
+
+<span class="mf">3.</span><span class="w"> </span><span class="n">AI生成完整代码</span>
+<span class="mf">4.</span><span class="w"> </span><span class="err">点击</span><span class="s">&quot;插入代码&quot;</span>
+<span class="mf">5.</span><span class="w"> </span><span class="err">完成！</span>
+</code></pre></div>
+
+<p><strong>✅ 你已经学会用AI写代码了！</strong></p>
+<hr />
+<h2 id="uistitch">🎨 UI设计师：用Stitch设计稿转代码</h2>
+<h3 id="stitchgoogle">工具：Stitch（Google出品，完全免费）</h3>
+<p><strong>第一步：访问网站</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开浏览器</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="n">stitch</span><span class="mf">.</span><span class="n">withgoogle</span><span class="mf">.</span><span class="n">com</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">登录Google账号</span>
+</code></pre></div>
+
+<p><strong>第二步：上传设计稿</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">准备你的Figma或Sketch设计稿</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">在Stitch中导入设计稿</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">或者直接上传设计图片</span>
+</code></pre></div>
+
+<p><strong>第三步：自动生成代码</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Stitch</span><span class="w"> </span><span class="n">AI自动分析设计稿</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">识别组件</span><span class="err">、</span><span class="n">布局</span><span class="err">、</span><span class="n">样式</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">自动生成React</span><span class="o">/</span><span class="n">Vue</span><span class="o">/</span><span class="n">Angular代码</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">完美还原设计细节</span>
+</code></pre></div>
+
+<p><strong>实际例子：</strong></p>
+<div class="codehilite"><pre><span></span><code>场景：你有一个登录页面的设计稿
+
+步骤：
+1. 在Figma完成设计
+2. 打开Stitch插件（或网页版）
+3. 选择要转换的页面
+4. 点击&quot;生成代码&quot;
+5. 自动生成完整的React组件代码
+6. 复制代码到项目中
+</code></pre></div>
+
+<p><strong>✅ 完全免费！设计稿秒变代码！</strong></p>
+<hr />
+<h2 id="canvappt">🎨 做设计：用Canva做海报/PPT</h2>
+<h3 id="canva">工具：Canva（免费版够用）</h3>
+<p><strong>第一步：注册登录</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">访问</span><span class="err">：</span><span class="n">canva</span><span class="mf">.</span><span class="n">com</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">点击</span><span class="s">&quot;注册&quot;</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">用Google账号登录</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">选择</span><span class="s">&quot;中文界面&quot;</span>
+</code></pre></div>
+
+<p><strong>第二步：选择模板</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">首页搜索框输入</span><span class="s">&quot;海报&quot;</span><span class="n">或</span><span class="s">&quot;PPT&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">浏览海量模板</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">找到喜欢的</span><span class="err">，</span><span class="n">点击</span><span class="s">&quot;使用此模板&quot;</span>
+</code></pre></div>
+
+<p><strong>第三步：编辑</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">双击文字进行修改</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">点击图片可以替换</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">左侧有</span><span class="s">&quot;元素&quot;</span><span class="n">可以添加形状</span><span class="err">、</span><span class="n">图标</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">用AI生成图片</span><span class="err">：</span><span class="n">点击</span><span class="s">&quot;应用&quot;</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="s">&quot;AI图像生成&quot;</span>
+</code></pre></div>
+
+<p><strong>第四步：下载</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">点击右上角</span><span class="s">&quot;下载&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">选择格式</span><span class="err">（</span><span class="n">PNG</span><span class="err">、</span><span class="n">PDF</span><span class="err">、</span><span class="n">PPT</span><span class="err">）</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">点击</span><span class="s">&quot;下载&quot;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">完成</span><span class="err">！</span>
+</code></pre></div>
+
+<p><strong>✅ 完成！你已经会用Canva做设计了！</strong></p>
+<hr />
+<h2 id="_2">🎬 剪视频：用剪映加字幕</h2>
+<h3 id="_3">工具：剪映（完全免费）</h3>
+<p><strong>第一步：下载安装</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">搜索</span><span class="s">&quot;剪映&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">下载电脑版或手机APP</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">安装后打开</span>
+</code></pre></div>
+
+<p><strong>第二步：导入视频</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">点击</span><span class="s">&quot;开始创作&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">选择视频文件</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">拖到时间轴</span>
+</code></pre></div>
+
+<p><strong>第三步：自动加字幕</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">点击左侧</span><span class="s">&quot;文字&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">点击</span><span class="s">&quot;识别字幕&quot;</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">选择</span><span class="s">&quot;自动识别&quot;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">等待几秒</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">字幕自动生成</span><span class="err">！</span>
+</code></pre></div>
+
+<p><strong>第四步：导出</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">点击右上角</span><span class="s">&quot;导出&quot;</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">选择分辨率</span><span class="err">（</span><span class="mf">1080</span><span class="n">P</span><span class="err">）</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">点击</span><span class="s">&quot;导出&quot;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">等待导出完成</span>
+</code></pre></div>
+
+<p><strong>✅ 完成！你已经会用剪映了！</strong></p>
+<hr />
+<h2 id="_4">💡 实用技巧</h2>
+<h3 id="1-prompt">1. 怎么写好Prompt？</h3>
+<p><strong>公式：角色 + 任务 + 要求 + 格式</strong></p>
+<div class="codehilite"><pre><span></span><code>❌ 差的例子：
+&quot;帮我写代码&quot;
+
+✅ 好的例子：
+&quot;你是一个Python专家。
+任务：创建一个爬虫
+要求：
+- 爬取新闻网站标题
+- 保存到CSV文件
+- 有完整错误处理
+- 添加注释
+格式：给我完整可运行的代码&quot;
+</code></pre></div>
+
+<h3 id="2">2. 遇到问题怎么办？</h3>
+<p><strong>步骤：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">复制错误信息</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">问AI</span><span class="err">：</span><span class="s">&quot;这个错误是什么意思？怎么解决？&quot;</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">AI会解释原因并给出解决方案</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">按照方案修复</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">如果还不行</span><span class="err">，</span><span class="n">继续问AI</span>
+</code></pre></div>
+
+<h3 id="3-ai">3. 如何让AI理解你的项目？</h3>
+<p><strong>Cursor中：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nx">使用</span><span class="err">@</span><span class="nx">符号引用文件</span><span class="err">：</span>
+
+<span class="s">&quot;@README.md @package.json </span>
+<span class="s">分析这个项目是做什么的&quot;</span>
+
+<span class="s">&quot;@src/utils </span>
+<span class="s">这个文件夹里的工具函数有什么作用？&quot;</span>
+</code></pre></div>
+
+<hr />
+<h2 id="_5">📊 价格总结</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>免费版</th>
+<th>付费版</th>
+<th>推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kimi</strong></td>
+<td>✅ 完全免费</td>
+<td>-</td>
+<td>小白必备</td>
+</tr>
+<tr>
+<td><strong>AI Studio</strong></td>
+<td>✅ 完全免费</td>
+<td>-</td>
+<td>编程推荐</td>
+</tr>
+<tr>
+<td><strong>Grok</strong></td>
+<td>✅ 完全免费</td>
+<td>-</td>
+<td>联网查资料</td>
+</tr>
+<tr>
+<td><strong>Gemini CLI</strong></td>
+<td>✅ 完全免费</td>
+<td>-</td>
+<td>终端神器</td>
+</tr>
+<tr>
+<td><strong>Stitch</strong></td>
+<td>✅ 完全免费</td>
+<td>-</td>
+<td>UI转代码</td>
+</tr>
+<tr>
+<td><strong>Canva</strong></td>
+<td>够用</td>
+<td>$13/月</td>
+<td>免费版就行</td>
+</tr>
+<tr>
+<td><strong>剪映</strong></td>
+<td>✅ 完全免费</td>
+<td>-</td>
+<td>视频必备</td>
+</tr>
+<tr>
+<td><strong>Cursor</strong></td>
+<td>有限制</td>
+<td>$20/月</td>
+<td>进阶选择</td>
+</tr>
+</tbody>
+</table>
+<p><strong>🎁 免费组合（推荐！）：</strong>
+- <strong>小白：</strong> Kimi + Canva + 剪映 = <strong>$0</strong>
+- <strong>程序员：</strong> AI Studio + Grok + Gemini CLI + Stitch = <strong>$0</strong>
+- <strong>全能免费：</strong> 以上全部 = <strong>$0</strong></p>
+<p><strong>💎 进阶组合：</strong>
+- <strong>专业开发：</strong> Cursor（$20/月）+ 免费工具 = <strong>$20/月</strong></p>
+<hr />
+<h2 id="_6">⚠️ 注意事项</h2>
+<h3 id="1">1. 不要上传的东西</h3>
+<div class="codehilite"><pre><span></span><code>❌ 公司机密代码
+❌ 客户隐私数据
+❌ 密码和密钥
+❌ 未发布的商业计划
+</code></pre></div>
+
+<h3 id="2-ai">2. AI生成的内容要检查</h3>
+<div class="codehilite"><pre><span></span><code>✅ 代码要测试后再用
+✅ 文章要自己review
+✅ 设计要检查细节
+✅ 不要盲目相信AI
+</code></pre></div>
+
+<h3 id="3">3. 从简单开始</h3>
+<div class="codehilite"><pre><span></span><code>第1周：只用免费工具（Kimi）
+第2周：试试Cursor写简单代码
+第3周：尝试更多功能
+第4周：决定是否付费
+</code></pre></div>
+
+<hr />
+<h2 id="_7">🎯 今天就开始！</h2>
+<h3 id="5">5分钟行动计划：</h3>
+<p><strong>现在就做（小白）：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开</span><span class="w"> </span><span class="n">kimi</span><span class="mf">.</span><span class="n">moonshot</span><span class="mf">.</span><span class="n">cn</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">登录</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="s">&quot;教我如何用AI提升工作效率&quot;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">开始对话</span>
+
+<span class="n">恭喜</span><span class="err">！</span><span class="n">你已经开始用AI了</span><span class="err">！</span>
+</code></pre></div>
+
+<p><strong>现在就做（程序员）：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开</span><span class="w"> </span><span class="n">aistudio</span><span class="mf">.</span><span class="kr">go</span><span class="n">ogle</span><span class="mf">.</span><span class="n">com</span><span class="o">/</span><span class="n">prompts</span><span class="o">/</span><span class="kr">new</span><span class="n">_chat</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">登录Google账号</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">输入</span><span class="err">：</span><span class="s">&quot;写一个Python函数读取JSON文件&quot;</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">看AI生成代码</span>
+
+<span class="n">恭喜</span><span class="err">！</span><span class="n">你已经用AI写代码了</span><span class="err">！</span>
+</code></pre></div>
+
+<p><strong>明天试试：</strong></p>
+<div class="codehilite"><pre><span></span><code>- 让Kimi帮你写周报
+- 用Grok查最新技术资料
+- 用AI Studio生成代码
+- 用Stitch转换设计稿
+</code></pre></div>
+
+<p><strong>本周尝试（全免费）：</strong></p>
+<div class="codehilite"><pre><span></span><code>如果你是程序员：
+→ 试试 AI Studio + Grok + Gemini CLI
+
+如果你做UI：
+→ 用Stitch转换Figma设计稿
+
+如果你做设计：
+→ 用Canva做一张海报
+
+如果你剪视频：
+→ 用剪映给视频加字幕
+</code></pre></div>
+
+<hr />
+<h2 id="_8">📚 学习资源</h2>
+<p><strong>视频教程（B站搜索）：</strong>
+- "Cursor教程新手入门"
+- "Kimi使用教程"
+- "剪映自动字幕教程"</p>
+<p><strong>官网文档：</strong>
+- Kimi：kimi.moonshot.cn
+- AI Studio：aistudio.google.com
+- Grok：grok.com
+- Stitch：stitch.withgoogle.com
+- Cursor：cursor.so</p>
+<hr />
+<h2 id="_9">❓ 常见问题</h2>
+<p><strong>Q1: 我是小白，从哪开始？</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">A</span><span class="o">:</span><span class="w"> </span><span class="err">从</span><span class="n">Kimi开始</span><span class="err">！完全免费，打开网页就能用。</span>
+<span class="w">   </span><span class="err">第一步：</span><span class="n">kimi</span><span class="o">.</span><span class="na">moonshot</span><span class="o">.</span><span class="na">cn</span>
+<span class="w">   </span><span class="err">第二步：登录</span>
+<span class="w">   </span><span class="err">第三步：输入</span><span class="s2">&quot;你好&quot;</span><span class="err">开始聊天</span>
+</code></pre></div>
+
+<p><strong>Q2: Cursor值得付费吗？</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">A</span><span class="o">:</span><span class="w"> </span><span class="err">如果你是程序员，非常值得！</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">能提升</span><span class="mi">50</span><span class="o">%</span><span class="err">编码速度</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">帮你理解陌生代码</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">自动生成测试</span>
+<span class="w">   </span><span class="err">但如果你不常写代码，用免费的</span><span class="n">Kimi就够了</span>
+</code></pre></div>
+
+<p><strong>Q3: 怎么判断AI给的代码能不能用？</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">A</span><span class="o">:</span><span class="w"> </span><span class="err">三步检查：</span>
+<span class="w">   </span><span class="mi">1</span><span class="o">.</span><span class="w"> </span><span class="err">看代码有没有注释</span>
+<span class="w">   </span><span class="mi">2</span><span class="o">.</span><span class="w"> </span><span class="err">运行一遍测试</span>
+<span class="w">   </span><span class="mi">3</span><span class="o">.</span><span class="w"> </span><span class="err">问</span><span class="n">AI</span><span class="err">：</span><span class="s2">&quot;这段代码有什么潜在问题？&quot;</span>
+</code></pre></div>
+
+<p><strong>Q4: AI会替代我的工作吗？</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">A</span><span class="o">:</span><span class="w"> </span><span class="err">不会！但是：</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">会用</span><span class="n">AI的人</span><span class="err">，会替代不会用</span><span class="n">AI的人</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="n">AI是工具</span><span class="err">，不是替代品</span>
+<span class="w">   </span><span class="o">-</span><span class="w"> </span><span class="err">现在学会</span><span class="n">AI</span><span class="err">，就是为未来投资</span>
+</code></pre></div>
+
+<hr />
+<p><strong>🎉 恭喜你看完了！现在就打开Kimi试试吧！</strong></p>
+<p><strong>记住：最好的学习方法就是动手试！</strong></p>
+<hr />
+<hr />
+<h2 id="_10">🌟 核心推荐（全免费）</h2>
+<p><strong>编程开发：</strong>
+- ✅ AI Studio（Google免费AI）
+- ✅ Grok（实时联网）
+- ✅ Gemini CLI（终端工具）
+- ✅ TRAE（轻量助手）</p>
+<p><strong>UI设计：</strong>
+- ✅ Stitch（设计稿转代码）
+- ✅ Canva（图片设计）</p>
+<p><strong>视频剪辑：</strong>
+- ✅ 剪映（自动字幕）</p>
+<p><strong>日常使用：</strong>
+- ✅ Kimi（超长上下文）</p>
+<p><strong>💡 以上全部免费，满足90%需求！</strong></p>
+<hr />
+<p>📅 <strong>更新时间：</strong> 2025年10月9日<br />
+💬 <strong>有问题？</strong> 直接问AI："我是新手，应该怎么开始用AI工具？"</p>
     </div>
-    
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <a href="#" class="back-to-top">↑</a>
     
     <script>
-        // 返回顶部按钮
-        const backToTop = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        
-        backToTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // 平滑滚动到锚点
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 80; // 导航栏高度
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
