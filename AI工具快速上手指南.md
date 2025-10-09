@@ -487,6 +487,296 @@ codex "帮我分析这个项目的性能瓶颈"
 
 ---
 
+### 🎁 免费工具6：Claude（Anthropic AI助手）⭐⭐⭐⭐⭐
+
+**💡 什么是 Claude？**
+```
+- Anthropic 开发的 AI 助手
+- 200K tokens 超长上下文（约15万字代码）
+- 强大的代码生成和分析能力
+- 支持多模态（代码、文档、图片、PDF）
+- 网页版 + 桌面版
+```
+
+**🎯 两种使用方式**
+
+---
+
+**方式1：Claude 网页版（免费）**
+
+**第一步：访问注册**
+```
+1. 打开浏览器
+2. 访问：https://claude.ai/
+3. 点击"Sign up"注册
+4. 使用邮箱或Google账号登录
+```
+
+**第二步：开始编程**
+```
+免费版每天约50次对话，足够日常使用
+
+在对话框输入：
+"用 Python 写一个爬虫，爬取新闻网站的标题和链接
+- 使用 requests 和 BeautifulSoup
+- 保存到 CSV 文件
+- 添加错误处理
+- 包含完整注释"
+```
+
+**第三步：利用超长上下文**
+```
+Claude 的优势：200K tokens 上下文
+
+你可以：
+1. 一次性粘贴整个项目代码（30-50个文件）
+2. 上传完整的技术文档 PDF
+3. 让 Claude 理解整个项目后再提问
+
+示例：
+"我粘贴了整个后端项目代码，请帮我：
+1. 找出所有性能瓶颈
+2. 检查安全漏洞
+3. 优化数据库查询
+4. 给出详细的改进方案"
+```
+
+**第四步：Projects 功能（知识库）**
+```
+创建 Project 存储项目知识：
+
+1. 点击 "New Project"
+2. 添加项目文档：
+   - 架构设计文档
+   - API 文档
+   - 数据库 Schema
+   - 代码规范
+3. 在 Project 中对话，Claude 会记住所有内容
+
+示例：
+Project: "电商后端项目"
+- 文档1: 技术架构（微服务、gRPC）
+- 文档2: API 文档（OpenAPI）
+- 文档3: 数据库设计
+- 文档4: 编码规范
+
+每次对话，Claude 都会基于这些知识回答
+```
+
+---
+
+**方式2：Claude Desktop（桌面版）**
+
+**第一步：下载安装**
+```
+1. 访问：https://claude.ai/download
+2. 选择系统版本：
+   - macOS
+   - Windows
+3. 下载并安装
+```
+
+**第二步：配置 MCP（Model Context Protocol）**
+
+**什么是 MCP？**
+```
+让 Claude 能直接访问：
+- 你的本地文件系统
+- 数据库
+- GitHub 仓库
+- 各种 API
+
+就像给 Claude 装了"USB接口"
+```
+
+**MCP 配置示例（macOS）**
+```json
+配置文件位置：
+~/Library/Application Support/Claude/claude_desktop_config.json
+
+内容：
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/你的用户名/项目目录"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "你的GitHub Token"
+      }
+    }
+  }
+}
+```
+
+**第三步：使用 MCP 功能**
+```
+配置好 MCP 后，Claude 可以：
+
+1. 读取本地项目文件
+   "读取我的项目 /Users/xxx/myapp 的所有代码，
+    找出所有 TODO 注释"
+
+2. 访问 GitHub
+   "查看我 GitHub 上 myproject 仓库的所有 Issue，
+    总结最紧急的5个问题"
+
+3. 直接修改文件
+   "修改 src/app.js 文件，添加错误处理中间件"
+```
+
+---
+
+**🎯 实战案例**
+
+**案例1：代码审查**
+```
+你："这是我的 Express API 代码：[粘贴代码]
+    请全面审查，包括：
+    - 安全问题
+    - 性能问题
+    - 最佳实践
+    - 代码风格"
+
+Claude 会：
+1. 逐行分析代码
+2. 指出具体问题
+3. 给出修复建议
+4. 提供改进后的代码
+```
+
+**案例2：学习新技术**
+```
+你："我是 React 新手，如何使用 React Hooks？
+    给我一个完整的 Todo 应用示例"
+
+Claude 会：
+1. 解释 Hooks 概念（useState、useEffect）
+2. 生成完整代码
+3. 添加详细注释
+4. 讲解每部分的作用
+5. 给出最佳实践建议
+```
+
+**案例3：调试问题**
+```
+你："我的代码报错：
+    TypeError: Cannot read property 'map' of undefined
+    
+    代码：[粘贴代码]
+    
+    如何修复？"
+
+Claude 会：
+1. 分析错误原因
+2. 定位具体位置
+3. 解释为什么出错
+4. 提供多种修复方案
+5. 给出预防建议
+```
+
+**案例4：架构设计**
+```
+你："设计一个微服务电商系统架构
+    需求：
+    - 支持百万用户
+    - 高可用
+    - 技术栈：Node.js + Go + PostgreSQL + Redis
+    - 使用 Kubernetes 部署"
+
+Claude 会：
+1. 绘制架构图（文字描述）
+2. 设计各个微服务
+3. 数据库分库分表方案
+4. 缓存策略
+5. 消息队列设计
+6. 监控和日志方案
+```
+
+---
+
+**💡 使用技巧**
+
+**技巧1：XML 格式提问（Claude 特别擅长）**
+```xml
+<task>
+  <context>
+    我有一个 Express 项目，需要添加用户认证
+  </context>
+  <requirements>
+    - 使用 JWT token
+    - 密码用 bcrypt 加密
+    - 支持刷新 token
+    - 包含权限验证中间件
+  </requirements>
+  <constraints>
+    - 使用 TypeScript
+    - 遵循 RESTful 规范
+    - 完整错误处理
+  </constraints>
+  <output_format>
+    1. 先给出整体架构说明
+    2. 然后逐个文件提供代码
+    3. 最后给出测试用例
+  </output_format>
+</task>
+```
+
+**技巧2：思维链提问**
+```
+"请分析这段代码的性能问题，按以下步骤：
+1. 识别性能瓶颈
+2. 分析根本原因
+3. 提出3个优化方案
+4. 比较各方案优缺点
+5. 给出推荐方案和代码"
+```
+
+**技巧3：上传多个文件**
+```
+1. 上传整个项目的 zip 文件
+2. 或者上传多个关键文件
+3. Claude 会理解整个项目结构
+4. 然后基于全局理解回答问题
+```
+
+---
+
+**💰 价格**
+```
+免费版：
+- 每天约 50 次对话
+- 使用 Claude 3.5 Sonnet
+- 足够个人学习使用
+
+Pro 版：$20/月
+- 5 倍使用量（约 250 次/天）
+- 优先访问新功能
+- Projects 功能（知识库）
+- Claude Desktop + MCP
+```
+
+**🚀 快速开始**
+```
+1. 访问 https://claude.ai/
+2. 注册登录
+3. 输入你的第一个编程问题
+4. 开始使用！
+
+免费版足够日常编程使用！
+```
+
+**✅ 官网：https://claude.ai/**
+
+---
+
 ### 💎 进阶工具：Cursor（$20/月，最强编程工具）
 
 **第一步：下载安装**
