@@ -139,7 +139,7 @@ AI自动：找bug → 修复 → 测试 → 生成报告
 
 **安装**
 ```bash
-npm install -g @google/generative-ai-cli
+npm install -g @google/gemini-cli
 ```
 
 **使用**
@@ -149,6 +149,9 @@ gemini "怎么用git撤销最后一次提交？"
 
 # 生成代码
 gemini "写一个bash脚本，批量重命名文件"
+
+# 解释代码
+gemini "解释这段代码在做什么：[粘贴代码]"
 ```
 
 **✅ 程序员最爱，终端直接用AI！**
