@@ -5,142 +5,342 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI工具团队分享会 - 2025完整指南</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #667eea; --secondary: #764ba2; --success: #10b981;
-            --warning: #f59e0b; --dark: #1f2937; --light: #f9fafb;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-            line-height: 1.8; color: #333;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            padding: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
         }
+        
         .container {
-            max-width: 1600px; margin: 0 auto; background: white;
-            border-radius: 20px; box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white; padding: 80px 60px; text-align: center;
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
         }
-        header h1 { font-size: 3.5em; margin-bottom: 20px; }
-        nav {
-            background: var(--dark); padding: 20px; position: sticky; top: 0; z-index: 1000;
-        }
-        nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-        nav a {
-            color: white; text-decoration: none; font-weight: 600;
-            padding: 10px 20px; border-radius: 8px; transition: all 0.3s;
-        }
-        nav a:hover { background: var(--primary); }
-        .content { padding: 60px; }
-        .section { margin: 60px 0; }
+        
         h2 {
-            color: var(--primary); font-size: 2.5em; margin: 40px 0 30px;
-            padding-bottom: 15px; border-bottom: 4px solid var(--primary);
+            color: #764ba2;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid #667eea;
         }
-        h3 { color: var(--secondary); font-size: 2em; margin: 35px 0 20px; }
-        h4 { color: var(--primary); font-size: 1.4em; margin: 25px 0 15px; }
-        .tool-card {
-            background: white; border-radius: 15px; padding: 40px; margin: 30px 0;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 6px solid var(--primary);
+        
+        h3 {
+            color: #555;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
-        .code-block {
-            background: #1e293b; color: #e2e8f0; padding: 20px;
-            border-radius: 10px; margin: 15px 0; overflow-x: auto;
+        
+        h4 {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
             font-family: 'Courier New', monospace;
+            color: #e83e8c;
         }
+        
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: #333;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #eee;
+            margin: 30px 0;
+        }
+        
         .highlight {
-            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
-            padding: 20px; border-left: 5px solid var(--warning);
-            border-radius: 10px; margin: 20px 0;
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
         }
-        .info-box {
-            background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
-            padding: 20px; border-left: 5px solid #3b82f6;
-            border-radius: 10px; margin: 20px 0;
-        }
-        a { color: var(--primary); text-decoration: none; font-weight: 600; }
-        a:hover { text-decoration: underline; }
-        ul { margin-left: 30px; }
-        li { margin: 10px 0; line-height: 1.8; }
-        .back-to-top {
-            position: fixed; bottom: 40px; right: 40px;
-            background: var(--primary); color: white;
-            width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8em; cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            opacity: 0; transition: all 0.3s;
-        }
-        .back-to-top.show { opacity: 1; }
-        .back-to-top:hover { transform: translateY(-8px); }
+        
         @media (max-width: 768px) {
-            .content { padding: 30px; }
-            header h1 { font-size: 2.5em; }
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🤖 AI工具团队分享会</h1>
-            <p style="font-size: 1.3em; margin-top: 15px;">2025年最全AI工具指南 - MCP、Agent、Prompt、Rules详解</p>
-            <p style="margin-top: 20px; font-size: 1.1em;">📅 2025年10月4日 | 📊 适用于研发、产品、设计团队</p>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href="#concepts">核心概念</a></li>
-                <li><a href="#dev-tools">编程工具</a></li>
-                <li><a href="#ui-tools">UI生成</a></li>
-                <li><a href="#general">通用工具</a></li>
-                <li><a href="#design">设计工具</a></li>
-                <li><a href="#pricing">价格</a></li>
-            </ul>
-        </nav>
-        
-        <div class="content">
-<p><h1>AI工具终极使用指南</h1></p><p>> 📌 **2025年10月最新版** - 涵盖所有主流AI工具，包含MCP、Agent、Prompt、Rules详解</p><p>---</p><p><h2 id="concepts">📚 核心概念解释 - 必读】</h2></p><p>在开始之前，先理解这些核心概念：</p><p><h3>1️⃣ MCP (Model Context Protocol) - 模型上下文协议</h3></p><p>**💡 是什么？**
+        <h1 id="ai-2025">AI工具团队分享会 - 2025完整指南</h1>
+<blockquote>
+<p>📌 <strong>2025年10月最新版</strong> - 涵盖所有主流AI工具，包含MCP、Agent、Prompt、Rules详解</p>
+<p>📅 2025年10月4日 | 📊 适用于研发、产品、设计团队</p>
+</blockquote>
+<hr />
+<h2 id="-">🚀 快速导航 - 按角色选择</h2>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>推荐工具</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>👶 <strong>完全小白</strong></td>
+<td>Kimi（免费）</td>
+<td>200万字超长上下文，完全免费，国内直接访问</td>
+</tr>
+<tr>
+<td>👨‍💻 <strong>程序员</strong></td>
+<td>Cursor + Claude 4 + AI Studio（免费）</td>
+<td>最强编程组合，支持MCP、Agent，完全免费</td>
+</tr>
+<tr>
+<td>🎨 <strong>UI设计师</strong></td>
+<td>Stitch（免费）</td>
+<td>Google出品，设计稿自动生成代码</td>
+</tr>
+<tr>
+<td>👨‍💼 <strong>产品经理</strong></td>
+<td>ChatGPT + Notion AI</td>
+<td>PRD撰写、会议纪要、需求管理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_1">📋 目录</h2>
 <ul>
-<li>Anthropic开发的开放协议，让AI能连接外部数据源</li>
-<li>就像给AI装了"USB接口"，可以插入各种工具和数据源</li>
-</ul></p><p>**🎯 能做什么？**
+<li><a href="#核心概念解释">核心概念解释</a></li>
+<li><a href="#mcp-model-context-protocol">MCP (Model Context Protocol)</a></li>
+<li><a href="#ai-agent">AI Agent</a></li>
+<li><a href="#prompt-提示词">Prompt (提示词)</a></li>
+<li><a href="#rules-规则">Rules (规则)</a></li>
+<li><a href="#编程开发工具">编程开发工具</a></li>
+<li><a href="#1-cursor---ai原生代码编辑器">Cursor</a></li>
+<li><a href="#2-claude-4-sonnet---最强编程ai">Claude 4</a></li>
+<li><a href="#3-ai-studio---google免费ai工具">AI Studio</a></li>
+<li><a href="#4-grok---xai最新模型">Grok</a></li>
+<li><a href="#5-gemini-cli---命令行ai工具">Gemini CLI</a></li>
+<li><a href="#6-trae---轻量级ai编程助手">TRAE</a></li>
+<li><a href="#7-codex---openai代码模型">Codex</a></li>
+<li><a href="#ui代码生成工具">UI代码生成工具</a></li>
+<li><a href="#1-stitch---google设计转代码工具">Stitch</a></li>
+<li><a href="#小白通用工具">小白/通用工具</a></li>
+<li><a href="#1-kimi---月之暗面超长上下文ai">Kimi</a></li>
+<li><a href="#2-通义千问---阿里云多模态ai">通义千问</a></li>
+<li><a href="#3-豆包---字节跳动ai助手">豆包</a></li>
+<li><a href="#4-chatgpt---openai经典ai">ChatGPT</a></li>
+<li><a href="#5-perplexity-ai---ai搜索引擎">Perplexity AI</a></li>
+<li><a href="#设计图像视频工具">设计/图像/视频工具</a></li>
+<li><a href="#1-剪映---视频剪辑ai工具">剪映</a></li>
+<li><a href="#2-canva---零基础设计工具">Canva</a></li>
+<li><a href="#价格汇总">价格汇总</a></li>
+</ul>
+<hr />
+<div id="核心概念解释"></div>
+
+<h2 id="_2">📚 核心概念解释（必读）</h2>
+<p>在使用AI工具之前，先理解这4个核心概念，它们决定了你能否高效使用AI工具：</p>
+<hr />
+<div id="mcp-model-context-protocol"></div>
+
+<h3 id="1-mcp-model-context-protocol-">1️⃣ MCP (Model Context Protocol) - 模型上下文协议</h3>
+<h4 id="_3">💡 是什么？</h4>
+<p>Anthropic开发的开放协议，让AI能连接外部数据源。<strong>就像给AI装了"USB接口"</strong>，可以插入各种工具和数据。</p>
+<h4 id="_4">🎯 能做什么？</h4>
 <ul>
 <li>✅ 让Claude直接读取你的本地文件系统</li>
 <li>✅ 连接数据库（MySQL、PostgreSQL等）</li>
 <li>✅ 集成外部服务（GitHub、Notion、Google Drive）</li>
 <li>✅ 调用自定义API和工具</li>
 <li>✅ 实时获取最新数据</li>
-</ul></p><p>**📌 实际应用：**
-<div class="code-block">
-传统方式：
-你：复制代码 → 粘贴给AI → AI分析 → 你再粘贴回去</p><p>使用MCP：
-你：让AI直接读取项目 → AI自动分析所有文件 → AI直接修改文件
-</div></p><p>**🔧 支持MCP的工具：**
+</ul>
+<h4 id="_5">📌 对比示例</h4>
+<p><strong>❌ 没有MCP：</strong></p>
+<div class="codehilite"><pre><span></span><code>你：复制代码 → 粘贴给AI → AI分析 → 你再粘贴回去
+</code></pre></div>
+
+<p><strong>✅ 使用MCP：</strong></p>
+<div class="codehilite"><pre><span></span><code>你：让AI直接读取项目 → AI自动分析所有文件 → AI直接修改文件
+</code></pre></div>
+
+<h4 id="mcp">🔧 支持MCP的工具</h4>
 <ul>
-<li>Claude Desktop (原生支持)</li>
-<li>Cursor (通过MCP服务器)</li>
-</ul></p><p>---</p><p><h3>2️⃣ AI Agent - AI代理</h3></p><p>**💡 是什么？**
-<ul>
-<li>能自主规划、执行多步骤任务的AI系统</li>
-<li>不只是回答问题，而是主动完成复杂任务</li>
-</ul></p><p>**🎯 能做什么？**
+<li><strong>Claude Desktop</strong>（原生支持）</li>
+<li><strong>Cursor</strong>（通过MCP服务器）</li>
+</ul>
+<h4 id="mcp_1">📝 MCP配置示例</h4>
+<p><strong>Claude Desktop配置文件位置：</strong>
+- macOS: <code>~/Library/Application Support/Claude/claude_desktop_config.json</code>
+- Windows: <code>%APPDATA%\Claude\claude_desktop_config.json</code></p>
+<p><strong>配置示例：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;filesystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@modelcontextprotocol/server-filesystem&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/path/to/project&quot;</span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;github&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;@modelcontextprotocol/server-github&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;GITHUB_TOKEN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your_token_here&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<div id="ai-agent"></div>
+
+<h3 id="2-ai-agent-ai">2️⃣ AI Agent - AI代理</h3>
+<h4 id="_6">💡 是什么？</h4>
+<p>能<strong>自主规划、执行多步骤任务</strong>的AI系统。不只是回答问题，而是主动完成复杂任务。</p>
+<h4 id="_7">🎯 能做什么？</h4>
 <ul>
 <li>✅ 自动分解复杂任务为多个步骤</li>
 <li>✅ 调用多个工具和API</li>
 <li>✅ 自我纠错和迭代优化</li>
 <li>✅ 并行处理多个子任务</li>
 <li>✅ 生成完整的解决方案</li>
-</ul></p><p>**📌 实际应用：**
-<div class="code-block">
-普通AI对话：
-你："这段代码有bug吗？"
-AI："有，第12行空指针异常"
-你："怎么修？"
-AI："改成这样..."</p><p>AI Agent：
-你："帮我修复项目中的所有bug并优化性能"
+</ul>
+<h4 id="_8">📌 对比示例</h4>
+<p><strong>❌ 普通AI对话：</strong></p>
+<div class="codehilite"><pre><span></span><code>你：&quot;这段代码有bug吗？&quot;
+AI：&quot;有，第12行空指针异常&quot;
+你：&quot;怎么修？&quot;
+AI：&quot;改成这样...&quot;
+</code></pre></div>
+
+<p><strong>✅ AI Agent：</strong></p>
+<div class="codehilite"><pre><span></span><code>你：&quot;帮我修复项目中的所有bug并优化性能&quot;
+
 AI Agent自动：
   1. 扫描所有代码文件
   2. 静态分析找出潜在bug
@@ -149,173 +349,201 @@ AI Agent自动：
   5. 性能分析找出瓶颈
   6. 优化慢查询和算法
   7. 生成详细修复报告
-</div></p><p>**🔧 支持Agent的工具：**
+</code></pre></div>
+
+<h4 id="agent">🔧 支持Agent的工具</h4>
 <ul>
-<li>Cursor (Background Agent)</li>
-<li>bolt.new (自动生成完整项目)</li>
-<li>GitHub Copilot Workspace</li>
-</ul></p><p>---</p><p><h3>3️⃣ Prompt - 提示词/指令</h3></p><p>**💡 是什么？**
-<ul>
-<li>你给AI的指令、问题或要求</li>
-<li>决定了AI理解需求和输出质量的关键</li>
-</ul></p><p>**🎯 好Prompt的特征：**
+<li><strong>Cursor</strong>（Background Agent）</li>
+<li><strong>bolt.new</strong>（自动生成完整项目）</li>
+<li><strong>GitHub Copilot Workspace</strong></li>
+</ul>
+<hr />
+<div id="prompt-提示词"></div>
+
+<h3 id="3-prompt-">3️⃣ Prompt - 提示词/指令</h3>
+<h4 id="_9">💡 是什么？</h4>
+<p>你给AI的指令、问题或要求。<strong>决定了AI理解需求和输出质量的关键</strong>。</p>
+<h4 id="prompt">🎯 好Prompt的特征</h4>
 <ul>
 <li>✅ 清晰具体的需求描述</li>
 <li>✅ 提供充足的上下文信息</li>
 <li>✅ 明确期望的输出格式</li>
 <li>✅ 包含约束条件和边界情况</li>
-</ul></p><p>**📌 对比示例：**</p><p>**❌ 差的Prompt：**
-<div class="code-block">
-"帮我写个函数"
-</div></p><p>**✅ 好的Prompt：**
-<div class="code-block">
-用TypeScript写一个异步函数getUserById：
-<ul>
-<li>输入：userId (string类型)</li>
-<li>功能：从PostgreSQL数据库查询用户信息</li>
-<li>输出：返回User对象（包含id, name, email字段）</li>
-<li>错误处理：用户不存在返回null，数据库错误抛出异常</li>
-<li>使用Prisma ORM</li>
-<li>添加JSDoc注释</li>
 </ul>
-</div></p><p>**🔧 Prompt工程技巧：**
-1. **角色扮演**："你是一个资深的Python架构师..."
-2. **分步指导**："第一步...第二步...第三步..."
-3. **Few-shot示例**：提供2-3个示例让AI理解模式
-4. **思维链**："让我们一步步思考..."
-5. **格式约束**："用Markdown表格输出结果"</p><p>---</p><p><h3>4️⃣ Rules - 规则/代码规范</h3></p><p>**💡 是什么？**
-<ul>
-<li>给AI设定的行为规范和代码标准</li>
-<li>在Cursor中是`.cursorrules`文件</li>
-<li>让AI自动遵循团队的编码规范</li>
-</ul></p><p>**🎯 能做什么？**
+<h4 id="_10">📌 对比示例</h4>
+<p><strong>❌ 差的Prompt：</strong></p>
+<div class="codehilite"><pre><span></span><code>&quot;帮我写个函数&quot;
+</code></pre></div>
+
+<p><strong>✅ 好的Prompt：</strong></p>
+<div class="codehilite"><pre><span></span><code>用TypeScript写一个异步函数getUserById：
+- 输入：userId (string类型)
+- 功能：从PostgreSQL数据库查询用户信息
+- 输出：返回User对象（包含id, name, email字段）
+- 错误处理：用户不存在返回null，数据库错误抛出异常
+- 使用Prisma ORM
+- 添加JSDoc注释
+</code></pre></div>
+
+<h4 id="prompt_1">🔧 Prompt工程技巧</h4>
+<ol>
+<li><strong>角色扮演</strong>："你是一个资深的Python架构师..."</li>
+<li><strong>分步指导</strong>："第一步...第二步...第三步..."</li>
+<li><strong>Few-shot示例</strong>：提供2-3个示例让AI理解模式</li>
+<li><strong>思维链</strong>："让我们一步步思考..."</li>
+<li><strong>格式约束</strong>："用Markdown表格输出结果"</li>
+</ol>
+<hr />
+<div id="rules-规则"></div>
+
+<h3 id="4-rules-">4️⃣ Rules - 规则/代码规范</h3>
+<h4 id="_11">💡 是什么？</h4>
+<p>给AI设定的行为规范和代码标准。在Cursor中是<strong><code>.cursorrules</code>文件</strong>。让AI自动遵循团队的编码规范。</p>
+<h4 id="_12">🎯 能做什么？</h4>
 <ul>
 <li>✅ 统一团队代码风格</li>
 <li>✅ 自动应用最佳实践</li>
 <li>✅ 强制类型安全</li>
 <li>✅ 禁止不安全的代码模式</li>
 <li>✅ 自定义命名规范</li>
-</ul></p><p>**📌 实际应用：**</p><p>**创建`.cursorrules`文件：**
-<div class="code-block">
-<h1>TypeScript项目规则</h1></p><p><h2>代码风格</h2>
-<ul>
-<li>使用4空格缩进，不用Tab</li>
-<li>所有函数必须有TypeScript类型注解</li>
-<li>变量名使用camelCase，常量用UPPER_SNAKE_CASE</li>
-<li>接口名以I开头，如IUser</li>
-</ul></p><p><h2>异步处理</h2>
-<ul>
-<li>必须使用async/await，禁止使用回调函数</li>
-<li>所有Promise必须有错误处理</li>
-</ul></p><p><h2>错误处理</h2>
-<ul>
-<li>使用try-catch包裹可能出错的代码</li>
-<li>自定义错误要继承Error类</li>
-<li>记录详细的错误日志</li>
-</ul></p><p><h2>安全</h2>
-<ul>
-<li>禁止使用eval()</li>
-<li>禁止SQL字符串拼接，使用参数化查询</li>
-<li>所有用户输入必须验证和清理</li>
-</ul></p><p><h2>测试</h2>
-<ul>
-<li>每个函数都要有单元测试</li>
-<li>测试覆盖率不低于80%</li>
-</ul></p><p><h2>注释</h2>
-<ul>
-<li>公共API必须有JSDoc注释</li>
-<li>复杂逻辑要有行内注释说明</li>
 </ul>
-</div></p><p>**效果：**
-<div class="code-block">typescript
-// AI会自动生成符合规则的代码</p><p>// ✅ 符合规则
-async function getUserById(userId: string): Promise<IUser | null> {
-  try {
-    const user = await db.user.findUnique({
-      where: { id: userId }
-    });
-    return user;
-  } catch (error) {
-    logger.error('Failed to get user', { userId, error });
-    throw new DatabaseError('User query failed');
-  }
-}</p><p>// ❌ AI不会生成违反规则的代码
-function getUser(id, callback) {  // 违反：没类型、用回调
-  db.query("SELECT * FROM users WHERE id=" + id, callback);  // 违反：SQL注入风险
-}
-</div></p><p>---</p><p><h2>🚀 【快速导航】</h2></p><p><h3>👤 按角色选择</h3></p><p>| 角色 | 推荐工具 | 直达链接 |
-|-----|---------|---------|
-| 👶 完全小白 | Kimi（免费） | [跳转](#小白工具) |
-| 👨‍💻 程序员 | Cursor + Claude 4 | [跳转](#编程工具) |
-| 🎨 UI设计师 | v0.dev + Stitch | [跳转](#UI生成) |
-| 👨‍💼 产品经理 | ChatGPT + Notion AI | [跳转](#产品工具) |
-| 🎬 视频/设计 | Sora 2 + 剪映 | [跳转](#设计工具) |</p><p>---</p><p><h2>📊 【工具对比总览】</h2></p><p><div id="编程工具"></div></p><p><h3 id="dev-tools">🖥️ 编程开发工具（程序员必备）</h3></p><p><h4>1. Cursor - AI原生代码编辑器 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<h4 id="cursorrules">📌 .cursorrules文件示例</h4>
+<p><strong>创建<code>.cursorrules</code>文件：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="gh">#</span> TypeScript项目规则
+
+<span class="gu">##</span> 代码风格
+<span class="k">-</span> 使用4空格缩进，不用Tab
+<span class="k">-</span> 所有函数必须有TypeScript类型注解
+<span class="k">-</span> 变量名使用camelCase，常量用UPPER_SNAKE_CASE
+<span class="k">-</span> 接口名以I开头，如IUser
+
+<span class="gu">##</span> 异步处理
+<span class="k">-</span> 必须使用async/await，禁止使用回调函数
+<span class="k">-</span> 所有Promise必须有错误处理
+
+<span class="gu">##</span> 错误处理
+<span class="k">-</span> 使用try-catch包裹可能出错的代码
+<span class="k">-</span> 自定义错误要继承Error类
+<span class="k">-</span> 记录详细的错误日志
+
+<span class="gu">##</span> 安全
+<span class="k">-</span> 禁止使用eval()
+<span class="k">-</span> 禁止SQL字符串拼接，使用参数化查询
+<span class="k">-</span> 所有用户输入必须验证和清理
+
+<span class="gu">##</span> 测试
+<span class="k">-</span> 每个函数都要有单元测试
+<span class="k">-</span> 测试覆盖率不低于80%
+
+<span class="gu">##</span> 注释
+<span class="k">-</span> 公共API必须有JSDoc注释
+<span class="k">-</span> 复杂逻辑要有行内注释说明
+</code></pre></div>
+
+<h4 id="_13">效果展示</h4>
+<p><strong>✅ AI会自动生成符合规则的代码：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getUserById</span><span class="p">(</span><span class="nx">userId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">IUser</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">db</span><span class="p">.</span><span class="nx">user</span><span class="p">.</span><span class="nx">findUnique</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">where</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">userId</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">logger</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Failed to get user&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">userId</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DatabaseError</span><span class="p">(</span><span class="s1">&#39;User query failed&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>❌ AI不会生成违反规则的代码：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getUser</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 违反：没类型、用回调</span>
+<span class="w">  </span><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users WHERE id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">);</span><span class="w">  </span><span class="c1">// 违反：SQL注入</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<div id="编程开发工具"></div>
+
+<h2 id="_14">🖥️ 编程开发工具（程序员必备）</h2>
+<hr />
+<h3 id="1-cursor-ai">1. Cursor - AI原生代码编辑器 ⭐⭐⭐⭐⭐</h3>
+<h4 id="_15">💡 主要特点</h4>
 <ul>
 <li>基于VS Code深度定制，AI功能原生集成</li>
 <li>支持多模型切换（Claude 4、GPT-4o、Gemini 2.5等）</li>
-<li>`Ctrl+K` 内联编辑，`Ctrl+L` 对话式编程</li>
-<li>`@符号` 引用文件/文件夹上下文</li>
-<li>**Background Agent** 自动化处理复杂任务</li>
-</ul></p><p>**🤖 MCP支持：**
+<li><code>Ctrl+K</code> 内联编辑，<code>Ctrl+L</code> 对话式编程</li>
+<li><code>@符号</code> 引用文件/文件夹上下文</li>
+<li><strong>Background Agent</strong> 自动化处理复杂任务</li>
+</ul>
+<h4 id="mcp_2">🤖 MCP支持</h4>
 <ul>
 <li>✅ 通过MCP服务器连接外部数据源</li>
 <li>✅ 读取本地文件系统</li>
 <li>✅ 连接数据库和API</li>
 <li>配置方式：在设置中添加MCP服务器配置</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>**Background Agent模式**：并行处理多个任务</li>
-<li>示例："帮我重构整个项目使用TypeScript"</li>
-<li>Agent会：扫描文件 → 逐个转换 → 修复类型错误 → 更新配置</li>
-<li>**自动化PR生成**：从Issue描述自动实现功能并提交PR</li>
-<li>**跨文件重构**：智能理解依赖关系，批量修改</li>
-</ul></p><p>**✍️ Prompt最佳实践：**
-<div class="code-block">
-❌ 差的："优化这段代码"</p><p>✅ 好的："重构这个函数，要求：
-1. 使用async/await替代Promise.then
-2. 添加完整的错误处理
-3. 优化数据库查询，减少N+1问题
-4. 添加TypeScript类型注解
-5. 保持原有功能不变"
-</div></p><p>**📋 Rules配置：**
-创建 `.cursorrules` 文件：
-<div class="code-block">
-<h1>项目: E-commerce API</h1>
-<h1>技术栈: Node.js + TypeScript + Prisma + PostgreSQL</h1></p><p><h2>代码规范</h2>
-<ul>
-<li>使用TypeScript strict模式</li>
-<li>所有异步函数使用async/await</li>
-<li>接口命名: I前缀，如IUser, IProduct</li>
-<li>枚举命名: 大写下划线，如USER_STATUS</li>
-<li>文件命名: kebab-case, 如user-service.ts</li>
-</ul></p><p><h2>架构模式</h2>
-<ul>
-<li>使用三层架构: Controller -> Service -> Repository</li>
-<li>每层独立测试</li>
-<li>依赖注入使用tsyringe</li>
-</ul></p><p><h2>数据库</h2>
-<ul>
-<li>使用Prisma ORM</li>
-<li>所有查询必须有类型安全</li>
-<li>复杂查询写成raw SQL并注明原因</li>
-</ul></p><p><h2>错误处理</h2>
-<ul>
-<li>自定义错误类: AppError, ValidationError, DatabaseError</li>
-<li>Controller层捕获错误并返回HTTP状态码</li>
-<li>记录所有错误到日志系统</li>
-</ul></p><p><h2>安全</h2>
-<ul>
-<li>所有API需要认证中间件</li>
-<li>输入验证使用zod</li>
-<li>防止SQL注入，使用参数化查询</li>
-<li>敏感数据不输出到日志</li>
-</ul></p><p><h2>测试</h2>
-<ul>
-<li>单元测试覆盖率>80%</li>
-<li>使用Jest框架</li>
-<li>Mock外部依赖</li>
 </ul>
-</div></p><p>**🎯 适用任务：**
+<h4 id="ai-agent">🎯 AI Agent能力</h4>
+<p><strong>Background Agent模式</strong>：并行处理多个任务</p>
+<p>示例："帮我重构整个项目使用TypeScript"</p>
+<p>Agent会：
+1. 扫描所有文件
+2. 逐个转换为TypeScript
+3. 修复类型错误
+4. 更新配置文件</p>
+<h4 id="prompt_2">✍️ Prompt最佳实践</h4>
+<p><strong>❌ 差的：</strong></p>
+<div class="codehilite"><pre><span></span><code>&quot;优化这段代码&quot;
+</code></pre></div>
+
+<p><strong>✅ 好的：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">&quot;重构这个函数，要求：</span>
+<span class="err">1. 使用async/await替代Promise.then</span>
+<span class="err">2. 添加完整的错误处理</span>
+<span class="err">3. 优化数据库查询，减少N+1问题</span>
+<span class="err">4. 添加TypeScript类型注解</span>
+<span class="mi">5</span>.<span class="w"> </span>保持原有功能不变<span class="err">&quot;</span>
+</code></pre></div>
+
+<h4 id="rules">📋 Rules配置示例</h4>
+<p>创建 <code>.cursorrules</code> 文件：</p>
+<div class="codehilite"><pre><span></span><code><span class="cp"># 项目: E-commerce API</span>
+<span class="cp"># 技术栈: Node.js + TypeScript + Prisma + PostgreSQL</span>
+
+<span class="cp">## 代码规范</span>
+<span class="o">-</span><span class="w"> </span><span class="err">使用</span><span class="n">TypeScript</span><span class="w"> </span><span class="n">strict模式</span>
+<span class="o">-</span><span class="w"> </span><span class="err">所有异步函数使用</span><span class="n">async</span><span class="o">/</span><span class="n">await</span>
+<span class="o">-</span><span class="w"> </span><span class="err">接口命名</span><span class="o">:</span><span class="w"> </span><span class="n">I前缀</span><span class="err">，如</span><span class="n">IUser</span><span class="p">,</span><span class="w"> </span><span class="n">IProduct</span>
+<span class="o">-</span><span class="w"> </span><span class="err">枚举命名</span><span class="o">:</span><span class="w"> </span><span class="err">大写下划线，如</span><span class="n">USER_STATUS</span>
+<span class="o">-</span><span class="w"> </span><span class="err">文件命名</span><span class="o">:</span><span class="w"> </span><span class="n">kebab</span><span class="o">-</span><span class="kr">case</span><span class="p">,</span><span class="w"> </span><span class="err">如</span><span class="n">user</span><span class="o">-</span><span class="kr">service</span><span class="p">.</span><span class="n">ts</span>
+
+<span class="cp">## 架构模式</span>
+<span class="o">-</span><span class="w"> </span><span class="err">使用三层架构</span><span class="o">:</span><span class="w"> </span><span class="n">Controller</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kr">Service</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Repository</span>
+<span class="o">-</span><span class="w"> </span><span class="err">每层独立测试</span>
+<span class="o">-</span><span class="w"> </span><span class="err">依赖注入使用</span><span class="n">tsyringe</span>
+
+<span class="cp">## 数据库</span>
+<span class="o">-</span><span class="w"> </span><span class="err">使用</span><span class="n">Prisma</span><span class="w"> </span><span class="n">ORM</span>
+<span class="o">-</span><span class="w"> </span><span class="err">所有查询必须有类型安全</span>
+<span class="o">-</span><span class="w"> </span><span class="err">复杂查询写成</span><span class="n">raw</span><span class="w"> </span><span class="n">SQL并注明原因</span>
+
+<span class="cp">## 错误处理</span>
+<span class="o">-</span><span class="w"> </span><span class="err">自定义错误类</span><span class="o">:</span><span class="w"> </span><span class="n">AppError</span><span class="p">,</span><span class="w"> </span><span class="n">ValidationError</span><span class="p">,</span><span class="w"> </span><span class="n">DatabaseError</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Controller层捕获错误并返回HTTP状态码</span>
+<span class="o">-</span><span class="w"> </span><span class="err">记录所有错误到日志系统</span>
+
+<span class="cp">## 安全</span>
+<span class="o">-</span><span class="w"> </span><span class="err">所有</span><span class="n">API需要认证中间件</span>
+<span class="o">-</span><span class="w"> </span><span class="err">输入验证使用</span><span class="n">zod</span>
+<span class="o">-</span><span class="w"> </span><span class="err">防止</span><span class="n">SQL注入</span><span class="err">，使用参数化查询</span>
+<span class="o">-</span><span class="w"> </span><span class="err">敏感数据不输出到日志</span>
+
+<span class="cp">## 测试</span>
+<span class="o">-</span><span class="w"> </span><span class="err">单元测试覆盖率</span><span class="o">&gt;</span><span class="mi">80</span><span class="o">%</span>
+<span class="o">-</span><span class="w"> </span><span class="err">使用</span><span class="n">Jest框架</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Mock外部依赖</span>
+</code></pre></div>
+
+<h4 id="_16">🎯 适用任务</h4>
 <ul>
 <li>✅ 快速理解陌生代码库（@folders整个项目）</li>
 <li>✅ 实时代码补全和生成</li>
@@ -323,591 +551,367 @@ function getUser(id, callback) {  // 违反：没类型、用回调
 <li>✅ Bug定位和修复</li>
 <li>✅ 代码审查和安全检查</li>
 <li>✅ 自动化测试生成</li>
-</ul></p><p>**💰 收费情况：**
+</ul>
+<h4 id="_17">💰 收费情况</h4>
 <ul>
-<li>**免费版**：基础代码补全，有使用次数限制</li>
-<li>**Pro版**：$20/月，无限使用所有模型，优先响应，支持Background Agent</li>
-<li>**Team版**：$40/月/人，团队协作 + 代码库索引 + 共享Rules</li>
-</ul></p><p>**🌐 访问方式：**
+<li><strong>免费版</strong>：基础代码补全，有使用次数限制</li>
+<li><strong>Pro版</strong>：$20/月，无限使用所有模型，优先响应，支持Background Agent</li>
+<li><strong>Team版</strong>：$40/月/人，团队协作 + 代码库索引 + 共享Rules</li>
+</ul>
+<h4 id="_18">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://cursor.so" target="_blank">https://cursor.so</a></li>
-<li>支持平台：Windows / macOS / Linux</li>
+<li><strong>官网</strong>：https://cursor.so</li>
+<li><strong>支持平台</strong>：Windows / macOS / Linux</li>
 <li>下载后直接安装，可导入VS Code配置</li>
-</ul></p><p>**📌 高级使用技巧：**
-1. **使用@符号精准引用**：
-<ul>
-<li>`@filename.ts` - 引用单个文件</li>
-<li>`@folders src/` - 引用整个目录</li>
-<li>`@docs README.md` - 引用文档</li>
-</ul></p><p>2. **组合使用Ctrl+K和Ctrl+L**：
-<ul>
+</ul>
+<h4 id="_19">📌 高级使用技巧</h4>
+<ol>
+<li><strong>使用@符号精准引用</strong>：</li>
+<li><code>@filename.ts</code> - 引用单个文件</li>
+<li><code>@folders src/</code> - 引用整个目录</li>
+<li>
+<p><code>@docs README.md</code> - 引用文档</p>
+</li>
+<li>
+<p><strong>组合使用Ctrl+K和Ctrl+L</strong>：</p>
+</li>
 <li>Ctrl+K：快速局部修改</li>
-<li>Ctrl+L：复杂问题讨论和方案设计</li>
-</ul></p><p>3. **Background Agent工作流**：
-   <div class="code-block">
-   1. 创建详细的任务描述
-   2. 启动Background Agent
-   3. Agent自动分解任务并执行
-   4. 实时查看进度
-   5. Review并合并修改
-   </div></p><p>---</p><p><h4>2. Claude 4 Sonnet - 最强编程AI ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li>
+<p>Ctrl+L：复杂问题讨论和方案设计</p>
+</li>
+<li>
+<p><strong>Background Agent工作流</strong>：</p>
+</li>
+<li>创建详细的任务描述</li>
+<li>启动Background Agent</li>
+<li>Agent自动分解任务并执行</li>
+<li>实时查看进度</li>
+<li>Review并合并修改</li>
+</ol>
+<hr />
+<h3 id="2-claude-4-sonnet-ai">2. Claude 4 Sonnet - 最强编程AI ⭐⭐⭐⭐⭐</h3>
+<h4 id="_20">💡 主要特点</h4>
 <ul>
 <li>Anthropic 2025最新模型，编程能力业界最强</li>
-<li>**200K tokens** 超长上下文（约15万字代码）</li>
+<li><strong>200K tokens</strong> 超长上下文（约15万字代码）</li>
 <li>支持多模态（代码、文档、图表、PDF、图片）</li>
-<li>**思维链推理**：展示思考过程</li>
-<li>**Projects功能**：管理长期项目知识库</li>
-</ul></p><p>**🤖 MCP支持：**
+<li><strong>思维链推理</strong>：展示思考过程</li>
+<li><strong>Projects功能</strong>：管理长期项目知识库</li>
+</ul>
+<h4 id="mcp_3">🤖 MCP支持</h4>
 <ul>
-<li>✅ **原生支持MCP**（Anthropic自己开发的协议）</li>
+<li>✅ <strong>原生支持MCP</strong>（Anthropic自己开发的协议）</li>
 <li>✅ Claude Desktop可配置MCP服务器</li>
 <li>✅ 连接文件系统、数据库、API</li>
-<li>配置文件位置：</li>
-<li>macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`</li>
-<li>Windows: `%APPDATA%\Claude\claude_desktop_config.json`</li>
-</ul></p><p>**MCP配置示例：**
-<div class="code-block">json
-{
-  "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/project"]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_TOKEN": "your_token_here"
-      }
-    }
-  }
-}
-</div></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>**多步骤推理**：自动分解复杂任务</li>
-<li>**工具调用**：通过MCP调用外部工具</li>
-<li>**自我纠错**：发现错误自动修正</li>
-<li>示例：</li>
 </ul>
-  <div class="code-block">
-  你："帮我创建一个完整的用户认证系统"
-  
-  Claude Agent会：
-  1. 设计数据库schema
-  2. 生成Prisma模型
-  3. 实现JWT认证逻辑
-  4. 创建注册/登录API
-  5. 添加密码加密
-  6. 编写单元测试
-  7. 生成API文档
-  </div></p><p>**✍️ Prompt工程：**</p><p>**Claude特别擅长的Prompt模式：**</p><p>1. **XML标签结构化**：
-<div class="code-block">xml
-<task>
-  <context>
-    我有一个Express项目，需要添加用户认证
-  </context>
-  <requirements>
-<ul>
-<li>使用JWT token</li>
-<li>密码要bcrypt加密</li>
-<li>支持刷新token</li>
-<li>包含权限验证中间件</li>
-</ul>
-  </requirements>
-  <constraints>
-<ul>
-<li>使用TypeScript</li>
-<li>遵循RESTful规范</li>
-<li>错误处理要完善</li>
-</ul>
-  </constraints>
-  <output_format>
-    1. 先给出整体架构说明
-    2. 然后逐个文件提供代码
-    3. 最后给出测试用例
-  </output_format>
-</task>
-</div></p><p>2. **角色+思维链**：
-<div class="code-block">
-你是一位拥有20年经验的系统架构师。</p><p>请分析这段代码的性能问题，并提供优化方案。</p><p>请按以下步骤思考：
+<h4 id="ai-agent_1">🎯 AI Agent能力</h4>
+<p><strong>多步骤推理</strong>：自动分解复杂任务</p>
+<p>示例：你："帮我创建一个完整的用户认证系统"</p>
+<p>Claude Agent会：
+1. 设计数据库schema
+2. 生成Prisma模型
+3. 实现JWT认证逻辑
+4. 创建注册/登录API
+5. 添加密码加密
+6. 编写单元测试
+7. 生成API文档</p>
+<h4 id="prompt_3">✍️ Prompt工程</h4>
+<p><strong>Claude特别擅长的Prompt模式：</strong></p>
+<p><strong>1. XML标签结构化：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;task&gt;</span>
+<span class="w">  </span><span class="nt">&lt;context&gt;</span>
+<span class="w">    </span>我有一个Express项目，需要添加用户认证
+<span class="w">  </span><span class="nt">&lt;/context&gt;</span>
+<span class="w">  </span><span class="nt">&lt;requirements&gt;</span>
+<span class="w">    </span>-<span class="w"> </span>使用JWT<span class="w"> </span>token
+<span class="w">    </span>-<span class="w"> </span>密码要bcrypt加密
+<span class="w">    </span>-<span class="w"> </span>支持刷新token
+<span class="w">    </span>-<span class="w"> </span>包含权限验证中间件
+<span class="w">  </span><span class="nt">&lt;/requirements&gt;</span>
+<span class="w">  </span><span class="nt">&lt;constraints&gt;</span>
+<span class="w">    </span>-<span class="w"> </span>使用TypeScript
+<span class="w">    </span>-<span class="w"> </span>遵循RESTful规范
+<span class="w">    </span>-<span class="w"> </span>错误处理要完善
+<span class="w">  </span><span class="nt">&lt;/constraints&gt;</span>
+<span class="w">  </span><span class="nt">&lt;output_format&gt;</span>
+<span class="w">    </span>1.<span class="w"> </span>先给出整体架构说明
+<span class="w">    </span>2.<span class="w"> </span>然后逐个文件提供代码
+<span class="w">    </span>3.<span class="w"> </span>最后给出测试用例
+<span class="w">  </span><span class="nt">&lt;/output_format&gt;</span>
+<span class="nt">&lt;/task&gt;</span>
+</code></pre></div>
+
+<p><strong>2. 角色+思维链：</strong></p>
+<div class="codehilite"><pre><span></span><code>你是一位拥有20年经验的系统架构师。
+
+请分析这段代码的性能问题，并提供优化方案。
+
+请按以下步骤思考：
 1. 识别性能瓶颈
 2. 分析根本原因
 3. 提出多个优化方案
 4. 比较各方案优缺点
 5. 给出推荐方案和实现代码
-</div></p><p>3. **Few-shot示例**：
-<div class="code-block">
-我需要你把函数转换为TypeScript：</p><p>示例1：
-输入：function add(a, b) { return a + b; }
-输出：function add(a: number, b: number): number { return a + b; }</p><p>示例2：
-输入：async function getUser(id) { return await db.users.find(id); }
-输出：async function getUser(id: string): Promise<User> { 
-  return await db.users.find(id); 
-}</p><p>现在请转换：
-[你的代码]
-</div></p><p>**📋 Projects功能（相当于持久化Rules）：**
-<ul>
-<li>创建Project存储项目知识</li>
-<li>包含：代码规范、架构文档、API文档</li>
-<li>Claude会记住Project中的所有信息</li>
-<li>适合长期维护的项目</li>
-</ul></p><p>**Project示例结构：**
-<div class="code-block">
-Project: E-commerce Platform</p><p>文档1: 架构设计
-<ul>
-<li>微服务架构</li>
-<li>使用gRPC通信</li>
-<li>PostgreSQL + Redis</li>
-<li>Docker部署</li>
-</ul></p><p>文档2: 代码规范
-[粘贴你的.cursorrules内容]</p><p>文档3: API文档
-[粘贴OpenAPI规范]</p><p>文档4: 数据库Schema
-[粘贴Prisma schema]
-</div></p><p>**🎯 适用任务：**
+</code></pre></div>
+
+<p><strong>3. Few-shot示例：</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="nt">我需要你把函数转换为TypeScript</span><span class="err">：</span>
+
+<span class="nt">示例1</span><span class="err">：</span>
+<span class="nt">输入</span><span class="err">：</span><span class="nt">function</span><span class="w"> </span><span class="nt">add</span><span class="o">(</span><span class="nt">a</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">输出</span><span class="err">：</span><span class="nt">function</span><span class="w"> </span><span class="nt">add</span><span class="o">(</span><span class="nt">a</span><span class="o">:</span><span class="w"> </span><span class="nt">number</span><span class="o">,</span><span class="w"> </span><span class="nt">b</span><span class="o">:</span><span class="w"> </span><span class="nt">number</span><span class="o">):</span><span class="w"> </span><span class="nt">number</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">+</span><span class="w"> </span><span class="err">b</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nt">示例2</span><span class="err">：</span>
+<span class="nt">输入</span><span class="err">：</span><span class="nt">async</span><span class="w"> </span><span class="nt">function</span><span class="w"> </span><span class="nt">getUser</span><span class="o">(</span><span class="nt">id</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">return</span><span class="w"> </span><span class="err">await</span><span class="w"> </span><span class="err">db.users.find(id)</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="nt">输出</span><span class="err">：</span><span class="nt">async</span><span class="w"> </span><span class="nt">function</span><span class="w"> </span><span class="nt">getUser</span><span class="o">(</span><span class="nt">id</span><span class="o">:</span><span class="w"> </span><span class="nt">string</span><span class="o">):</span><span class="w"> </span><span class="nt">Promise</span><span class="o">&lt;</span><span class="nt">User</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">  </span><span class="err">return</span><span class="w"> </span><span class="err">await</span><span class="w"> </span><span class="err">db.users.find(id)</span><span class="p">;</span><span class="w"> </span>
+<span class="p">}</span>
+
+<span class="nt">现在请转换</span><span class="err">：</span>
+<span class="cp">[</span><span class="nx">你的代码</span><span class="cp">]</span>
+</code></pre></div>
+
+<h4 id="projectsrules">📋 Projects功能（相当于持久化Rules）</h4>
+<p>创建Project存储项目知识：</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Project</span><span class="o">:</span><span class="w"> </span><span class="n">E</span><span class="o">-</span><span class="n">commerce</span><span class="w"> </span><span class="n">Platform</span>
+
+<span class="err">文档</span><span class="mi">1</span><span class="o">:</span><span class="w"> </span><span class="err">架构设计</span>
+<span class="o">-</span><span class="w"> </span><span class="err">微服务架构</span>
+<span class="o">-</span><span class="w"> </span><span class="err">使用</span><span class="n">gRPC通信</span>
+<span class="o">-</span><span class="w"> </span><span class="n">PostgreSQL</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Redis</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Docker部署</span>
+
+<span class="err">文档</span><span class="mi">2</span><span class="o">:</span><span class="w"> </span><span class="err">代码规范</span>
+<span class="o">[</span><span class="err">粘贴你的</span><span class="o">.</span><span class="na">cursorrules内容</span><span class="o">]</span>
+
+<span class="err">文档</span><span class="mi">3</span><span class="o">:</span><span class="w"> </span><span class="n">API文档</span>
+<span class="o">[</span><span class="err">粘贴</span><span class="n">OpenAPI规范</span><span class="o">]</span>
+
+<span class="err">文档</span><span class="mi">4</span><span class="o">:</span><span class="w"> </span><span class="err">数据库</span><span class="n">Schema</span>
+<span class="o">[</span><span class="err">粘贴</span><span class="n">Prisma</span><span class="w"> </span><span class="n">schema</span><span class="o">]</span>
+</code></pre></div>
+
+<h4 id="_21">🎯 适用任务</h4>
 <ul>
 <li>✅ 代码深度审查（性能、安全、可维护性）</li>
 <li>✅ 系统架构设计和技术选型</li>
 <li>✅ 大规模代码重构（处理整个代码库）</li>
 <li>✅ 复杂Bug深度诊断</li>
 <li>✅ API文档和技术文档生成</li>
-<li>✅ 代码学习和教学（解释复杂概念）</li>
+<li>✅ 代码学习和教学</li>
 <li>✅ 算法设计和优化</li>
-</ul></p><p>**💰 收费情况：**
+</ul>
+<h4 id="_22">💰 收费情况</h4>
 <ul>
-<li>**免费版**：约50次对话/天，使用Claude 4 Sonnet</li>
-<li>**Pro版**：$20/月，5倍使用量，支持所有模型，包含Projects功能</li>
-<li>**API版**：按Token计费，$3输入/$15输出（每百万tokens）</li>
-</ul></p><p>**🌐 访问方式：**
+<li><strong>免费版</strong>：约50次对话/天，使用Claude 4 Sonnet</li>
+<li><strong>Pro版</strong>：$20/月，5倍使用量，支持所有模型，包含Projects功能</li>
+<li><strong>API版</strong>：按Token计费，$3输入/$15输出（每百万tokens）</li>
+</ul>
+<h4 id="_23">🌐 访问方式</h4>
 <ul>
-<li>网页版：<a href="https://claude.ai" target="_blank">https://claude.ai</a></li>
-<li>Claude Desktop：<a href="https://claude.ai/download" target="_blank">https://claude.ai/download</a></li>
-<li>API文档：<a href="https://docs.anthropic.com" target="_blank">https://docs.anthropic.com</a></li>
-</ul></p><p>**📌 高级使用技巧：**</p><p>1. **超长上下文利用**：
-<ul>
+<li><strong>网页版</strong>：https://claude.ai</li>
+<li><strong>Claude Desktop</strong>：https://claude.ai/download</li>
+<li><strong>API文档</strong>：https://docs.anthropic.com</li>
+</ul>
+<h4 id="_24">📌 高级使用技巧</h4>
+<ol>
+<li><strong>超长上下文利用</strong>：</li>
 <li>一次性粘贴整个代码库（200K tokens ≈ 约30个文件）</li>
 <li>上传完整技术文档PDF</li>
-<li>让Claude理解整个项目后再提问</li>
-</ul></p><p>2. **多模态应用**：
-<ul>
+<li>
+<p>让Claude理解整个项目后再提问</p>
+</li>
+<li>
+<p><strong>多模态应用</strong>：</p>
+</li>
 <li>上传架构图让Claude分析设计</li>
 <li>上传错误截图让Claude诊断</li>
-<li>上传数据库ER图让Claude生成Schema</li>
-</ul></p><p>3. **MCP实战**：
-   <div class="code-block">
-   配置MCP后：
-   "读取我的GitHub仓库所有Issue"
-   "分析我项目的数据库结构"
-   "查看我最近的Git提交"
-   </div></p><p>---</p><p><h4>3. GitHub Copilot - 实时代码补全 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li>
+<p>上传数据库ER图让Claude生成Schema</p>
+</li>
+<li>
+<p><strong>MCP实战</strong>：</p>
+</li>
+<li>"读取我的GitHub仓库所有Issue"</li>
+<li>"分析我项目的数据库结构"</li>
+<li>"查看我最近的Git提交"</li>
+</ol>
+<hr />
+<h3 id="3-ai-studio-googleai">3. AI Studio - Google免费AI工具 ⭐⭐⭐⭐⭐</h3>
+<h4 id="_25">💡 主要特点</h4>
 <ul>
-<li>OpenAI Codex驱动，实时代码建议</li>
-<li>深度GitHub集成，理解数百万开源项目模式</li>
-<li>支持30+主流IDE</li>
-<li>支持80+编程语言</li>
-<li>**Copilot Chat**：在IDE内对话式编程</li>
-</ul></p><p>**🤖 MCP支持：**
-<ul>
-<li>❌ 不直接支持MCP</li>
-<li>✅ 通过GitHub生态间接访问仓库数据</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>**Copilot Workspace**（新功能）：</li>
-<li>基于GitHub Issue自动生成PR</li>
-<li>自动规划实现步骤</li>
-<li>跨文件修改和测试</li>
-<li>**多文件编辑**：理解项目上下文，修改相关文件</li>
-</ul></p><p>**✍️ Prompt技巧（通过注释）：**</p><p>**在代码中用注释作为Prompt：**
-<div class="code-block">typescript
-// 创建一个React组件，展示用户列表
-// 需求：
-// 1. 从API获取用户数据
-// 2. 支持分页，每页10条
-// 3. 支持搜索功能
-// 4. 点击用户显示详情弹窗
-// 5. 使用TypeScript和Hooks</p><p>// Copilot会自动生成完整组件代码
-</div></p><p>**函数名作为Prompt：**
-<div class="code-block">python
-def calculate_user_monthly_subscription_revenue_with_discounts(
-    user_id: str,
-    month: int,
-    year: int,
-    apply_promotional_codes: bool = True
-):
-    # Copilot会根据函数名生成完整实现
-</div></p><p>**📋 Rules配置：**
-<ul>
-<li>通过 `.gitattributes` 和注释引导</li>
-<li>在项目根目录创建 `CONVENTIONS.md`</li>
-<li>Copilot会学习项目风格</li>
-</ul></p><p>**🎯 适用任务：**
-<ul>
-<li>✅ 快速编写样板代码（CRUD、API调用）</li>
-<li>✅ 根据注释自动实现函数</li>
-<li>✅ 自动生成单元测试</li>
-<li>✅ 学习新技术和API用法</li>
-<li>✅ 代码片段快速生成</li>
-<li>✅ 重复代码模式识别</li>
-</ul></p><p>**💰 收费情况：**
-<ul>
-<li>**个人版**：$10/月</li>
-<li>**企业版**：$19/月/人，支持代码隐私保护</li>
-<li>**学生/教师**：✅ 免费（需GitHub Education认证）</li>
-<li>**开源维护者**：✅ 免费（需认证）</li>
-</ul></p><p>**🌐 访问方式：**
-<ul>
-<li>订阅：<a href="https://github.com/features/copilot" target="_blank">https://github.com/features/copilot</a></li>
-<li>支持IDE：VS Code、IntelliJ IDEA、PyCharm、Neovim、Visual Studio</li>
-<li>安装：在IDE扩展商店搜索"GitHub Copilot"</li>
-</ul></p><p>**📌 高级使用技巧：**</p><p>1. **多行补全**：
-<ul>
-<li>按 `Tab` 接受建议</li>
-<li>按 `Alt+]` 查看下一个建议</li>
-<li>按 `Ctrl+Enter` 查看多个建议</li>
-</ul></p><p>2. **Copilot Chat使用**：
-   <div class="code-block">
-   /explain - 解释选中代码
-   /fix - 修复bug
-   /tests - 生成测试
-   /doc - 生成文档
-   </div></p><p>3. **上下文优化**：
-<ul>
-<li>打开相关文件让Copilot学习项目风格</li>
-<li>在注释中提供详细需求</li>
-</ul></p><p>---</p><p><h4>4. Gemini 2.5 Pro - Google多模态AI ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
-<ul>
-<li>Google 2025最新模型</li>
-<li>**200万tokens** 超长上下文（业界最长，约150万字）</li>
-<li>强大多模态能力（文本、图片、视频、音频、代码）</li>
-<li>深度集成Google生态（Gmail、Drive、Docs、Colab）</li>
-<li>实时联网搜索</li>
-</ul></p><p>**🤖 MCP支持：**
-<ul>
-<li>❌ 不支持MCP协议</li>
-<li>✅ 通过Google API访问Google服务</li>
-<li>✅ Gemini Extensions连接Gmail、Drive等</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>**多模态推理**：同时处理代码、图片、文档</li>
-<li>**工具调用**：通过Extensions调用Google服务</li>
-<li>**代码执行**：在Google Colab中执行Python代码</li>
-<li>示例：</li>
+<li><strong>Google官方出品，完全免费</strong></li>
+<li>基于Gemini 2.0模型，能力强大</li>
+<li>支持超长上下文（200万tokens）</li>
+<li>多模态支持（文本、代码、图片）</li>
+<li>无使用次数限制</li>
 </ul>
-  <div class="code-block">
-  你："分析我Drive里的项目代码和架构图，给出优化建议"
-  
-  Gemini会：
-  1. 读取Drive中的代码文件
-  2. 分析架构图图片
-  3. 理解项目结构
-  4. 提供详细优化方案
-  5. 生成改进后的代码
-  </div></p><p>**✍️ Prompt最佳实践：**</p><p>**利用超长上下文：**
-<div class="code-block">
-我要上传我整个项目的代码（50个文件，约100万字）</p><p>[上传所有文件]</p><p>现在请：
-1. 分析整体架构设计
-2. 找出所有潜在bug
-3. 检查安全漏洞
-4. 提供性能优化建议
-5. 生成完整的重构方案
-</div></p><p>**多模态Prompt：**
-<div class="code-block">
-[上传：代码文件 + 架构图 + 需求文档PDF + 数据库ER图]</p><p>请基于这些材料：
-1. 验证代码是否符合架构设计
-2. 检查是否满足需求文档
-3. 优化数据库设计
-4. 提供改进建议
-</div></p><p>**📋 Rules配置：**
+<h4 id="_26">🎯 适用任务</h4>
 <ul>
-<li>在对话开始时设定规则</li>
-<li>使用System Instruction（类似.cursorrules）</li>
-</ul></p><p>**System Instruction示例：**
-<div class="code-block">
-你是一个Google Cloud架构专家。</p><p>代码规范：
-<ul>
-<li>使用Python 3.11+</li>
-<li>遵循Google Python Style Guide</li>
-<li>使用type hints</li>
-<li>文档字符串使用Google风格</li>
-</ul></p><p>架构偏好：
-<ul>
-<li>优先使用Google Cloud服务</li>
-<li>使用Cloud Run部署</li>
-<li>数据库用Cloud SQL</li>
-<li>缓存用Memorystore</li>
-</ul></p><p>安全要求：
-<ul>
-<li>所有API使用IAM认证</li>
-<li>敏感数据加密</li>
-<li>遵循最小权限原则</li>
+<li>✅ 代码生成和调试</li>
+<li>✅ 技术问题解答</li>
+<li>✅ 代码审查和优化</li>
+<li>✅ 学习新技术</li>
+<li>✅ API文档查询</li>
 </ul>
-</div></p><p>**🎯 适用任务：**
+<h4 id="_27">💰 收费情况</h4>
 <ul>
-<li>✅ 超大型项目分析（整个代码库）</li>
-<li>✅ 技术文档PDF快速提取信息（上传几百页文档）</li>
-<li>✅ 架构图分析和优化建议</li>
-<li>✅ 多文件代码审查</li>
-<li>✅ 视频教程内容提取和代码实现</li>
-<li>✅ 跨语言代码转换</li>
-<li>✅ Google Cloud项目开发</li>
-</ul></p><p>**💰 收费情况：**
+<li>✅ <strong>完全免费！</strong> 无任何使用限制</li>
+</ul>
+<h4 id="_28">🌐 访问方式</h4>
 <ul>
-<li>**免费版**：Gemini 2.0 Flash，有使用限制</li>
-<li>**Gemini Advanced**：$19.99/月，Gemini 2.5 Pro，2TB Google One存储</li>
-<li>**API版**：$1.25输入/$5输出（每百万tokens）</li>
-</ul></p><p>**🌐 访问方式：**
-<ul>
-<li>网页版：<a href="https://gemini.google.com" target="_blank">https://gemini.google.com</a></li>
-<li>Google Colab集成：<a href="https://colab.google" target="_blank">https://colab.google</a></li>
-<li>API文档：<a href="https://ai.google.dev/docs" target="_blank">https://ai.google.dev/docs</a></li>
-</ul></p><p>**📌 高级使用技巧：**</p><p>1. **超长上下文策略**：
-   <div class="code-block">
-   第一次对话：上传所有项目代码
-   后续对话：Gemini已记住所有代码，直接提问
-   
-   "找出所有API接口"
-   "分析数据库查询性能"
-   "生成项目文档"
-   </div></p><p>2. **多模态组合**：
-<ul>
-<li>上传设计稿 + 代码，验证实现一致性</li>
-<li>上传错误日志截图，快速定位问题</li>
-<li>上传技术视频，提取代码和知识点</li>
-</ul></p><p>3. **Google生态集成**：
-   <div class="code-block">
-   "读取我Gmail中的bug报告"
-   "分析Drive中的需求文档"
-   "在Colab中运行这段代码"
-   </div></p><p>---</p><p><h4>5. Grok 4 - xAI最新模型 ⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li><strong>官网</strong>：https://aistudio.google.com/prompts/new_chat</li>
+<li>无需科学上网，直接访问</li>
+</ul>
+<hr />
+<h3 id="4-grok-xai">4. Grok - xAI最新模型 ⭐⭐⭐⭐⭐</h3>
+<h4 id="_29">💡 主要特点</h4>
 <ul>
 <li>Elon Musk的xAI团队开发</li>
-<li>与X平台（Twitter）深度集成</li>
-<li>**实时联网**，获取最新技术动态</li>
-<li>回答风格幽默、不枯燥</li>
-<li>Grok 4性能大幅提升</li>
-</ul></p><p>**🤖 MCP支持：**
-<ul>
-<li>❌ 不支持MCP</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>**实时信息检索**：搜索X平台最新技术讨论</li>
-<li>**趋势分析**：追踪技术社区动态</li>
-<li>适合了解新技术和最佳实践</li>
-</ul></p><p>**✍️ Prompt建议：**
-<div class="code-block">
-// 利用Grok的实时能力
-"最近一周AI编程工具有什么重大更新？"
-"React 19正式版发布了吗？有哪些新特性？"
-"开发者社区对Rust的看法如何？"
-</div></p><p>**📋 Rules配置：**
-<ul>
-<li>在对话开始时设定</li>
-</ul></p><p>**🎯 适用任务：**
+<li><strong>完全免费使用</strong>（无需Premium）</li>
+<li><strong>实时联网</strong>，获取最新技术动态</li>
+<li>强大的代码能力</li>
+<li>回答风格直接高效</li>
+</ul>
+<h4 id="_30">🎯 适用任务</h4>
 <ul>
 <li>✅ 了解最新技术趋势和新闻</li>
 <li>✅ 代码生成和调试</li>
 <li>✅ 技术问题解答</li>
 <li>✅ 创意编程方案</li>
-<li>✅ 技术社区观点获取</li>
-</ul></p><p>**💰 收费情况：**
-<ul>
-<li>**需要X Premium+订阅**：$16/月（包含X平台所有Premium功能）</li>
-</ul></p><p>**🌐 访问方式：**
-<ul>
-<li>方式1：<a href="https://x.com" target="_blank">https://x.com</a> - 登录后侧边栏找到Grok</li>
-<li>方式2：<a href="https://grok.x.ai" target="_blank">https://grok.x.ai</a></li>
-<li>需要X Premium+会员</li>
-</ul></p><p>---</p><p><div id="UI生成"></div></p><p><h3 id="ui-tools">🎨 UI代码生成工具（前端开发神器）</h3></p><p><h4>1. v0.dev - Vercel官方UI生成器 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
-<ul>
-<li>Vercel官方出品，专注前端UI生成</li>
-<li>生成高质量React/Next.js/TypeScript代码</li>
-<li>支持Tailwind CSS、shadcn/ui组件库</li>
-<li>实时预览，一键复制代码</li>
-<li>生成的代码可直接用于生产环境</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>理解设计稿自动生成代码</li>
-<li>支持迭代优化</li>
-<li>自动处理响应式布局</li>
-</ul></p><p>**✍️ Prompt技巧：**
-<div class="code-block">
-❌ 差的："做个登录页面"</p><p>✅ 好的："创建一个现代风格的登录页面
-要求：
-<ul>
-<li>使用Next.js 14 App Router</li>
-<li>Tailwind CSS样式</li>
-<li>包含邮箱、密码输入框</li>
-<li>Google和GitHub第三方登录按钮</li>
-<li>响应式设计，支持手机端</li>
-<li>深色模式支持</li>
-<li>表单验证用react-hook-form + zod</li>
-<li>添加加载状态和错误提示</li>
-<li>参考Vercel登录页设计风格"</li>
+<li>✅ 实时信息查询</li>
 </ul>
-</div></p><p>**🎯 适用任务：**
+<h4 id="_31">💰 收费情况</h4>
 <ul>
-<li>✅ 快速搭建页面UI界面</li>
-<li>✅ 生成React组件代码</li>
-<li>✅ 创建表单、卡片、导航等组件</li>
-<li>✅ 快速原型开发</li>
-<li>✅ 学习React和Tailwind最佳实践</li>
-</ul></p><p>**💰 收费情况：**
+<li>✅ <strong>完全免费！</strong> 基础版无限制使用</li>
+</ul>
+<h4 id="_32">🌐 访问方式</h4>
 <ul>
-<li>**免费版**：200积分/月（约20-30个组件）</li>
-<li>**付费版**：$20/月，5000积分/月</li>
-<li>每次生成消耗约10积分</li>
-</ul></p><p>**🌐 访问方式：**
+<li><strong>官网</strong>：https://grok.com/</li>
+<li>需要X账号登录</li>
+</ul>
+<hr />
+<h3 id="5-gemini-cli-ai">5. Gemini CLI - 命令行AI工具 ⭐⭐⭐⭐</h3>
+<h4 id="_33">💡 主要特点</h4>
 <ul>
-<li>官网：<a href="https://v0.dev" target="_blank">https://v0.dev</a></li>
-<li>需要Vercel账号（GitHub登录即可）</li>
-<li>网页直接使用，无需安装</li>
-</ul></p><p>---</p><p><h4>2. Stitch - Google设计转代码工具 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li>在命令行直接使用AI</li>
+<li>快速代码生成和调试</li>
+<li>支持终端操作自动化</li>
+<li><strong>完全免费</strong></li>
+</ul>
+<h4 id="_34">🎯 适用任务</h4>
 <ul>
-<li>Google官方出品，Figma到代码的桥梁</li>
-<li>AI理解设计稿，生成高质量代码</li>
-<li>支持React、Vue、Angular</li>
+<li>✅ 终端命令生成</li>
+<li>✅ 脚本编写辅助</li>
+<li>✅ 快速代码片段生成</li>
+<li>✅ Git命令辅助</li>
+</ul>
+<h4 id="_35">💰 收费情况</h4>
+<ul>
+<li>✅ <strong>完全免费！</strong></li>
+</ul>
+<h4 id="_36">🌐 访问方式</h4>
+<ul>
+<li>安装：<code>npm install -g @google/generative-ai-cli</code></li>
+<li>使用：<code>gemini "你的问题"</code></li>
+</ul>
+<hr />
+<h3 id="6-trae-ai">6. TRAE - 轻量级AI编程助手 ⭐⭐⭐⭐</h3>
+<h4 id="_37">💡 主要特点</h4>
+<ul>
+<li>轻量级、快速响应</li>
+<li>专注编程场景</li>
+<li><strong>完全免费</strong></li>
+<li>支持多种编程语言</li>
+</ul>
+<h4 id="_38">🎯 适用任务</h4>
+<ul>
+<li>✅ 代码补全</li>
+<li>✅ Bug修复建议</li>
+<li>✅ 代码重构</li>
+<li>✅ 技术文档查询</li>
+</ul>
+<h4 id="_39">💰 收费情况</h4>
+<ul>
+<li>✅ <strong>完全免费！</strong></li>
+</ul>
+<h4 id="_40">🌐 访问方式</h4>
+<ul>
+<li><strong>官网</strong>：搜索"TRAE AI"</li>
+</ul>
+<hr />
+<h3 id="7-codex-openai">7. Codex - OpenAI代码模型 ⭐⭐⭐⭐</h3>
+<h4 id="_41">💡 主要特点</h4>
+<ul>
+<li>OpenAI专门的代码模型</li>
+<li>支持多种编程语言</li>
+<li>强大的代码理解能力</li>
+<li>GitHub Copilot的底层模型</li>
+</ul>
+<h4 id="_42">🎯 适用任务</h4>
+<ul>
+<li>✅ 代码生成</li>
+<li>✅ 代码解释</li>
+<li>✅ 代码转换（语言互转）</li>
+<li>✅ API调用示例</li>
+</ul>
+<h4 id="_43">💰 收费情况</h4>
+<ul>
+<li>通过OpenAI API使用，按token计费</li>
+<li>或使用GitHub Copilot（$10/月，学生免费）</li>
+</ul>
+<h4 id="_44">🌐 访问方式</h4>
+<ul>
+<li><strong>API文档</strong>：https://platform.openai.com/docs</li>
+</ul>
+<hr />
+<div id="ui代码生成工具"></div>
+
+<h2 id="ui">🎨 UI代码生成工具</h2>
+<hr />
+<h3 id="1-stitch-google">1. Stitch - Google设计转代码工具 ⭐⭐⭐⭐⭐</h3>
+<h4 id="_45">💡 主要特点</h4>
+<ul>
+<li><strong>Google官方出品，完全免费</strong></li>
+<li>AI自动理解设计稿，生成高质量代码</li>
+<li>支持React、Vue、Angular等主流框架</li>
 <li>Material Design风格原生支持</li>
-<li>保持设计和代码同步</li>
-</ul></p><p>**🎯 AI Agent能力：**
+<li>自动生成响应式布局</li>
+<li>完美还原设计稿细节</li>
+</ul>
+<h4 id="_46">🎯 适用任务</h4>
 <ul>
-<li>自动识别设计组件</li>
-<li>智能生成响应式代码</li>
-<li>理解设计规范自动应用</li>
-</ul></p><p>**✍️ 使用流程：**
-<div class="code-block">
-1. 在Figma中设计UI
-2. 使用Stitch插件
-3. 选择要导出的组件
-4. AI自动生成代码
-5. 一键复制到项目中
-</div></p><p>**🎯 适用任务：**
-<ul>
-<li>✅ Figma设计稿转代码</li>
-<li>✅ 设计系统实现</li>
+<li>✅ Figma/Sketch设计稿自动转代码</li>
+<li>✅ 设计系统快速实现</li>
 <li>✅ UI组件库开发</li>
-<li>✅ 保持设计与代码一致</li>
-</ul></p><p>**💰 收费情况：**
+<li>✅ 保持设计与代码100%一致</li>
+<li>✅ 快速原型开发</li>
+</ul>
+<h4 id="_47">💰 收费情况</h4>
 <ul>
-<li>**免费版**：基础功能</li>
-<li>**Pro版**：定价见官网</li>
-</ul></p><p>**🌐 访问方式：**
+<li>✅ <strong>完全免费！</strong> 无任何限制</li>
+</ul>
+<h4 id="_48">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://stitch.withgoogle.com" target="_blank">https://stitch.withgoogle.com</a></li>
+<li><strong>官网</strong>：https://stitch.withgoogle.com</li>
 <li>Figma插件商店搜索"Stitch"</li>
-</ul></p><p>---</p><p><h4>3. bolt.new - StackBlitz全栈应用生成 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
-<ul>
-<li>StackBlitz出品，生成完整Web应用</li>
-<li>支持React、Vue、Node.js等技术栈</li>
-<li>在线IDE环境，实时运行预览</li>
-<li>持续对话修改完善</li>
-<li>支持导出项目代码</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>自动生成完整项目结构</li>
-<li>前后端同时生成</li>
-<li>自动配置依赖和构建工具</li>
-</ul></p><p>**✍️ Prompt示例：**
-<div class="code-block">
-"创建一个任务管理Web应用：</p><p>前端：
-<ul>
-<li>React + TypeScript + Vite</li>
-<li>Tailwind CSS样式</li>
-<li>用户可以添加、编辑、删除任务</li>
-<li>任务有状态：待办、进行中、已完成</li>
-<li>支持拖拽排序</li>
-<li>本地存储用localStorage</li>
-</ul></p><p>后端（可选）：
-<ul>
-<li>Node.js + Express</li>
-<li>SQLite数据库</li>
-<li>RESTful API</li>
-<li>JWT认证</li>
-</ul></p><p>请生成完整可运行的项目"
-</div></p><p>**🎯 适用任务：**
-<ul>
-<li>✅ 生成完整的全栈应用</li>
-<li>✅ 快速搭建项目骨架</li>
-<li>✅ 创建Landing Page</li>
-<li>✅ 构建管理后台</li>
-<li>✅ 教学演示和原型验证</li>
-</ul></p><p>**💰 收费情况：**
-<ul>
-<li>**免费版**：有使用次数限制</li>
-<li>**付费版**：$20/月，无限使用</li>
-</ul></p><p>**🌐 访问方式：**
-<ul>
-<li>官网：<a href="https://bolt.new" target="_blank">https://bolt.new</a></li>
-<li>浏览器直接使用</li>
-</ul></p><p>---</p><p><h4>4. Lovable (GPT Engineer) - AI全栈开发 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
-<ul>
-<li>从自然语言描述生成完整应用</li>
-<li>支持React、Next.js、Supabase</li>
-<li>自动部署到云端</li>
-<li>可视化编辑界面</li>
-</ul></p><p>**✍️ Prompt示例：**
-<div class="code-block">
-"创建一个SaaS订阅管理系统：</p><p>功能：
-1. 用户注册和登录
-2. 订阅套餐选择（月付/年付）
-3. Stripe支付集成
-4. 用户仪表板（使用情况、账单）
-5. 管理后台（用户管理、数据统计）</p><p>技术栈：
-<ul>
-<li>Next.js 14</li>
-<li>Supabase（数据库和认证）</li>
-<li>Stripe（支付）</li>
-<li>Tailwind CSS</li>
-<li>TypeScript</li>
-</ul></p><p>请生成完整项目并部署"
-</div></p><p>**🎯 适用任务：**
-<ul>
-<li>✅ 快速构建MVP产品</li>
-<li>✅ 创建SaaS应用原型</li>
-<li>✅ 全栈项目搭建</li>
-</ul></p><p>**💰 收费情况：**
-<ul>
-<li>**Hobby版**：$29/月</li>
-<li>**Pro版**：$99/月</li>
-</ul></p><p>**🌐 访问方式：**
-<ul>
-<li>官网：<a href="https://lovable.dev" target="_blank">https://lovable.dev</a></li>
-</ul></p><p>---</p><p><h4>5. Replit Agent - 在线AI协作开发 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
-<ul>
-<li>在线IDE + AI编程助手</li>
-<li>支持50+编程语言</li>
-<li>实时协作，多人同时编辑</li>
-<li>内置部署功能</li>
-</ul></p><p>**🎯 AI Agent能力：**
-<ul>
-<li>自动配置开发环境</li>
-<li>智能安装依赖</li>
-<li>一键部署到生产</li>
-</ul></p><p>**✍️ 使用方式：**
-<div class="code-block">
-在Replit中问AI：
-"创建一个Express API服务器，有用户CRUD接口"
-"添加JWT认证"
-"部署到生产环境"
-</div></p><p>**🎯 适用任务：**
-<ul>
-<li>✅ 在线协作开发</li>
-<li>✅ 编程教学和学习</li>
-<li>✅ 快速验证想法</li>
-<li>✅ API开发和测试</li>
-</ul></p><p>**💰 收费情况：**
-<ul>
-<li>**免费版**：有资源限制</li>
-<li>**Core版**：$7/月</li>
-</ul></p><p>**🌐 访问方式：**
-<ul>
-<li>官网：<a href="https://replit.com" target="_blank">https://replit.com</a></li>
-</ul></p><p>---</p><p><div id="小白工具"></div></p><p><h3 id="general">👶 小白/通用AI工具（推荐从这里开始）</h3></p><p><h4>1. Kimi - 月之暗面超长上下文AI ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li>支持在线使用和插件集成</li>
+</ul>
+<hr />
+<div id="小白通用工具"></div>
+
+<h2 id="ai">👶 小白/通用AI工具（推荐从这里开始！）</h2>
+<hr />
+<h3 id="1-kimi-ai">1. Kimi - 月之暗面超长上下文AI ⭐⭐⭐⭐⭐</h3>
+<h4 id="_49">💡 主要特点</h4>
 <ul>
 <li>国产AI，月之暗面（Moonshot AI）出品</li>
-<li>**200万字**超长上下文（约4本《红楼梦》）</li>
+<li><strong>200万字</strong>超长上下文（约4本《红楼梦》）</li>
 <li>可以一次性读完整本书、长论文</li>
 <li>中文理解能力极强</li>
-<li>**完全免费**，无使用限制</li>
-</ul></p><p>**🎯 适用任务：**
+<li><strong>完全免费</strong>，无使用限制</li>
+</ul>
+<h4 id="_50">🎯 适用任务</h4>
 <ul>
 <li>✅ 长文档阅读和总结（论文、报告、合同）</li>
 <li>✅ 学习资料整理（上传PDF、Word）</li>
@@ -915,138 +919,424 @@ def calculate_user_monthly_subscription_revenue_with_discounts(
 <li>✅ 写作辅助（文章、报告、总结）</li>
 <li>✅ 翻译（中英互译）</li>
 <li>✅ 代码解释和学习</li>
-</ul></p><p>**💰 收费情况：**
+</ul>
+<h4 id="_51">💰 收费情况</h4>
 <ul>
-<li>✅ **完全免费**，无任何限制！</li>
-</ul></p><p>**🌐 访问方式：**
+<li>✅ <strong>完全免费</strong>，无任何限制！</li>
+</ul>
+<h4 id="_52">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://kimi.moonshot.cn" target="_blank">https://kimi.moonshot.cn</a></li>
-<li>无需科学上网</li>
+<li><strong>官网</strong>：https://kimi.moonshot.cn</li>
+<li>无需科学上网，国内直接访问</li>
 <li>支持手机号/微信登录</li>
-</ul></p><p>---</p><p><h4>2. 通义千问 - 阿里云多模态AI ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li>有网页版和APP</li>
+</ul>
+<h4 id="_53">📌 使用技巧</h4>
 <ul>
-<li>阿里云出品</li>
+<li>上传PDF/Word文档，Kimi会自动阅读并回答问题</li>
+<li>适合处理超长文档，如论文、合同、技术文档</li>
+<li>问："总结这篇文章的核心观点"</li>
+<li>问："找出文档中的关键数据"</li>
+</ul>
+<hr />
+<h3 id="2-ai">2. 通义千问 - 阿里云多模态AI ⭐⭐⭐⭐⭐</h3>
+<h4 id="_54">💡 主要特点</h4>
+<ul>
+<li>阿里云出品，技术实力强</li>
 <li>支持多模态（文字、图片、文档）</li>
-<li>深度集成阿里生态</li>
-</ul></p><p>**🎯 适用任务：**
+<li>深度集成阿里生态（钉钉、钉盘）</li>
+</ul>
+<h4 id="_55">🎯 适用任务</h4>
 <ul>
-<li>✅ 办公文档处理</li>
+<li>✅ 办公文档处理（Word、Excel、PPT）</li>
 <li>✅ 图片理解和分析</li>
 <li>✅ 代码辅助</li>
-</ul></p><p>**💰 收费情况：**
+</ul>
+<h4 id="_56">💰 收费情况</h4>
 <ul>
-<li>**免费版**：功能完整</li>
-<li>**Plus版**：¥60/月</li>
-</ul></p><p>**🌐 访问方式：**
+<li><strong>免费版</strong>：功能完整，日常使用足够</li>
+<li><strong>Plus版</strong>：¥60/月，更快响应</li>
+</ul>
+<h4 id="_57">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://tongyi.aliyun.com" target="_blank">https://tongyi.aliyun.com</a></li>
-</ul></p><p>---</p><p><h4>3. 豆包 - 字节跳动AI助手 ⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li><strong>官网</strong>：https://tongyi.aliyun.com</li>
+</ul>
+<hr />
+<h3 id="3-ai">3. 豆包 - 字节跳动AI助手 ⭐⭐⭐⭐</h3>
+<h4 id="_58">💡 主要特点</h4>
 <ul>
-<li>字节跳动出品</li>
-<li>完全免费，无限制</li>
+<li>字节跳动出品，技术成熟</li>
+<li>完全免费，无任何使用限制</li>
 <li>响应速度快</li>
-</ul></p><p>**🎯 适用任务：**
+</ul>
+<h4 id="_59">🎯 适用任务</h4>
 <ul>
-<li>✅ 日常聊天</li>
+<li>✅ 日常聊天对话</li>
 <li>✅ 写作辅助</li>
 <li>✅ 知识问答</li>
-</ul></p><p>**💰 收费情况：**
+</ul>
+<h4 id="_60">💰 收费情况</h4>
 <ul>
-<li>✅ **完全免费**</li>
-</ul></p><p>**🌐 访问方式：**
+<li>✅ <strong>完全免费</strong>，无限制使用！</li>
+</ul>
+<h4 id="_61">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://doubao.com" target="_blank">https://doubao.com</a></li>
-</ul></p><p>---</p><p><div id="设计工具"></div></p><p><h3 id="design">🎨 设计/图像/视频工具</h3></p><p><h4>1. Sora 2 - OpenAI视频生成 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li><strong>官网</strong>：https://doubao.com</li>
+</ul>
+<hr />
+<h3 id="4-chatgpt-openaiai">4. ChatGPT - OpenAI经典AI ⭐⭐⭐⭐⭐</h3>
+<h4 id="_62">💡 主要特点</h4>
 <ul>
-<li>OpenAI 2025最新视频生成模型</li>
-<li>从文字描述生成高质量视频</li>
-<li>支持最长60秒视频</li>
-<li>物理规律准确，运动流畅</li>
-<li>支持多种视频风格</li>
-</ul></p><p>**🎯 适用任务：**
+<li>OpenAI出品，全球最流行的AI</li>
+<li>功能全面，插件生态丰富</li>
+<li>支持联网搜索、数据分析、图像生成</li>
+</ul>
+<h4 id="_63">🎯 适用任务</h4>
 <ul>
-<li>✅ 文字生成视频</li>
-<li>✅ 产品宣传片</li>
-<li>✅ 教学演示视频</li>
-<li>✅ 创意视频制作</li>
-<li>✅ 概念验证</li>
-</ul></p><p>**✍️ Prompt示例：**
-<div class="code-block">
-"创建一个30秒的产品宣传视频：</p><p>场景：现代化办公室
-镜头：从窗外推进，展示团队在使用我们的软件
-风格：商业广告风格，明亮温暖色调
-音乐：轻快的背景音乐
-文字：产品名称和Slogan
-分辨率：1920x1080"
-</div></p><p>**💰 收费情况：**
+<li>✅ 通用对话和问答</li>
+<li>✅ 写作（文章、代码、创意文案）</li>
+<li>✅ 数据分析（上传Excel/CSV）</li>
+<li>✅ 图像生成</li>
+<li>✅ 联网搜索最新信息</li>
+</ul>
+<h4 id="_64">💰 收费情况</h4>
 <ul>
-<li>定价待官方公布</li>
-<li>预计包含在ChatGPT Pro订阅中</li>
-</ul></p><p>**🌐 访问方式：**
+<li><strong>免费版</strong>：GPT-4o mini，有使用限制</li>
+<li><strong>Plus版</strong>：$20/月，GPT-4o无限使用，包含DALL·E 3</li>
+<li><strong>Pro版</strong>：$200/月，o1推理模型无限使用</li>
+</ul>
+<h4 id="_65">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://openai.com/sora" target="_blank">https://openai.com/sora</a></li>
-<li>需要等待正式发布</li>
-</ul></p><p>---</p><p><h4>2. 剪映 - 视频剪辑AI工具 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+<li><strong>官网</strong>：https://chat.openai.com</li>
+</ul>
+<hr />
+<h3 id="5-perplexity-ai-ai">5. Perplexity AI - AI搜索引擎 ⭐⭐⭐⭐</h3>
+<h4 id="_66">💡 主要特点</h4>
 <ul>
-<li>字节跳动出品</li>
-<li>**自动识别语音生成字幕**</li>
+<li>AI驱动的搜索引擎</li>
+<li>不只给链接，直接给答案</li>
+<li>每个答案都有引用来源</li>
+<li>实时联网搜索</li>
+</ul>
+<h4 id="_67">🎯 适用任务</h4>
+<ul>
+<li>✅ 搜索资料和学习</li>
+<li>✅ 了解最新新闻和动态</li>
+<li>✅ 研究和对比信息</li>
+</ul>
+<h4 id="_68">💰 收费情况</h4>
+<ul>
+<li><strong>免费版</strong>：基础搜索功能</li>
+<li><strong>Pro版</strong>：$20/月，使用GPT-4等高级模型</li>
+</ul>
+<h4 id="_69">🌐 访问方式</h4>
+<ul>
+<li><strong>官网</strong>：https://www.perplexity.ai</li>
+</ul>
+<hr />
+<div id="设计图像视频工具"></div>
+
+<h2 id="_70">🎨 设计/视频工具</h2>
+<hr />
+<h3 id="1-ai">1. 剪映 - 视频剪辑AI工具 ⭐⭐⭐⭐⭐</h3>
+<h4 id="_71">💡 主要特点</h4>
+<ul>
+<li><strong>字节跳动出品，完全免费</strong></li>
+<li><strong>AI自动识别语音生成字幕</strong>（准确率极高）</li>
 <li>智能剪辑，一键成片</li>
-<li>**完全免费**</li>
-</ul></p><p>**🎯 适用任务：**
+<li>丰富的特效和转场效果</li>
+<li>AI配音、AI文案生成</li>
+<li>支持多平台使用</li>
+</ul>
+<h4 id="_72">🎯 适用任务</h4>
 <ul>
-<li>✅ 短视频制作</li>
+<li>✅ 短视频制作（抖音、快手、视频号）</li>
 <li>✅ Vlog剪辑</li>
-<li>✅ 会议录屏加字幕</li>
-<li>✅ 自动去水印</li>
-</ul></p><p>**💰 收费情况：**
+<li>✅ 教学视频制作</li>
+<li>✅ 会议录屏自动加字幕</li>
+<li>✅ 去水印、变速、倒放等功能</li>
+</ul>
+<h4 id="_73">💰 收费情况</h4>
 <ul>
-<li>✅ **完全免费**</li>
-</ul></p><p>**🌐 访问方式：**
+<li>✅ <strong>完全免费！</strong>（少量会员专属素材）</li>
+</ul>
+<h4 id="_74">🌐 访问方式</h4>
 <ul>
 <li>搜索"剪映"下载APP</li>
 <li>支持Windows、macOS、iOS、Android</li>
-</ul></p><p>---</p><p><h4>3. Canva - 零基础设计工具 ⭐⭐⭐⭐⭐</h4></p><p>**💡 主要特点：**
+</ul>
+<hr />
+<h3 id="2-canva-">2. Canva - 零基础设计工具 ⭐⭐⭐⭐⭐</h3>
+<h4 id="_75">💡 主要特点</h4>
 <ul>
-<li>零基础也能做设计</li>
-<li>海量模板</li>
-<li>AI辅助设计</li>
-</ul></p><p>**🎯 适用任务：**
+<li>零基础也能做专业设计</li>
+<li>海量模板（PPT、海报、社交媒体、简历等）</li>
+<li>拖拽式操作，非常简单</li>
+<li>AI辅助设计（AI生成图片、AI抠图、AI文案）</li>
+</ul>
+<h4 id="_76">🎯 适用任务</h4>
 <ul>
 <li>✅ PPT制作</li>
 <li>✅ 海报设计</li>
-<li>✅ 社交媒体内容</li>
-</ul></p><p>**💰 收费情况：**
+<li>✅ 社交媒体配图</li>
+<li>✅ 公众号封面</li>
+<li>✅ 简历制作</li>
+<li>✅ Logo设计</li>
+</ul>
+<h4 id="_77">💰 收费情况</h4>
 <ul>
-<li>**免费版**：够用</li>
-<li>**Pro版**：$12.99/月</li>
-</ul></p><p>**🌐 访问方式：**
+<li><strong>免费版</strong>：基础模板和功能，日常使用足够</li>
+<li><strong>Pro版</strong>：$12.99/月，所有模板+AI功能</li>
+</ul>
+<h4 id="_78">🌐 访问方式</h4>
 <ul>
-<li>官网：<a href="https://www.canva.com" target="_blank">https://www.canva.com</a></li>
-</ul></p><p>---</p><p><h2 id="pricing">💰 价格汇总</h2></p><p>| 价格 | 工具 |
-|-----|------|
-| **✅ 完全免费** | Kimi、豆包、剪映、通义千问免费版 |
-| **$10/月** | GitHub Copilot |
-| **$20/月** | Cursor Pro、Claude Pro、ChatGPT Plus、Gemini Advanced、v0.dev、bolt.new |
-| **$29+/月** | Lovable、Midjourney Pro |</p><p>---</p><p><h2>📚 【学习资源】</h2></p><p><ul>
-<li>[Cursor文档](<a href="https://docs.cursor.sh)" target="_blank">https://docs.cursor.sh)</a></li>
-<li>[Claude MCP文档](<a href="https://docs.anthropic.com/mcp)" target="_blank">https://docs.anthropic.com/mcp)</a></li>
-<li>[Prompt工程指南](<a href="https://www.promptingguide.ai)" target="_blank">https://www.promptingguide.ai)</a></li>
-</ul></p><p>---</p><p>**最后更新：2025年10月4日**</p>
-        </div>
-        
-        <footer style="background: var(--dark); color: white; text-align: center; padding: 50px; margin-top: 60px;">
-            <p style="font-size: 1.2em; margin-bottom: 15px;"><strong>📅 最后更新：2025年10月4日</strong></p>
-            <p style="font-size: 1.1em;">💡 AI工具更新很快，建议定期查看最新版本</p>
-            <p style="margin-top: 25px; font-size: 1.2em;">祝大家使用AI工具愉快，效率翻倍！🚀</p>
-        </footer>
+<li><strong>官网</strong>：https://www.canva.com</li>
+<li>支持网页版和APP</li>
+</ul>
+<hr />
+<div id="价格汇总"></div>
+
+<h2 id="_79">💰 价格汇总对比</h2>
+<h3 id="_80">🎁 完全免费的强大工具（推荐！）</h3>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>类型</th>
+<th>核心功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AI Studio</strong></td>
+<td>AI编程</td>
+<td>Google出品，Gemini 2.0，无限制使用</td>
+</tr>
+<tr>
+<td><strong>Grok</strong></td>
+<td>AI编程</td>
+<td>xAI出品，实时联网，强大代码能力</td>
+</tr>
+<tr>
+<td><strong>Gemini CLI</strong></td>
+<td>命令行AI</td>
+<td>终端直接使用AI，自动化操作</td>
+</tr>
+<tr>
+<td><strong>TRAE</strong></td>
+<td>编程助手</td>
+<td>轻量级，专注编程场景</td>
+</tr>
+<tr>
+<td><strong>Kimi</strong></td>
+<td>通用AI</td>
+<td>200万字超长上下文，国内直接访问</td>
+</tr>
+<tr>
+<td><strong>豆包</strong></td>
+<td>通用AI</td>
+<td>字节跳动出品，响应速度快</td>
+</tr>
+<tr>
+<td><strong>剪映</strong></td>
+<td>视频剪辑</td>
+<td>AI自动字幕，智能剪辑</td>
+</tr>
+<tr>
+<td><strong>Stitch</strong></td>
+<td>UI生成</td>
+<td>Google出品，设计稿自动转代码</td>
+</tr>
+<tr>
+<td><strong>通义千问</strong></td>
+<td>通用AI</td>
+<td>阿里云出品，办公文档处理强</td>
+</tr>
+</tbody>
+</table>
+<p><strong>💡 这些免费工具组合，已经可以满足90%的日常需求！</strong></p>
+<hr />
+<h3 id="_81">💰 按价格区间分类</h3>
+<table>
+<thead>
+<tr>
+<th>价格区间</th>
+<th>工具列表</th>
+<th>推荐人群</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>✅ 完全免费</strong></td>
+<td>AI Studio、Grok、Gemini CLI、TRAE、Codex、Kimi、豆包、剪映、Stitch、通义千问</td>
+<td><strong>所有人首选</strong>，功能强大，零成本</td>
+</tr>
+<tr>
+<td><strong>$20/月</strong></td>
+<td>Cursor Pro、Claude Pro、ChatGPT Plus</td>
+<td>专业用户、重度使用者</td>
+</tr>
+<tr>
+<td><strong>$13/月</strong></td>
+<td>Canva Pro</td>
+<td>需要高级设计模板</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_82">推荐方案</h3>
+<p><strong>🎯 零成本完美方案（强烈推荐！）：</strong>
+- 💻 <strong>AI编程</strong>：AI Studio（免费） + Grok（免费） + Gemini CLI（免费）
+- 🤖 <strong>日常AI</strong>：Kimi（免费） / 豆包（免费）
+- 🎨 <strong>UI生成</strong>：Stitch（免费）
+- 🎬 <strong>视频剪辑</strong>：剪映（免费）
+- 🎨 <strong>图片设计</strong>：Canva免费版</p>
+<p><strong>总成本：$0</strong> - 完全免费，能力超强！</p>
+<p><strong>💎 专业用户方案（$20/月）：</strong>
+- Cursor Pro ($20/月) 或 Claude Pro ($20/月)
+- 配合免费工具使用，效率最高</p>
+<p><strong>🚀 全能方案（$40/月）：</strong>
+- Cursor Pro ($20/月)
+- Claude Pro ($20/月)
+- 配合所有免费工具，覆盖所有场景</p>
+<hr />
+<h2 id="_83">⚠️ 重要提示和最佳实践</h2>
+<h3 id="_84">数据安全</h3>
+<p><strong>❗ 不要上传的内容：</strong>
+- ❌ 公司机密代码
+- ❌ 用户隐私数据
+- ❌ 未发布的商业计划
+- ❌ 身份证、密码等敏感信息</p>
+<p><strong>✅ 企业使用建议：</strong>
+- 选择支持私有化部署的工具（如Tabnine Enterprise）
+- 使用企业版工具，有数据保护协议
+- 敏感信息脱敏处理</p>
+<h3 id="_85">学习建议</h3>
+<ol>
+<li><strong>从免费工具开始</strong></li>
+<li>先用Kimi/豆包体验AI对话</li>
+<li>再用Canva/剪映体验AI创作</li>
+<li>
+<p>最后根据需求选择付费工具</p>
+</li>
+<li>
+<p><strong>不要过度依赖AI</strong></p>
+</li>
+<li>AI是辅助工具，不是替代品</li>
+<li>AI生成的内容需要人工审核</li>
+<li>
+<p>保持批判性思维</p>
+</li>
+<li>
+<p><strong>善用AI学习</strong></p>
+</li>
+<li>遇到不懂的代码，问AI解释</li>
+<li>让AI教你新技术</li>
+<li>用AI做学习助手</li>
+</ol>
+<h3 id="_86">选择建议</h3>
+<p><strong>如何选择合适的AI工具？</strong></p>
+<ol>
+<li><strong>看需求场景</strong></li>
+<li>日常对话 → Kimi/豆包（免费）</li>
+<li>写代码 → Cursor + Claude</li>
+<li>生成UI → v0.dev / Stitch</li>
+<li>
+<p>做设计 → Canva / Midjourney</p>
+</li>
+<li>
+<p><strong>看预算</strong></p>
+</li>
+<li>预算有限 → 优先用免费工具</li>
+<li>专业用户 → 考虑$20/月的主流工具</li>
+<li>
+<p>企业团队 → 选择企业版，有技术支持</p>
+</li>
+<li>
+<p><strong>看使用频率</strong></p>
+</li>
+<li>偶尔用 → 免费版够用</li>
+<li>每天用 → 付费版更划算</li>
+<li>重度用户 → 选Pro版</li>
+</ol>
+<hr />
+<h2 id="_87">📚 学习资源</h2>
+<h3 id="_88">官方文档</h3>
+<ul>
+<li><a href="https://docs.anthropic.com">Claude使用指南</a></li>
+<li><a href="https://docs.cursor.sh">Cursor文档</a></li>
+<li><a href="https://v0.dev/docs">v0.dev教程</a></li>
+<li><a href="https://docs.anthropic.com/mcp">MCP协议文档</a></li>
+</ul>
+<h3 id="_89">社区资源</h3>
+<ul>
+<li><a href="https://www.promptingguide.ai">Prompt Engineering指南</a></li>
+<li><a href="https://github.blog">GitHub Copilot最佳实践</a></li>
+<li><a href="https://learn-cursor.com/">Cursor中文社区</a></li>
+</ul>
+<h3 id="_90">视频教程</h3>
+<ul>
+<li>B站搜索："Cursor教程"、"AI编程"、"v0.dev教程"</li>
+<li>YouTube搜索："AI Coding"、"v0.dev tutorial"</li>
+</ul>
+<hr />
+<h2 id="_91">📅 文档更新记录</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>版本</th>
+<th>更新内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025-10-09</td>
+<td>v2.0</td>
+<td>• <strong>大幅简化文档，突出免费工具</strong><br/>• 新增：AI Studio、Grok、Gemini CLI、TRAE、Codex<br/>• 移除不常用工具，保持简洁实用<br/>• UI工具仅保留Stitch（免费且强大）<br/>• 设计工具仅保留剪映和Canva<br/>• 重点推荐零成本方案</td>
+</tr>
+<tr>
+<td>2025-10-04</td>
+<td>v1.0</td>
+<td>• 初始版本<br/>• 包含核心概念详解（MCP、Agent、Prompt、Rules）<br/>• 所有工具详细说明</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_92">💬 反馈与建议</h2>
+<p>如有任何问题或建议，欢迎反馈！</p>
+<p><strong>最后更新：2025年10月9日</strong></p>
+<hr />
+<h2 id="_93">🌟 核心推荐总结</h2>
+<h3 id="_94">🎁 完全免费的超强组合</h3>
+<p><strong>编程开发：</strong>
+- AI Studio（Google免费AI，能力强大）
+- Grok（xAI免费，实时联网）
+- Gemini CLI（命令行AI工具）
+- TRAE（轻量级编程助手）
+- Codex（OpenAI代码模型）</p>
+<p><strong>UI和设计：</strong>
+- Stitch（Google免费，设计稿自动转代码）
+- Canva免费版（零基础设计）
+- 剪映（视频剪辑神器）</p>
+<p><strong>日常使用：</strong>
+- Kimi（200万字超长上下文）
+- 豆包（字节跳动AI）</p>
+<p><strong>💡 以上所有工具完全免费，组合使用，效率爆表！</strong></p>
+<hr />
+<p><strong>祝大家使用AI工具愉快，效率翻倍！🚀</strong></p>
     </div>
-    
-    <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+    <a href="#" class="back-to-top">↑</a>
     
     <script>
-        window.addEventListener('scroll', () => {
-            const btn = document.querySelector('.back-to-top');
-            btn.classList.toggle('show', window.pageYOffset > 300);
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 </body>
