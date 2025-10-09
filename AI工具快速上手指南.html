@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI工具快速上手指南 - 5分钟学会用AI</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; line-height: 1.8; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-        h1 { color: #667eea; font-size: 2.5em; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 3px solid #667eea; }
-        h2 { color: #764ba2; font-size: 2em; margin-top: 40px; margin-bottom: 20px; padding-left: 15px; border-left: 5px solid #667eea; }
-        h3 { color: #555; font-size: 1.5em; margin-top: 30px; margin-bottom: 15px; }
-        h4 { color: #666; font-size: 1.2em; margin-top: 20px; margin-bottom: 10px; }
-        p { margin-bottom: 15px; }
-        ul, ol { margin-left: 30px; margin-bottom: 15px; }
-        li { margin-bottom: 8px; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        th { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; text-align: left; font-weight: 600; }
-        td { padding: 12px 15px; border-bottom: 1px solid #eee; }
-        tr:hover { background-color: #f5f5f5; }
-        code { background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; color: #e83e8c; }
-        pre { background-color: #f4f4f4; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 15px 0; }
-        pre code { background: none; padding: 0; color: #333; }
-        blockquote { border-left: 4px solid #667eea; background-color: #f9f9f9; padding: 15px 20px; margin: 20px 0; font-style: italic; }
-        a { color: #667eea; text-decoration: none; transition: color 0.3s; }
-        a:hover { color: #764ba2; text-decoration: underline; }
-        hr { border: none; border-top: 2px solid #eee; margin: 30px 0; }
-        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 2em; } h2 { font-size: 1.5em; } }
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s; text-decoration: none; font-size: 24px; }
-        .back-to-top:hover { transform: translateY(-5px); }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 id="ai">AI工具快速上手指南</h1>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AI工具快速上手指南</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;line-height:1.8;color:#333;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}.container{max-width:1000px;margin:0 auto;background:white;padding:40px;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}h1{color:#667eea;font-size:2.5em;margin-bottom:20px;padding-bottom:15px;border-bottom:3px solid #667eea}h2{color:#764ba2;font-size:2em;margin-top:40px;margin-bottom:20px;padding-left:15px;border-left:5px solid #667eea}h3{color:#555;font-size:1.5em;margin-top:30px;margin-bottom:15px}h4{color:#666;font-size:1.2em;margin-top:20px;margin-bottom:10px}p{margin-bottom:15px}ul,ol{margin-left:30px;margin-bottom:15px}li{margin-bottom:8px}table{width:100%;border-collapse:collapse;margin:20px 0;box-shadow:0 2px 10px rgba(0,0,0,0.1)}th{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:15px;text-align:left;font-weight:600}td{padding:12px 15px;border-bottom:1px solid #eee}tr:hover{background-color:#f5f5f5}code{background-color:#f4f4f4;padding:2px 6px;border-radius:3px;font-family:'Courier New',monospace;color:#e83e8c}pre{background-color:#f4f4f4;padding:15px;border-radius:8px;overflow-x:auto;margin:15px 0}pre code{background:none;padding:0;color:#333}blockquote{border-left:4px solid #667eea;background-color:#f9f9f9;padding:15px 20px;margin:20px 0;font-style:italic}a{color:#667eea;text-decoration:none;transition:color 0.3s}a:hover{color:#764ba2;text-decoration:underline}hr{border:none;border-top:2px solid #eee;margin:30px 0}@media (max-width:768px){.container{padding:20px}h1{font-size:2em}h2{font-size:1.5em}}.back-to-top{position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);transition:transform 0.3s;text-decoration:none;font-size:24px}.back-to-top:hover{transform:translateY(-5px)}</style></head><body><div class="container"><h1 id="ai">AI工具快速上手指南</h1>
 <blockquote>
 <p>📌 <strong>5分钟学会用AI工具</strong> - 手把手教学，小白也能看懂</p>
 </blockquote>
@@ -64,7 +29,7 @@
 <td>$20/月</td>
 </tr>
 <tr>
-<td>🎨 设计稿转代码</td>
+<td>🎨 生成UI界面代码</td>
 <td><strong>Stitch</strong></td>
 <td>✅ 免费</td>
 </tr>
@@ -517,7 +482,7 @@ Ctrl+Enter  - 查看所有建议
 
 <p><strong>✅ 你已经学会用AI写代码了！</strong></p>
 <hr />
-<h2 id="uistitch">🎨 UI设计师：用Stitch设计稿转代码</h2>
+<h2 id="stitchui">🎨 前端开发：用Stitch生成UI界面</h2>
 <h3 id="stitchgoogle">工具：Stitch（Google出品，完全免费）</h3>
 <p><strong>第一步：访问网站</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">打开浏览器</span>
@@ -525,32 +490,63 @@ Ctrl+Enter  - 查看所有建议
 <span class="mf">3.</span><span class="w"> </span><span class="n">登录Google账号</span>
 </code></pre></div>
 
-<p><strong>第二步：上传设计稿</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">准备你的Figma或Sketch设计稿</span>
-<span class="mf">2.</span><span class="w"> </span><span class="n">在Stitch中导入设计稿</span>
-<span class="mf">3.</span><span class="w"> </span><span class="n">或者直接上传设计图片</span>
+<p><strong>第二步：描述你要的UI</strong></p>
+<div class="codehilite"><pre><span></span><code>在输入框输入需求，例如：
+
+&quot;创建一个现代风格的登录页面
+- 有邮箱和密码输入框
+- Material Design风格
+- 深色模式支持
+- 响应式布局
+- 使用React和Tailwind CSS&quot;
 </code></pre></div>
 
-<p><strong>第三步：自动生成代码</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Stitch</span><span class="w"> </span><span class="n">AI自动分析设计稿</span>
-<span class="mf">2.</span><span class="w"> </span><span class="n">识别组件</span><span class="err">、</span><span class="n">布局</span><span class="err">、</span><span class="n">样式</span>
-<span class="mf">3.</span><span class="w"> </span><span class="n">自动生成React</span><span class="o">/</span><span class="n">Vue</span><span class="o">/</span><span class="n">Angular代码</span>
-<span class="mf">4.</span><span class="w"> </span><span class="n">完美还原设计细节</span>
+<p><strong>第三步：AI自动生成代码</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Stitch</span><span class="w"> </span><span class="n">AI理解你的需求</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">自动生成完整的UI代码</span>
+<span class="mf">3.</span><span class="w"> </span><span class="n">实时预览效果</span>
+<span class="mf">4.</span><span class="w"> </span><span class="n">支持React</span><span class="err">、</span><span class="n">Vue</span><span class="err">、</span><span class="n">Angular</span>
+<span class="mf">5.</span><span class="w"> </span><span class="n">一键复制代码</span>
 </code></pre></div>
 
 <p><strong>实际例子：</strong></p>
-<div class="codehilite"><pre><span></span><code>场景：你有一个登录页面的设计稿
+<div class="codehilite"><pre><span></span><code>例子1：生成仪表盘
+输入：&quot;创建一个数据仪表盘，包含：
+- 顶部导航栏
+- 侧边菜单
+- 数据卡片（显示销售额、用户数、订单数）
+- 图表区域
+- 使用Material UI组件&quot;
 
-步骤：
-1. 在Figma完成设计
-2. 打开Stitch插件（或网页版）
-3. 选择要转换的页面
-4. 点击&quot;生成代码&quot;
-5. 自动生成完整的React组件代码
-6. 复制代码到项目中
+等待5-10秒 → Stitch生成完整代码 → 预览 → 复制使用
+
+例子2：生成表单
+输入：&quot;创建用户注册表单
+- 姓名、邮箱、密码、确认密码
+- 实时验证
+- 提交按钮
+- 使用React Hook Form&quot;
+
+AI自动生成 → 包含验证逻辑 → 复制代码
+
+例子3：生成卡片列表
+输入：&quot;生成产品卡片列表
+- 网格布局，每行3个
+- 每个卡片有图片、标题、价格、购买按钮
+- Hover动画效果
+- 响应式设计&quot;
+
+AI立即生成 → 完美布局 → 直接使用
 </code></pre></div>
 
-<p><strong>✅ 完全免费！设计稿秒变代码！</strong></p>
+<p><strong>第四步：调整优化</strong></p>
+<div class="codehilite"><pre><span></span><code>不满意可以继续对话：
+&quot;把主色调改成蓝色&quot;
+&quot;添加加载动画&quot;
+&quot;移动端一行显示1个卡片&quot;
+</code></pre></div>
+
+<p><strong>✅ 完全免费！描述需求秒变UI代码！</strong></p>
 <hr />
 <h2 id="canvappt">🎨 做设计：用Canva做海报/PPT</h2>
 <h3 id="canva">工具：Canva（免费版够用）</h3>
@@ -848,17 +844,4 @@ Ctrl+Enter  - 查看所有建议
 <p><strong>💡 以上全部免费，满足90%需求！</strong></p>
 <hr />
 <p>📅 <strong>更新时间：</strong> 2025年10月9日<br />
-💬 <strong>有问题？</strong> 直接问AI："我是新手，应该怎么开始用AI工具？"</p>
-    </div>
-    <a href="#" class="back-to-top">↑</a>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) { target.scrollIntoView({ behavior: 'smooth' }); }
-            });
-        });
-    </script>
-</body>
-</html>
+💬 <strong>有问题？</strong> 直接问AI："我是新手，应该怎么开始用AI工具？"</p></div><a href="#" class="back-to-top">↑</a><script>document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();const target=document.querySelector(this.getAttribute('href'));if(target){target.scrollIntoView({behavior:'smooth'})}})});</script></body></html>
