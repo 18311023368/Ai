@@ -300,46 +300,190 @@ TRAE会：
 
 ---
 
-### 🎁 免费工具5：Codex（OpenAI代码模型）
+### 🎁 免费工具5：Codex（OpenAI新一代AI编程助手）⭐⭐⭐⭐⭐
 
 **💡 什么是Codex？**
 ```
-- OpenAI专门训练的代码AI模型
-- 支持多种编程语言
-- 自然语言转代码
+- OpenAI 最新推出的智能编程助手
+- 包含在 ChatGPT Plus、Pro、Team、Edu 和 Enterprise 中
+- 可在终端、IDE、云端、手机端使用
+- 支持团队协作和自动化工作流
 ```
 
-**官方网站**
-```
-访问：https://openai.com/zh-Hans-CN/codex/
-了解最新功能和使用方法
+**🎯 三种使用方式**
+
+---
+
+**方式1：Codex CLI（命令行）**
+
+**安装**
+```bash
+npm i -g @openai/codex
 ```
 
-**主要使用方式：GitHub Copilot**
+**使用**
+```bash
+# 在终端直接与 Codex 对话
+$ codex "帮我添加暗色模式功能"
 
-**第一步：安装**
-```
-1. 访问：github.com/features/copilot
-2. 订阅服务（学生免费，其他$10/月）
-3. 在VS Code安装Copilot插件
-```
-
-**第二步：使用**
-```
-1. 写注释描述需求
-2. Copilot自动补全代码
-3. 按Tab接受建议
+# Codex 会：
+1. 浏览你的代码库
+2. 编辑相关文件
+3. 运行测试
+4. 执行命令
 ```
 
-**快捷键**
-```
-Tab         - 接受建议
-Alt+]       - 下一个建议
-Alt+[       - 上一个建议
-Ctrl+Enter  - 查看所有建议
+**实际案例**
+```bash
+# 修复 bug
+$ codex "修复登录接口的401错误"
+
+# 添加新功能
+$ codex "添加用户头像上传功能，使用阿里云OSS"
+
+# 重构代码
+$ codex "把这个组件重构成 TypeScript"
 ```
 
-**✅ 访问官网了解最新功能：https://openai.com/zh-Hans-CN/codex/**
+---
+
+**方式2：IDE 扩展（编辑器内）**
+
+**支持的编辑器**
+```
+- VSCode
+- Cursor
+- Windsurf
+```
+
+**安装步骤**
+```
+1. 打开你的 IDE
+2. 搜索 "OpenAI Codex" 扩展
+3. 安装并登录 ChatGPT 账号
+4. 开始使用
+```
+
+**使用场景**
+```
+- 配对编程：与 Codex 一起写代码
+- 修复 bug：选中代码让 Codex 分析问题
+- 集思广益：讨论解决方案
+- 代码审查：让 Codex 审查你的代码
+```
+
+---
+
+**方式3：云端运行（后台自动）**
+
+**特点**
+```
+- Codex 在云端独立沙盒环境中运行
+- 包含你的代码库和环境配置
+- 后台执行任务，不影响本地工作
+```
+
+**使用流程**
+```
+1. 在 ChatGPT 中分配任务给 Codex
+2. Codex 在云端开始工作
+3. 你可以继续做其他事情
+4. 完成后审核、合并或下载代码
+```
+
+**实际案例**
+```
+任务："创建完整的用户认证系统"
+
+Codex 自动：
+1. 创建数据库模型
+2. 实现 JWT 认证
+3. 编写 API 接口
+4. 添加单元测试
+5. 生成文档
+6. 提交 PR 供你审核
+```
+
+---
+
+**🤝 团队协作功能**
+
+**1. GitHub 代码审查**
+```
+- 自动审查新的 Pull Request
+- 在 PR 中 @codex 请求审查
+- Codex 对比意图和代码变更
+- 运行代码并提供详细审查意见
+```
+
+**2. Slack 集成**
+```
+在 Slack 频道中：
+@codex 帮我修复这个 bug：[描述问题]
+
+Codex 会：
+1. 自动从对话中获取上下文
+2. 选择正确的代码仓库
+3. 开始修复工作
+4. 完成后通知你
+```
+
+**3. Codex SDK（自动化）**
+```typescript
+// 嵌入到 GitHub Actions 或内部工具
+import { Codex } from '@openai/codex-sdk';
+
+const codex = new Codex();
+
+// 自动化 CI/CD 流程
+await codex.startThread({
+  prompt: "运行所有测试并修复失败的用例",
+  repo: "my-project"
+});
+```
+
+---
+
+**📱 移动端支持**
+
+**通过 ChatGPT 手机 APP**
+```
+1. 打开 ChatGPT 移动应用
+2. 随时启动编程任务
+3. 追踪进度
+4. 审查 PR
+5. 合并变更
+
+随时随地写代码！
+```
+
+---
+
+**💰 价格**
+```
+✅ 包含在以下套餐中（无需额外付费）：
+- ChatGPT Plus ($20/月)
+- ChatGPT Pro ($200/月)  
+- ChatGPT Team
+- ChatGPT Edu
+- ChatGPT Enterprise
+
+已订阅的用户可直接使用！
+```
+
+**🚀 快速开始**
+```bash
+# 1. 安装 Codex CLI
+npm i -g @openai/codex
+
+# 2. 登录（使用 ChatGPT 账号）
+codex login
+
+# 3. 开始使用
+codex "帮我分析这个项目的性能瓶颈"
+```
+
+**✅ 官网：https://openai.com/zh-Hans-CN/codex/**
 
 ---
 
