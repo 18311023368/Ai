@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具快速上手指南 - 2025最新版</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", sans-serif;
+            line-height: 1.8; color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px; margin: 0 auto; background: white;
+            border-radius: 20px; box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 60px 40px; text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+        header h1 { font-size: 2.8em; margin-bottom: 15px; }
+        header p { font-size: 1.3em; opacity: 0.95; }
+        nav {
+            background: #1f2937; padding: 20px; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style: none; display: flex; gap: 15px; flex-wrap: wrap;
+            justify-content: center; max-width: 1200px; margin: 0 auto;
+        }
+        nav a {
+            color: white; text-decoration: none; font-weight: 600;
+            padding: 10px 20px; border-radius: 8px; transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        nav a:hover { background: #667eea; transform: translateY(-2px); }
+        .back-to-top {
+            position: fixed; bottom: 40px; right: 40px;
+            background: #667eea; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8em; cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            opacity: 0; transition: all 0.3s; text-decoration: none;
+        }
+        .back-to-top.show { opacity: 1; }
+        .back-to-top:hover { transform: translateY(-8px); }
+        .content { padding: 50px; }
+        h2 {
+            color: #667eea; font-size: 2.2em; margin: 50px 0 25px;
+            padding: 15px 0 15px 20px; border-left: 6px solid #667eea;
+        }
+        h3 {
+            color: #764ba2; font-size: 1.8em; margin: 35px 0 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e5e7eb 100%);
+            padding: 15px 20px; border-radius: 10px;
+        }
+        .step-box {
+            background: #f8f9ff; padding: 25px; margin: 20px 0;
+            border-left: 5px solid #10b981; border-radius: 10px;
+        }
+        .step-box h4 {
+            color: #10b981; font-size: 1.4em; margin-bottom: 15px;
+        }
+        .example {
+            background: #1e293b; color: #e2e8f0; padding: 20px;
+            border-radius: 10px; margin: 15px 0; font-family: 'Courier New', monospace;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px; border-left: 5px solid #f59e0b;
+            border-radius: 10px; margin: 20px 0;
+        }
+        .success {
+            background: linear-gradient(120deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 20px; border-left: 5px solid #10b981;
+            border-radius: 10px; margin: 20px 0; text-align: center;
+            font-size: 1.2em; font-weight: 600; color: #065f46;
+        }
+        table {
+            width: 100%; border-collapse: collapse; margin: 25px 0;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;
+        }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 18px; text-align: left; font-size: 1.1em;
+        }
+        td { padding: 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:hover { background: #f8f9ff; }
+        a { color: #667eea; text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        .cta-button {
+            display: inline-block; padding: 15px 35px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white; border-radius: 30px; font-size: 1.2em;
+            font-weight: 600; text-decoration: none; margin: 10px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
+        }
+        .tip {
+            background: linear-gradient(120deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 15px 20px; border-left: 5px solid #3b82f6;
+            border-radius: 8px; margin: 15px 0;
+        }
+        ul, ol { margin-left: 30px; margin-top: 15px; }
+        li { margin: 12px 0; line-height: 1.9; }
+        .badge-free {
+            display: inline-block; background: #10b981; color: white;
+            padding: 5px 12px; border-radius: 15px; font-size: 0.9em;
+            font-weight: 600; margin: 0 5px;
+        }
+        .badge-paid {
+            display: inline-block; background: #f59e0b; color: white;
+            padding: 5px 12px; border-radius: 15px; font-size: 0.9em;
+            font-weight: 600; margin: 0 5px;
+        }
+        @media (max-width: 768px) {
+            .content { padding: 25px; }
+            header h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 AI工具快速上手指南</h1>
+            <p>2025最新版 | 免费工具大全 | 小白也能看懂</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#quick-select">快速选择</a></li>
+                <li><a href="#free-tools">免费工具</a></li>
+                <li><a href="#beginner">小白工具</a></li>
+                <li><a href="#developer">编程工具</a></li>
+                <li><a href="#ui-tools">UI生成</a></li>
+                <li><a href="#design">设计工具</a></li>
+                <li><a href="#video">视频工具</a></li>
+                <li><a href="#pricing">价格对比</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <h2 id="quick-select">🎯 你需要什么？快速选择</h2>
+            
+            <table>
+                <tr>
+                    <th style="width: 30%;">我想要</th>
+                    <th style="width: 35%;">用什么工具</th>
+                    <th style="width: 35%;">多少钱</th>
+                </tr>
+                <tr>
+                    <td>💬 聊天、写作、日常问答</td>
+                    <td><strong>Kimi</strong></td>
+                    <td><span class="badge-free">✅ 免费</span></td>
+                </tr>
+                <tr>
+                    <td>💻 写代码、编程</td>
+                    <td><strong>AI Studio / Grok / Claude</strong></td>
+                    <td><span class="badge-free">✅ 免费</span></td>
+                </tr>
+                <tr>
+                    <td>💻 高级编程</td>
+                    <td><strong>Cursor</strong></td>
+                    <td><span class="badge-paid">$20/月</span></td>
+                </tr>
+                <tr>
+                    <td>🎨 生成UI界面代码</td>
+                    <td><strong>Stitch</strong></td>
+                    <td><span class="badge-free">✅ 免费</span></td>
+                </tr>
+                <tr>
+                    <td>🖼️ 做海报、PPT</td>
+                    <td><strong>Canva</strong></td>
+                    <td><span class="badge-free">免费版够用</span></td>
+                </tr>
+                <tr>
+                    <td>🎬 剪视频、加字幕</td>
+                    <td><strong>剪映</strong></td>
+                    <td><span class="badge-free">✅ 免费</span></td>
+                </tr>
+            </table>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
+                    立即开始 - 打开Kimi试试！
+                </a>
+            </div>
+            
+            <h2 id="free-tools">🎁 免费编程工具（强烈推荐！）</h2>
+            
+            <div class="highlight">
+                <h4 style="color: #10b981;">⭐ 这些工具完全免费，能力超强！</h4>
+                <p>不需要花钱就能享受强大的AI编程能力，非常适合学生、个人开发者和预算有限的团队！</p>
+            </div>
+            
+            <h3>1. AI Studio - Google免费AI</h3>
+            <div class="step-box">
+                <h4>💡 什么是AI Studio？</h4>
+                <ul>
+                    <li>Google官方出品，<strong>完全免费</strong></li>
+                    <li>基于Gemini 2.0模型，能力强大</li>
+                    <li>支持超长上下文（200万tokens）</li>
+                    <li><strong>无使用次数限制</strong></li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>🚀 快速开始3步</h4>
+                <ol>
+                    <li>访问：<a href="https://aistudio.google.com/prompts/new_chat" target="_blank">aistudio.google.com/prompts/new_chat</a></li>
+                    <li>用Google账号登录</li>
+                    <li>输入："写一个Python函数读取JSON文件"</li>
+                </ol>
+                
+                <div class="example">
+实战例子：<br/>
+输入："用Python写一个爬虫，爬取新闻网站标题"<br/>
+→ AI Studio立即生成完整代码<br/>
+→ 包含错误处理和注释
+                </div>
+            </div>
+            
+            <h3>2. Grok - xAI免费AI</h3>
+            <div class="step-box">
+                <h4>💡 什么是Grok？</h4>
+                <ul>
+                    <li>Elon Musk的xAI团队开发</li>
+                    <li><strong>完全免费使用</strong>（基础版）</li>
+                    <li><strong>实时联网</strong>，获取最新技术动态</li>
+                    <li>强大的代码能力</li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>🚀 快速开始3步</h4>
+                <ol>
+                    <li>访问：<a href="https://grok.com/" target="_blank">grok.com</a></li>
+                    <li>用X（Twitter）账号登录</li>
+                    <li>问："React 19的最新特性是什么？给我代码示例"</li>
+                </ol>
+                
+                <div class="example">
+独特优势：<br/>
+• 实时联网查最新技术<br/>
+• 查询最新的库和框架用法<br/>
+• 了解技术社区动态
+                </div>
+            </div>
+            
+            <h3>3. Gemini CLI - 命令行AI工具</h3>
+            <div class="step-box">
+                <h4>💡 什么是Gemini CLI？</h4>
+                <ul>
+                    <li>在命令行直接使用AI</li>
+                    <li>快速代码生成和调试</li>
+                    <li><strong>完全免费</strong></li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>🚀 安装和使用</h4>
+                <div class="example">
+# 安装<br/>
+npm install -g @google/gemini-cli<br/><br/>
+
+# 使用<br/>
+gemini "怎么用git撤销最后一次提交？"<br/><br/>
+
+# 生成代码<br/>
+gemini "写一个bash脚本，批量重命名文件"
+                </div>
+                <p><strong>✅ 程序员最爱，终端直接用AI！</strong></p>
+            </div>
+            
+            <h3>4. TRAE - 对标Cursor的免费工具</h3>
+            <div class="step-box">
+                <h4>💡 什么是TRAE？</h4>
+                <ul>
+                    <li>未来对标Cursor的AI编程工具</li>
+                    <li>支持多种编程语言</li>
+                    <li>AI代码生成和补全</li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>🚀 快速开始</h4>
+                <ol>
+                    <li>访问：<a href="https://www.trae.ai/" target="_blank">trae.ai</a></li>
+                    <li>注册登录</li>
+                    <li>根据官网指引开始使用</li>
+                </ol>
+                <p><strong>💡 功能：</strong>代码生成、代码优化、Bug修复辅助</p>
+            </div>
+            
+            <h3>5. Codex - OpenAI编程助手</h3>
+            <div class="step-box">
+                <h4>💡 什么是Codex？</h4>
+                <ul>
+                    <li>OpenAI最新的智能编程助手</li>
+                    <li><strong>包含在ChatGPT Plus中</strong>（$20/月）</li>
+                    <li>可在终端、IDE、云端、手机使用</li>
+                    <li>支持团队协作和自动化</li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>🚀 快速开始 - Codex CLI</h4>
+                <div class="example">
+# 1. 安装<br/>
+npm i -g @openai/codex<br/><br/>
+
+# 2. 登录<br/>
+codex login<br/><br/>
+
+# 3. 使用<br/>
+codex "帮我添加暗色模式功能"
+                </div>
+                
+                <p><strong>✅ 包含在ChatGPT Plus中，已订阅的可直接用！</strong></p>
+            </div>
+            
+            <h3>6. Claude - Anthropic AI助手</h3>
+            <div class="step-box">
+                <h4>💡 什么是Claude？</h4>
+                <ul>
+                    <li>Anthropic开发的AI助手</li>
+                    <li><strong>200K tokens超长上下文</strong>（约15万字代码）</li>
+                    <li>强大的代码生成和分析能力</li>
+                    <li>免费版每天约50次对话</li>
+                </ul>
+            </div>
+            
+            <div class="step-box">
+                <h4>🚀 快速开始3步</h4>
+                <ol>
+                    <li>访问：<a href="https://claude.ai/" target="_blank">claude.ai</a></li>
+                    <li>用Google账号登录</li>
+                    <li>粘贴你的代码，问："这段代码有什么问题？如何优化？"</li>
+                </ol>
+                
+                <div class="example">
+独特优势：<br/>
+• 超长上下文，可以粘贴整个项目代码<br/>
+• Projects功能，创建项目知识库<br/>
+• Claude Desktop + MCP，访问本地文件<br/>
+• 擅长代码审查和架构设计
+                </div>
+                
+                <p><span class="badge-free">免费50次/天</span> <span class="badge-paid">$20/月 Pro版</span></p>
+            </div>
+            
+            <div class="success">
+                ✅ 以上6个工具，大部分免费，足够日常编程使用！
+            </div>
+            
+            <h2 id="beginner">👶 完全小白：从Kimi开始</h2>
+            
+            <h3>工具：Kimi（完全免费）</h3>
+            
+            <div class="step-box">
+                <h4>第一步：打开网站</h4>
+                <ol>
+                    <li>打开浏览器</li>
+                    <li>输入网址：<a href="https://kimi.moonshot.cn" target="_blank">kimi.moonshot.cn</a></li>
+                    <li>按回车</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第二步：登录</h4>
+                <ol>
+                    <li>看到登录按钮，点击</li>
+                    <li>用手机号或微信登录</li>
+                    <li>登录成功</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第三步：开始使用</h4>
+                <div class="example">
+例子1：让AI写周报<br/>
+输入："帮我写一份本周工作周报，包括：完成了用户登录功能开发、修复了3个bug、参加了2次会议"<br/><br/>
+
+例子2：总结长文档<br/>
+点击上传按钮 → 选择PDF文件 → 问："总结这个文档的核心内容"<br/><br/>
+
+例子3：翻译<br/>
+输入："把这段话翻译成英文：我们的产品已经上线了"
+                </div>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经学会用AI聊天了！
+            </div>
+            
+            <h2 id="developer">👨‍💻 程序员：用Cursor写代码</h2>
+            
+            <h3>工具：Cursor（$20/月，最强编程工具）</h3>
+            
+            <div class="step-box">
+                <h4>第一步：下载安装</h4>
+                <ol>
+                    <li>访问：<a href="https://cursor.so" target="_blank">cursor.so</a></li>
+                    <li>点击 Download</li>
+                    <li>选择你的系统（Windows/Mac/Linux）</li>
+                    <li>下载完成后安装</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第二步：基础设置</h4>
+                <ol>
+                    <li>首次打开，选择"导入VS Code配置"</li>
+                    <li>登录账号（用GitHub或Google登录）</li>
+                    <li>选择AI模型：推荐选"Claude 4"</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>第三步：开始写代码</h4>
+                <p><strong>方法1：用Ctrl+L对话</strong></p>
+                <ol>
+                    <li>按 Ctrl+L（Mac是Cmd+L）</li>
+                    <li>输入："创建一个Python函数，读取Excel文件并返回数据"</li>
+                    <li>AI会生成完整代码</li>
+                    <li>点击"插入代码"按钮</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                ✅ 你已经学会用AI写代码了！
+            </div>
+            
+            <h2 id="ui-tools">🎨 前端开发：用Stitch生成UI</h2>
+            
+            <h3>工具：Stitch（Google出品，完全免费）</h3>
+            
+            <div class="step-box">
+                <h4>快速开始3步</h4>
+                <ol>
+                    <li>访问：<a href="https://stitch.withgoogle.com" target="_blank">stitch.withgoogle.com</a></li>
+                    <li>登录Google账号</li>
+                    <li>描述你要的UI："创建一个现代风格的登录页面"</li>
+                </ol>
+                
+                <div class="example">
+输入示例：<br/>
+"创建一个登录页面<br/>
+- 有邮箱和密码输入框<br/>
+- Material Design风格<br/>
+- 深色模式支持<br/>
+- 响应式布局<br/>
+- 使用React和Tailwind CSS"<br/><br/>
+
+→ Stitch AI自动生成代码 → 预览 → 复制使用
+                </div>
+            </div>
+            
+            <div class="success">
+                ✅ 完全免费！描述需求秒变UI代码！
+            </div>
+            
+            <h2 id="design">🖼️ 做设计：用Canva做海报/PPT</h2>
+            
+            <h3>工具：Canva（免费版够用）</h3>
+            
+            <div class="step-box">
+                <h4>简单4步</h4>
+                <ol>
+                    <li>访问 <a href="https://canva.com" target="_blank">canva.com</a>，用Google账号登录</li>
+                    <li>搜索"海报"或"PPT"，找到喜欢的模板</li>
+                    <li>双击文字修改，点击图片替换</li>
+                    <li>点击"下载"，选择格式，完成！</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经会用Canva做设计了！
+            </div>
+            
+            <h2 id="video">🎬 剪视频：用剪映加字幕</h2>
+            
+            <h3>工具：剪映（完全免费）</h3>
+            
+            <div class="step-box">
+                <h4>自动加字幕4步</h4>
+                <ol>
+                    <li>搜索"剪映"下载安装</li>
+                    <li>点击"开始创作"，选择视频</li>
+                    <li>点击"文字" → "识别字幕" → "自动识别"</li>
+                    <li>点击"导出"，选择1080P，完成！</li>
+                </ol>
+            </div>
+            
+            <div class="success">
+                ✅ 完成！你已经会用剪映了！
+            </div>
+            
+            <h2 id="pricing">📊 价格总结</h2>
+            
+            <table>
+                <tr>
+                    <th>工具</th>
+                    <th>类型</th>
+                    <th>价格</th>
+                    <th>推荐度</th>
+                </tr>
+                <tr>
+                    <td><strong>AI Studio</strong></td>
+                    <td>编程AI</td>
+                    <td><span class="badge-free">✅ 完全免费</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Grok</strong></td>
+                    <td>编程AI</td>
+                    <td><span class="badge-free">✅ 完全免费</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini CLI</strong></td>
+                    <td>命令行AI</td>
+                    <td><span class="badge-free">✅ 完全免费</span></td>
+                    <td>⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>TRAE</strong></td>
+                    <td>编程助手</td>
+                    <td><span class="badge-free">基础免费</span></td>
+                    <td>⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Codex</strong></td>
+                    <td>OpenAI AI</td>
+                    <td><span class="badge-paid">包含在ChatGPT Plus</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude</strong></td>
+                    <td>编程AI</td>
+                    <td><span class="badge-free">50次/天</span> <span class="badge-paid">$20/月</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Cursor</strong></td>
+                    <td>AI编辑器</td>
+                    <td><span class="badge-paid">$20/月</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Stitch</strong></td>
+                    <td>UI生成</td>
+                    <td><span class="badge-free">✅ 完全免费</span></td>
+                    <td>⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Kimi</strong></td>
+                    <td>通用AI</td>
+                    <td><span class="badge-free">✅ 完全免费</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>Canva</strong></td>
+                    <td>设计工具</td>
+                    <td><span class="badge-free">基础免费</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td><strong>剪映</strong></td>
+                    <td>视频剪辑</td>
+                    <td><span class="badge-free">✅ 完全免费</span></td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                </tr>
+            </table>
+            
+            <div class="highlight">
+                <h4>💰 推荐组合方案</h4>
+                
+                <p><strong>🎁 零成本完美方案（强烈推荐！）</strong></p>
+                <ul>
+                    <li><strong>AI编程：</strong>AI Studio + Grok + Gemini CLI + Claude免费版</li>
+                    <li><strong>日常AI：</strong>Kimi</li>
+                    <li><strong>UI生成：</strong>Stitch</li>
+                    <li><strong>视频剪辑：</strong>剪映</li>
+                    <li><strong>图片设计：</strong>Canva免费版</li>
+                </ul>
+                <p style="text-align: center; margin-top: 15px; font-size: 1.2em; color: #10b981;">
+                    <strong>总成本：$0 - 完全免费，能力超强！</strong>
+                </p>
+                
+                <p style="margin-top: 30px;"><strong>💎 专业用户方案（$20/月）</strong></p>
+                <ul>
+                    <li>Cursor Pro（$20/月）或 Claude Pro（$20/月）</li>
+                    <li>配合免费工具使用，效率最高</li>
+                </ul>
+            </div>
+            
+            <h2>🎯 今天就开始！5分钟行动计划</h2>
+            
+            <div class="step-box">
+                <h4>现在就做（小白）：</h4>
+                <ol>
+                    <li>打开 <a href="https://kimi.moonshot.cn" target="_blank">kimi.moonshot.cn</a></li>
+                    <li>登录</li>
+                    <li>输入："教我如何用AI提升工作效率"</li>
+                    <li>开始对话</li>
+                </ol>
+            </div>
+            
+            <div class="step-box">
+                <h4>现在就做（程序员）：</h4>
+                <ol>
+                    <li>打开 <a href="https://aistudio.google.com/prompts/new_chat" target="_blank">aistudio.google.com</a></li>
+                    <li>登录Google账号</li>
+                    <li>输入："写一个Python函数读取JSON文件"</li>
+                    <li>看AI生成代码</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0;">
+                <a href="https://kimi.moonshot.cn" target="_blank" class="cta-button">
+                    🚀 立即开始 - 打开Kimi
+                </a>
+                <a href="https://aistudio.google.com/prompts/new_chat" target="_blank" class="cta-button">
+                    🚀 编程 - 打开AI Studio
+                </a>
+            </div>
+            
+            <div class="highlight" style="text-align: center; font-size: 1.3em;">
+                <strong>🎉 恭喜你看完了！</strong><br/>
+                <strong>记住：最好的学习方法就是动手试！</strong><br/><br/>
+                <strong>💡 以上免费工具组合，满足90%需求！</strong>
+            </div>
+        </div>
+        
+        <footer style="background: #1f2937; color: white; text-align: center; padding: 40px; border-radius: 0 0 20px 20px;">
+            <p style="font-size: 1.1em; margin-bottom: 10px;"><strong>📅 更新时间：2025年10月9日</strong></p>
+            <p style="font-size: 1em;">💬 有问题？直接问AI："我是新手，应该怎么开始用AI工具？"</p>
+        </footer>
+    </div>
+    
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    
+    <script>
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
