@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 工具与科学上网教程导航</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background: white;
+        border-radius: 20px;
+        padding: 60px 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 1.1em;
+        margin-bottom: 50px;
+      }
+
+      .nav-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .nav-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 15px;
+        padding: 40px 30px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        color: white;
+        display: block;
+      }
+
+      .nav-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+      }
+
+      .nav-card .icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .nav-card h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .nav-card p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95em;
+        line-height: 1.6;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 50px;
+        color: #999;
+        font-size: 0.9em;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 40px 20px;
+        }
+
+        h1 {
+          font-size: 1.8em;
+        }
+
+        .nav-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 欢迎使用 AI 工具教程</h1>
+      <p class="subtitle">选择您需要的教程开始学习</p>
+
+      <div class="nav-cards">
+        <a href="AI工具快速上手指南-最新版.html" class="nav-card">
+          <div class="icon">⚡</div>
+          <h2>AI工具快速上手</h2>
+          <p>快速掌握 ChatGPT、Claude 等 AI 工具的使用方法</p>
+        </a>
+
+        <a href="AI工具-完整版.html" class="nav-card">
+          <div class="icon">📚</div>
+          <h2>AI工具完整版</h2>
+          <p>全面深入的 AI 工具使用教程与技巧</p>
+        </a>
+
+        <a href="vpn.html" class="nav-card">
+          <div class="icon">🌐</div>
+          <h2>科学上网教程</h2>
+          <p>macOS / Windows 内部方案配置指南</p>
+        </a>
+      </div>
+
+      <div class="footer">
+        <p>© 2025 AI 工具与科学上网教程</p>
+      </div>
+    </div>
+  </body>
+</html>
