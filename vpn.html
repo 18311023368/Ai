@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>科学上网与 Google 账号注册教程</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px 40px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      header p {
+        font-size: 1.1em;
+        opacity: 0.9;
+      }
+
+      nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 15px 40px;
+        border-bottom: none;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1200px;
+        width: calc(100% - 40px);
+        z-index: 1000;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 20px 20px;
+        transition: all 0.3s ease;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      nav li {
+        position: relative;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #667eea;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 12px 24px;
+        border-radius: 12px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(
+          135deg,
+          rgba(102, 126, 234, 0.08),
+          rgba(118, 75, 162, 0.08)
+        );
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: -1;
+      }
+
+      nav a:hover {
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        border-color: rgba(102, 126, 234, 0.3);
+      }
+
+      nav a:hover::before {
+        left: 0;
+      }
+
+      nav a:active {
+        transform: translateY(-1px);
+      }
+
+      main {
+        padding: 40px;
+        padding-top: 120px;
+      }
+
+      section {
+        margin-bottom: 60px;
+        padding: 30px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        border-left: 5px solid #667eea;
+      }
+
+      h2 {
+        color: #667eea;
+        font-size: 2em;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #667eea;
+      }
+
+      h3 {
+        color: #764ba2;
+        font-size: 1.5em;
+        margin: 30px 0 20px;
+        padding-left: 15px;
+        border-left: 4px solid #764ba2;
+      }
+
+      .step {
+        background: white;
+        padding: 25px;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .step:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+      }
+
+      .step-number {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 35px;
+        font-weight: bold;
+        margin-right: 15px;
+      }
+
+      .step-title {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .step-content {
+        color: #555;
+        padding-left: 50px;
+      }
+
+      .warning {
+        background: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+
+      .warning strong {
+        color: #856404;
+      }
+
+      .tip {
+        background: #d1ecf1;
+        border-left: 5px solid #17a2b8;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+
+      .tip strong {
+        color: #0c5460;
+      }
+
+      code {
+        background: #f4f4f4;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        color: #e83e8c;
+      }
+
+      .download-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 10px 10px 10px 0;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .download-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      footer {
+        background: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .platform-icon {
+        font-size: 1.5em;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 1.8em;
+        }
+
+        nav {
+          width: calc(100% - 20px);
+          padding: 12px 15px;
+          border-radius: 0 0 15px 15px;
+        }
+
+        nav ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        nav a {
+          padding: 10px 16px;
+          font-size: 14px;
+          border-radius: 10px;
+        }
+
+        main {
+          padding: 20px;
+          padding-top: 180px;
+        }
+
+        section {
+          padding: 20px;
+        }
+
+        .step-content {
+          padding-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🚀 科学上网与 Google 账号注册教程</h1>
+        <p>完整的跨平台指南 - 让您轻松访问国际互联网</p>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#intro">📖 使用说明</a></li>
+          <li><a href="#mac-tutorial">🍎 macOS 教程</a></li>
+          <li><a href="#windows-tutorial">🪟 Windows 教程</a></li>
+          <li><a href="#google-register">📧 Google 账号注册</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <!-- 使用说明 -->
+        <section id="intro">
+          <h2><span class="platform-icon">📖</span>使用说明</h2>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">📌</span>
+              教程使用指南
+            </div>
+            <div class="step-content">
+              <p style="font-size: 1.1em; line-height: 1.8">
+                欢迎使用本教程！本教程分为两大部分：
+              </p>
+              <ul
+                style="margin-left: 50px; margin-top: 15px; font-size: 1.05em"
+              >
+                <li style="margin-bottom: 10px">
+                  <strong>第一部分：科学上网工具安装</strong>
+                  <br />包含 macOS、Windows、Android、iOS 四大平台的详细配置教程
+                </li>
+                <li style="margin-bottom: 10px">
+                  <strong>第二部分：Google 账号注册</strong>
+                  <br />2025 最新保姆级注册教程，解决手机验证等常见问题
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ 重要提示：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>
+                <strong>必须先完成科学上网配置</strong>，才能注册 Google 账号
+              </li>
+              <li>请根据您的设备选择对应的平台教程</li>
+              <li>建议按照教程顺序逐步操作，不要跳过关键步骤</li>
+              <li>遇到问题请查看教程中的"常见问题"部分</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">🚀</span>
+              推荐操作流程
+            </div>
+            <div class="step-content">
+              <ol
+                style="
+                  margin-left: 50px;
+                  margin-top: 10px;
+                  font-size: 1.05em;
+                  line-height: 2;
+                "
+              >
+                <li>
+                  <strong>选择您的设备平台</strong>，查看对应的科学上网教程
+                </li>
+                <li><strong>按照教程安装配置</strong>代理工具</li>
+                <li><strong>测试连接</strong>，确保能正常访问 Google</li>
+                <li><strong>前往最后的 Google 账号注册教程</strong></li>
+                <li><strong>完成注册</strong>，开始使用 Google 服务</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 快速导航：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>
+                <strong>电脑用户</strong>：点击上方导航栏的
+                <a
+                  href="#mac-tutorial"
+                  style="color: #667eea; font-weight: bold"
+                  >macOS 教程</a
+                >
+                或
+                <a
+                  href="#windows-tutorial"
+                  style="color: #667eea; font-weight: bold"
+                  >Windows 教程</a
+                >
+              </li>
+              <li>
+                <strong>已有代理工具</strong>：直接跳转到
+                <a
+                  href="#google-register"
+                  style="color: #667eea; font-weight: bold"
+                  >Google 账号注册</a
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- macOS 教程 -->
+        <section id="mac-tutorial">
+          <h2><span class="platform-icon">🍎</span>macOS 内部安装 - V2Ray</h2>
+
+          <!-- 公共方案（ClashX）已按需求隐藏，仅保留内部方案 -->
+          <!--
+          <h3>一、下载与安装 ClashX</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">1</span>
+              下载 ClashX 客户端
+            </div>
+            <div class="step-content">
+              <p><strong>推荐下载方式（按优先级排序）：</strong></p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  <strong>从服务商处下载</strong>：大多数科学上网服务商都提供客户端下载（最推荐）
+                </li>
+                <li>
+                  <strong>ClashX Pro</strong>：访问 GitHub 搜索 "ClashX Pro" 获取最新版本
+                  <br /><code>https://github.com/search?q=clashx+pro&type=repositories</code>
+                </li>
+                <li><strong>备用方案</strong>：使用 ClashX Meta 或其他 Clash 客户端</li>
+              </ol>
+              <div class="tip" style="margin-top: 15px">
+                <strong>💡 提示：</strong>
+                由于原始 ClashX 项目已停止更新，建议优先使用服务商提供的客户端， 或搜索 "ClashX
+                Pro"、"ClashX Meta" 等活跃维护的分支版本。
+              </div>
+              <p style="margin-top: 10px">
+                下载 <code>ClashX.dmg</code> 或 <code>ClashX.Pro.dmg</code> 文件到本地。
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">2</span>
+              安装 ClashX
+            </div>
+            <div class="step-content">
+              <p>1. 双击下载的 <code>ClashX.dmg</code> 文件</p>
+              <p>2. 将 ClashX 图标拖动到应用程序(Applications)文件夹</p>
+              <p>3. 在应用程序文件夹中找到 ClashX 并双击打开</p>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ 安全提示：</strong>
+            首次打开时，系统可能提示"无法打开，因为它来自身份不明的开发者"。 请前往
+            <strong>系统偏好设置 → 安全性与隐私 → 通用</strong>，点击"仍要打开"按钮。
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">3</span>
+              授予系统权限
+            </div>
+            <div class="step-content">
+              <p>ClashX 首次运行时会请求安装网络扩展，系统会弹出授权窗口。</p>
+              <p>1. 点击"允许"按钮</p>
+              <p>2. 输入您的 macOS 用户密码进行授权</p>
+              <p>3. 授权完成后，ClashX 图标会出现在顶部菜单栏</p>
+            </div>
+          </div>
+
+          <h3>二、配置订阅链接</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">4</span>
+              获取订阅链接
+            </div>
+            <div class="step-content">
+              <p>从您的科学上网服务商获取订阅链接（Subscription URL）。</p>
+              <p>通常在服务商的用户中心或仪表板中可以找到。</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">5</span>
+              导入配置
+            </div>
+            <div class="step-content">
+              <p>1. 点击菜单栏的 ClashX 图标</p>
+              <p>2. 选择 <strong>配置 → 托管配置 → 管理</strong></p>
+              <p>3. 在弹出的窗口中点击"添加"</p>
+              <p>4. 粘贴您的订阅链接，设置一个配置名称</p>
+              <p>5. 点击"确定"完成添加</p>
+            </div>
+          </div>
+
+          <h3>三、启用代理</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">6</span>
+              设置系统代理
+            </div>
+            <div class="step-content">
+              <p>1. 点击菜单栏的 ClashX 图标</p>
+              <p>2. 勾选 <strong>设置为系统代理</strong></p>
+              <p>3. 选择代理模式（推荐使用"规则模式"）：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li><strong>全局模式</strong>：所有流量都通过代理</li>
+                <li><strong>规则模式</strong>：根据规则自动选择是否代理（推荐）</li>
+                <li><strong>直连模式</strong>：不使用代理</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">7</span>
+              选择节点
+            </div>
+            <div class="step-content">
+              <p>1. 点击 ClashX 图标</p>
+              <p>2. 在 <strong>Proxy</strong> 或 <strong>节点选择</strong> 菜单中</p>
+              <p>3. 选择一个延迟较低的服务器节点</p>
+              <p>4. 可以点击"测速"来查看各节点的延迟</p>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 提示：</strong> 选择地理位置较近的节点通常能获得更好的速度。
+            可以使用"自动选择"功能让 ClashX 自动选择最优节点。
+          </div>
+
+          <h3>四、验证连接</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">8</span>
+              测试连接
+            </div>
+            <div class="step-content">
+              <p>1. 打开浏览器访问 <code>www.google.com</code></p>
+              <p>2. 如果能正常访问，说明配置成功</p>
+              <p>3. 也可以访问 <code>https://ip.sb</code> 查看当前 IP 地址</p>
+            </div>
+          </div>
+
+          <h3>五、配置代理排除（可选但推荐）</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">9</span>
+              为什么需要代理排除？
+            </div>
+            <div class="step-content">
+              <p>代理排除列表可以让以下地址<strong>不经过代理直接访问</strong>，提高访问速度：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li><strong>局域网地址</strong>：如 192.168.x.x、10.x.x.x（访问公司内网、打印机等）</li>
+                <li><strong>本地服务</strong>：如 localhost、127.0.0.1（本地开发环境）</li>
+                <li><strong>国内网站</strong>：不需要代理的网站可直连，节省流量</li>
+              </ul>
+            </div>
+          </div>
+          -->
+
+          <h3>V2Ray 安装与导入</h3>
+
+          <div class="warning">
+            <strong>⚠️ 说明：</strong>此方案与其他
+            VPN/代理工具可能产生冲突，如安装后出现无法上网，请卸载或仅保留一个代理工具。
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">A1</span>
+              下载并安装 V2Ray（macOS）
+            </div>
+            <div class="step-content">
+              <p>
+                点击下载：
+                <a
+                  class="download-btn"
+                  href="https://x17uymzv08s.feishu.cn/file/Dwllb1QGWoKNsJxliuQcTa6anyd"
+                  target="_blank"
+                  >V2Ray 安装包（macOS）</a
+                >
+              </p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>下载完成后，双击安装包并按向导完成安装</li>
+                <li>
+                  首次启动如遇到来源不明提示，请在 系统设置 → 隐私与安全
+                  中选择“仍要打开”
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">A2</span>
+              导入服务器配置
+            </div>
+            <div class="step-content">
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 V2Ray 客户端</li>
+                <li>
+                  进入 <strong>服务器设置</strong> 或
+                  <strong>订阅/导入</strong> 页面
+                </li>
+                <li>
+                  在“链接地址”处粘贴：<code
+                    style="
+                      display: block;
+                      white-space: pre-wrap;
+                      word-break: break-all;
+                    "
+                    >ss://YWVzLTEyOC1nY206b3VuN1hnYVdkMTNHT0pEWkBjbmFtZTAxLW5qaWR3cDV5NWdiZDdsYmQucG9tcGVpNDI1Ny54eXo6ODUxMQ==#%E9%A6%99%E6%B8%AF+01</code
+                  >
+                  → 点击<strong>导入</strong>
+                  → 确定
+                </li>
+              </ol>
+              <!-- <div class="tip" style="margin-top: 15px">
+                <strong>💡 如果导入失败，可手动填写：</strong>
+                <ul style="margin-left: 20px; margin-top: 10px">
+                  <li>服务器地址：<code>demo</code></li>
+                  <li>端口：<code>demo</code></li>
+                  <li>密码：<code>demo</code></li>
+                  <li>加密方法：<code>demo</code></li>
+                </ul>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">A3</span>
+              连接与测试
+            </div>
+            <div class="step-content">
+              <p>
+                完成导入后，选择对应服务器并点击<strong>连接</strong>，然后访问
+                <code>www.google.com</code> 或
+                <code>https://ip.sb</code> 验证是否生效。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Windows 教程 -->
+        <section id="windows-tutorial">
+          <h2>
+            <span class="platform-icon">🪟</span>Windows 内部安装 -
+            ShadowsocksR（小飞机）
+          </h2>
+
+          <!-- 公共方案（Clash for Windows/Clash Verge）已按需求隐藏，仅保留内部方案 -->
+          <!--
+          <h3>一、下载与安装</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">1</span>
+              下载 Clash for Windows
+            </div>
+            <div class="step-content">
+              <p><strong>推荐下载方式（按优先级排序）：</strong></p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li><strong>从服务商处下载</strong>：最安全可靠的方式（强烈推荐）</li>
+                <li>
+                  <strong>Clash Verge</strong>：新一代 Clash 客户端，界面更现代 <br /><code
+                    >https://github.com/clash-verge-rev/clash-verge-rev/releases</code
+                  >
+                </li>
+                <li>
+                  <strong>Clash for Windows 中文版</strong>：搜索 "clash for windows 汉化版"
+                  <br />可在网盘或镜像站找到
+                </li>
+              </ol>
+              <div class="warning" style="margin-top: 15px">
+                <strong>⚠️ 重要说明：</strong>
+                原始 Clash for Windows 项目已停止维护，原 GitHub 仓库已删除。 建议使用以下替代方案：
+                <ul style="margin-left: 20px; margin-top: 10px">
+                  <li><strong>Clash Verge Rev</strong>：功能强大，持续更新（推荐）</li>
+                  <li><strong>服务商客户端</strong>：通常基于 Clash 内核，更稳定</li>
+                  <li><strong>V2rayN</strong>：另一个流行的 Windows 代理工具</li>
+                </ul>
+              </div>
+              <p style="margin-top: 10px">
+                下载 <code>Clash.for.Windows.Setup.exe</code> 或
+                <code>Clash.Verge_xxx_x64-setup.exe</code> 安装包。
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">2</span>
+              安装软件
+            </div>
+            <div class="step-content">
+              <p>1. 双击下载的安装包</p>
+              <p>2. 如果出现 Windows 安全提示，点击"更多信息"→"仍要运行"</p>
+              <p>3. 按照安装向导完成安装</p>
+              <p>4. 安装完成后自动启动 Clash for Windows</p>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ 防火墙提示：</strong> 首次运行时 Windows
+            防火墙可能会弹出提示，请选择"允许访问"以确保软件正常工作。
+          </div>
+
+          <h3>二、配置订阅</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">3</span>
+              添加订阅链接
+            </div>
+            <div class="step-content">
+              <p>1. 从服务商获取订阅链接</p>
+              <p>2. 打开 Clash for Windows</p>
+              <p>3. 点击左侧菜单的 <strong>Profiles（配置）</strong></p>
+              <p>4. 在顶部的输入框中粘贴订阅链接</p>
+              <p>5. 点击 <strong>Download（下载）</strong> 按钮</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">4</span>
+              激活配置文件
+            </div>
+            <div class="step-content">
+              <p>1. 下载完成后，配置文件会出现在列表中</p>
+              <p>2. 点击配置文件将其激活（显示为绿色高亮）</p>
+              <p>3. 可以右键点击配置文件选择"更新"来获取最新节点</p>
+            </div>
+          </div>
+
+          <h3>三、启动代理</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">5</span>
+              开启系统代理
+            </div>
+            <div class="step-content">
+              <p>1. 点击左侧菜单的 <strong>General（常规）</strong></p>
+              <p>2. 找到 <strong>System Proxy（系统代理）</strong> 选项</p>
+              <p>3. 将开关切换到开启状态</p>
+              <p>4. 建议同时开启 <strong>Start with Windows（开机启动）</strong></p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">6</span>
+              选择代理模式
+            </div>
+            <div class="step-content">
+              <p>在 General 页面中设置代理模式：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li><strong>Rule（规则模式）</strong>：智能分流，推荐使用</li>
+                <li><strong>Global（全局模式）</strong>：所有流量走代理</li>
+                <li><strong>Direct（直连模式）</strong>：不使用代理</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>四、选择节点</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">7</span>
+              切换服务器节点
+            </div>
+            <div class="step-content">
+              <p>1. 点击左侧菜单的 <strong>Proxies（代理）</strong></p>
+              <p>2. 在节点列表中选择一个服务器</p>
+              <p>3. 可以点击节点旁边的闪电图标进行延迟测试</p>
+              <p>4. 选择延迟低、速度快的节点</p>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 高级功能：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>可以在 <strong>Settings → TUN Mode</strong> 中启用 TUN 模式，实现全局网络代理</li>
+              <li>使用 <strong>Connections</strong> 页面查看实时连接状态</li>
+              <li>在 <strong>Logs</strong> 页面查看详细日志，排查问题</li>
+            </ul>
+          </div>
+
+          <h3>五、验证连接</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">8</span>
+              测试访问
+            </div>
+            <div class="step-content">
+              <p>1. 打开浏览器访问 <code>www.google.com</code></p>
+              <p>2. 访问 <code>https://ip.sb</code> 查看当前 IP 是否为代理 IP</p>
+              <p>3. 确认能正常访问国际网站</p>
+            </div>
+          </div>
+
+          <h3>六、配置代理排除（可选但推荐）</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">9</span>
+              局域网直连设置
+            </div>
+            <div class="step-content">
+              <p><strong>方法一：系统代理绕过设置（推荐）</strong></p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 Windows <strong>设置 → 网络和 Internet → 代理</strong></li>
+                <li>
+                  在"手动代理设置"下找到"请勿对以下条目开头的地址使用代理服务器"
+                  <br />（如果看不到，说明 Clash 已自动管理）
+                </li>
+                <li>
+                  输入排除地址（用分号分隔）：
+                  <pre style="background: #f4f4f4; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 13px"><code>localhost;127.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;192.168.*;<local></code></pre>
+                </li>
+              </ol>
+
+              <p style="margin-top: 20px">
+                <strong>方法二：编辑 Clash 配置文件（适用于 Clash for Windows）</strong>
+              </p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 Clash for Windows</li>
+                <li>点击左侧的 <strong>Profiles（配置）</strong></li>
+                <li>找到当前使用的配置，点击右侧的 <strong>编辑图标</strong>（铅笔图标）</li>
+                <li>在配置文件中查找或添加 <code>bypass</code> 字段</li>
+                <li>保存后点击配置文件重新加载</li>
+              </ol>
+
+              <p style="margin-top: 20px">
+                <strong>方法三：使用 Clash Verge 的 LAN 设置</strong>
+              </p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 Clash Verge</li>
+                <li>进入 <strong>设置 → 系统设置</strong></li>
+                <li>找到 <strong>绕过域名/IP</strong> 或 <strong>Bypass</strong> 选项</li>
+                <li>
+                  添加局域网地址：
+                  <pre style="background: #f4f4f4; padding: 10px; border-radius: 8px; margin-top: 10px; font-size: 13px"><code>localhost
+127.0.0.1
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16</code></pre>
+                </li>
+                <li>保存设置</li>
+              </ol>
+            </div>
+          </div>
+
+          -->
+
+          <div class="tip">
+            <strong>💡 为什么需要配置代理排除？</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>
+                <strong>访问局域网设备</strong
+                >：路由器管理页面（192.168.1.1）、公司内网、NAS、打印机等
+              </li>
+              <li>
+                <strong>本地开发</strong>：localhost 访问本地服务器（如
+                127.0.0.1:8080）
+              </li>
+              <li>
+                <strong>提高速度</strong>：国内网站直连，无需绕道代理服务器
+              </li>
+              <li><strong>节省流量</strong>：减少不必要的代理流量消耗</li>
+            </ul>
+          </div>
+
+          <h3>ShadowsocksR（小飞机）</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">A1</span>
+              下载与解压
+            </div>
+            <div class="step-content">
+              <p>
+                点击下载（推荐先保存到桌面）：
+                <a
+                  class="download-btn"
+                  href="https://x17uymzv08s.feishu.cn/file/XjjAbz4vNoXwI6xjz8ocZMoZnWf"
+                  target="_blank"
+                  >ShadowsocksR 压缩包（Windows）</a
+                >
+              </p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>将压缩包解压到桌面</li>
+                <li>打开解压后的 <strong>ShadowsocksR</strong> 文件夹</li>
+                <li>在该文件夹内启动“小飞机”程序</li>
+              </ol>
+              <div class="warning" style="margin-top: 15px">
+                <strong>⚠️ 重要：</strong
+                >小飞机程序<strong>必须</strong>放在它自己的文件夹内运行，<strong>不要</strong>把可执行文件单独拷贝到其他位置，否则可能导致配置或依赖缺失。
+              </div>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">A2</span>
+              导入或填写服务器
+            </div>
+            <div class="step-content">
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  打开小飞机 →
+                  找到<strong>服务器</strong>或<strong>订阅</strong>设置
+                </li>
+                <li>
+                  若有“链接地址/导入”入口，粘贴：<code
+                    style="
+                      display: block;
+                      white-space: pre-wrap;
+                      word-break: break-all;
+                    "
+                    >ss://YWVzLTEyOC1nY206b3VuN1hnYVdkMTNHT0pEWkBjbmFtZTAxLW5qaWR3cDV5NWdiZDdsYmQucG9tcGVpNDI1Ny54eXo6ODUxMQ==#%E9%A6%99%E6%B8%AF+01</code
+                  >
+                  → 点击<strong>导入</strong>
+                </li>
+
+                <li>如导入失败，手动填写以下参数：</li>
+              </ol>
+              <!-- <ul style="margin-left: 70px; margin-top: 5px">
+                <li>服务器地址：<code>demo</code></li>
+                <li>端口：<code>demo</code></li>
+                <li>密码：<code>demo</code></li>
+                <li>加密方法：<code>demo</code></li>
+              </ul> -->
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">A3</span>
+              连接与测试
+            </div>
+            <div class="step-content">
+              <p>
+                选择服务器后点击<strong>连接</strong>；建议在托盘菜单中开启<strong>系统代理</strong>。随后访问
+                <code>www.google.com</code> 或 <code>https://ip.sb</code> 测试。
+              </p>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ 常见问题：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>
+                <strong>无法访问路由器管理页面</strong>：确保 192.168.*
+                已添加到排除列表
+              </li>
+              <li>
+                <strong>内网 IP 冲突</strong>：检查公司网络使用的 IP
+                段，添加对应的排除规则
+              </li>
+              <li>
+                <strong>配置不生效</strong>：重启 Clash
+                或切换代理模式（关闭再开启系统代理）
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Google 账号注册教程 -->
+        <section id="google-register">
+          <h2>
+            <span class="platform-icon">📧</span>Google 账号注册教程（2025
+            最新版）
+          </h2>
+
+          <div class="warning">
+            <strong>⚠️ 前置条件：</strong> 在注册 Google
+            账号之前，请确保您已经成功配置科学上网工具并能正常访问 Google 网站。
+            <strong>必须使用全局模式！</strong>
+          </div>
+
+          <h3>一、为什么注册总是失败？常见问题分析</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">💡</span>
+              网络环境问题
+            </div>
+            <div class="step-content">
+              <p><strong>1. 连接不稳定或受限</strong></p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>谷歌服务在中国大陆无法直接访问，需使用稳定的代理网络</li>
+                <li><strong>必须开启「全局模式」</strong>，不要用规则模式</li>
+                <li>优先推荐<strong>美国、新加坡节点</strong></li>
+              </ul>
+
+              <p style="margin-top: 15px"><strong>2. IP 地址异常</strong></p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>频繁更换 IP 地址会触发谷歌安全机制</li>
+                <li><strong>选定节点后不要更换</strong>，保持网络稳定不断网</li>
+                <li>整个注册过程使用同一个节点</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">💡</span>
+              手机号码验证问题
+            </div>
+            <div class="step-content">
+              <p><strong>1. 号码注册次数超限</strong></p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>单个手机号可注册的谷歌账号数量有限</li>
+                <li>国内 +86 号码每个月验证次数有限</li>
+                <li>建议更换其他号码或尝试使用备用邮箱验证</li>
+              </ul>
+
+              <p style="margin-top: 15px"><strong>2. 无法接收验证码</strong></p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>运营商可能屏蔽境外短信</li>
+                <li>号码输入格式错误（需添加国际区号 +86）</li>
+                <li>浏览器语言设置与节点国家不匹配</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>二、准备工作（非常重要！）</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">1</span>
+              设置代理为全局模式
+            </div>
+            <div class="step-content">
+              <p><strong>这是成功关键！</strong></p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开您的代理工具（Clash、V2ray 等）</li>
+                <li>
+                  将模式切换为<strong>「全局模式」</strong>（不要用规则模式）
+                </li>
+                <li>选择<strong>美国或新加坡节点</strong>（推荐美国）</li>
+                <li>确认连接成功，访问 <code>www.google.com</code> 测试</li>
+                <li><strong>整个注册过程不要更换节点！</strong></li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ 为什么必须用全局模式？</strong>
+            <br />规则模式可能导致部分 Google 验证请求走直连，造成 IP
+            不一致，触发安全检测。 全局模式确保所有流量都通过代理。
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">2</span>
+              设置浏览器语言为英语（关键步骤！）
+            </div>
+            <div class="step-content">
+              <p><strong>为什么要改语言？</strong></p>
+              <p style="margin-left: 20px">
+                国内谷歌浏览器默认中文界面特别容易被检测，导致手机号死活验证不过。
+                必须改成英文！
+              </p>
+
+              <p style="margin-top: 20px">
+                <strong>Chrome 浏览器设置步骤：</strong>
+              </p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 Chrome 浏览器</li>
+                <li>
+                  点击右上角三个点 <strong>⋮</strong> →
+                  <strong>Settings（设置）</strong>
+                </li>
+                <li>左侧菜单找到 <strong>Languages（语言）</strong></li>
+                <li>点击 <strong>Add languages（添加语言）</strong></li>
+                <li>搜索并添加 <strong>English (United States)</strong></li>
+                <li>
+                  点击 English 右侧的三个点，选择
+                  <strong>Move to the top（移到顶部）</strong>
+                </li>
+                <li><strong>删除中文（简体）</strong>或将其移到底部</li>
+                <li>
+                  勾选
+                  <strong
+                    >Display Chrome in this language（以此语言显示
+                    Chrome）</strong
+                  >
+                </li>
+                <li>点击 <strong>Relaunch（重新启动）</strong>浏览器</li>
+              </ol>
+
+              <p style="margin-top: 20px">
+                <strong>Edge 浏览器设置步骤：</strong>
+              </p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 Edge 浏览器</li>
+                <li>
+                  点击右上角 <strong>⋯</strong> → <strong>Settings</strong>
+                </li>
+                <li>左侧选择 <strong>Languages</strong></li>
+                <li>添加 <strong>English (United States)</strong></li>
+                <li>将其移到顶部，删除或下移中文</li>
+                <li>重启浏览器</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 浏览器选择建议：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li><strong>推荐：</strong>Google Chrome 最新版（官网下载）</li>
+              <li><strong>备选：</strong>Microsoft Edge 最新版（官网下载）</li>
+              <li>
+                <strong>不要用：</strong>360 浏览器、搜狗浏览器、QQ
+                浏览器等国产浏览器
+              </li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">3</span>
+              准备注册信息
+            </div>
+            <div class="step-content">
+              <p>提前准备好以下信息（<strong>建议填写真实信息</strong>）：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  <strong>手机号码</strong>：中国 +86 号码（确保能接收短信）
+                </li>
+                <li><strong>姓名</strong>：真实姓名的拼音或英文名</li>
+                <li><strong>出生日期</strong>：真实生日（需年满 18 周岁）</li>
+                <li><strong>性别</strong>：真实性别</li>
+                <li>
+                  <strong>辅助邮箱</strong>（可选）：QQ 邮箱、163 邮箱、Outlook
+                  等
+                </li>
+              </ul>
+              <p
+                style="
+                  margin-top: 15px;
+                  background: #fff3cd;
+                  padding: 15px;
+                  border-radius: 8px;
+                "
+              >
+                <strong>⚠️ 为什么要填真实信息？</strong><br />
+                • 账号异常时客服可以核对资料帮你解决<br />
+                • 可能需要人脸识别认证<br />
+                • 年龄过小会触发防沉迷限制<br />
+                • 找回账号时需要视频验证
+              </p>
+            </div>
+          </div>
+
+          <h3>三、开始注册（手把手教程）</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">4</span>
+              访问 Gmail 注册页面
+            </div>
+            <div class="step-content">
+              <p>1. 确认代理已开启（全局模式 + 美国节点）</p>
+              <p>2. 确认浏览器已改为英文界面</p>
+              <p>3. 打开浏览器访问 <code>https://www.google.com</code></p>
+              <p>4. 点击右上角的 <strong>Gmail</strong> 按钮</p>
+              <p>5. 点击 <strong>Create an account</strong>（创建账号）</p>
+              <p>6. 选择 <strong>For my personal use</strong>（供个人使用）</p>
+              <a
+                href="https://accounts.google.com/signup"
+                class="download-btn"
+                target="_blank"
+                >直接前往注册页面</a
+              >
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">5</span>
+              填写姓名信息
+            </div>
+            <div class="step-content">
+              <p>在第一步填写：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li><strong>First name</strong>（名）：例如 Lei</li>
+                <li><strong>Last name</strong>（姓）：例如 Zhang</li>
+              </ul>
+              <p style="margin-top: 10px">
+                填写完成后点击 <strong>Next</strong>。
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">6</span>
+              填写出生日期和性别
+            </div>
+            <div class="step-content">
+              <p>在 "Basic information" 页面填写：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li><strong>Month</strong>（月）：选择出生月份</li>
+                <li><strong>Day</strong>（日）：输入出生日期</li>
+                <li>
+                  <strong>Year</strong>（年）：输入出生年份（<strong
+                    >必须年满 18 周岁！</strong
+                  >）
+                </li>
+                <li>
+                  <strong>Gender</strong>（性别）：Male（男）/ Female（女）/
+                  Rather not say（不愿透露）
+                </li>
+              </ul>
+              <p
+                style="
+                  margin-top: 15px;
+                  background: #fff3cd;
+                  padding: 15px;
+                  border-radius: 8px;
+                "
+              >
+                <strong>⚠️ 年龄限制：</strong>
+                不要填写未成年年龄！谷歌有防沉迷机制，年龄过小会导致：<br />
+                • 无法观看 YouTube 部分视频<br />
+                • 无法使用 Google Play 购买功能<br />
+                • 账号功能受限
+              </p>
+              <p style="margin-top: 10px">
+                填写完成后点击 <strong>Next</strong>。
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">7</span>
+              设置 Gmail 地址和密码
+            </div>
+            <div class="step-content">
+              <p>在 "How you'll sign in" 页面：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  <strong>Username</strong>（用户名）： <br />设置您的 Gmail
+                  邮箱地址，例如：<code>yourname2024</code> <br />系统会自动加上
+                  <code>@gmail.com</code> <br /><span style="color: #666"
+                    >可使用字母、数字和英文句点</span
+                  >
+                </li>
+                <li style="margin-top: 10px">
+                  <strong>Password</strong>（密码）： <br />设置强密码（至少 8
+                  位字符） <br /><span style="color: #666"
+                    >建议使用字母、数字和符号的组合</span
+                  >
+                </li>
+                <li style="margin-top: 10px">
+                  <strong>Confirm</strong>（确认密码）：
+                  <br />再次输入相同的密码
+                </li>
+              </ul>
+              <p style="margin-top: 15px">
+                也可以选择
+                <strong>Use your existing email</strong
+                >（使用现有电子邮件地址）来注册。
+              </p>
+              <p>填写完成后点击 <strong>Next</strong>。</p>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 用户名提示：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>如果提示 "That username is taken"（用户名已被占用）</li>
+              <li>可以尝试添加数字：yourname2024、yourname0101</li>
+              <li>或使用下划线：your_name、first_last</li>
+              <li>系统也会给出一些可用的用户名建议</li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">8</span>
+              手机号验证（最关键的一步！）
+            </div>
+            <div class="step-content">
+              <p>设置完账号后，Google 会显示验证页面：</p>
+              <p
+                style="
+                  background: #d1ecf1;
+                  padding: 15px;
+                  border-radius: 8px;
+                  margin: 10px 0;
+                "
+              >
+                <strong>"Verify that you're not a robot"</strong><br />
+                To continue, Google needs to verify that it's really you. This
+                helps keep your account safe and the web spam-free.
+              </p>
+
+              <p style="margin-top: 20px"><strong>验证步骤：</strong></p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  在 <strong>Country/Region</strong> 下拉菜单选择
+                  <strong>China (+86)</strong>
+                </li>
+                <li>
+                  在 <strong>Phone number</strong> 输入框输入您的手机号（不要加
+                  +86）
+                </li>
+                <li>点击 <strong>Next</strong></li>
+                <li>Google 会向您的手机发送 6 位验证码短信</li>
+                <li>在 <strong>Enter code</strong> 页面输入收到的验证码</li>
+                <li>点击 <strong>Verify</strong> 按钮</li>
+              </ol>
+
+              <p
+                style="
+                  margin-top: 20px;
+                  background: #d4edda;
+                  padding: 15px;
+                  border-radius: 8px;
+                "
+              >
+                <strong>✅ 提高验证成功率的关键：</strong><br />
+                • ✔️ 全局模式 + 美国节点（不要换！）<br />
+                • ✔️ 浏览器已改为英文<br />
+                • ✔️ 网络保持稳定不断网<br />
+                • ✔️ 使用 Chrome 或 Edge 最新版<br />
+                这样做成功率会大大提高！
+              </p>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong
+              >⚠️ 提示"This phone number cannot be used for
+              verification"怎么办？</strong
+            >
+            <br /><br />
+            <strong>立即尝试以下方法：</strong>
+            <ol style="margin-left: 20px; margin-top: 10px">
+              <li>
+                <strong>检查代理</strong
+                >：确认是否使用<strong>全局模式</strong>，节点是否稳定
+              </li>
+              <li>
+                <strong>清除缓存</strong>： <br />• Chrome: 按
+                Ctrl+Shift+Delete，清除"全部时间"的缓存和 Cookie <br />•
+                清除后关闭浏览器，重新打开
+              </li>
+              <li>
+                <strong>使用无痕模式</strong>： <br />• Chrome: 按 Ctrl+Shift+N
+                打开无痕窗口 <br />• Edge: 按 Ctrl+Shift+P 打开 InPrivate 窗口
+                <br />• 在无痕模式下重新注册
+              </li>
+              <li>
+                <strong>更换节点</strong
+                >：换到其他美国城市的节点（如洛杉矶、纽约）
+              </li>
+              <li>
+                <strong>更换手机号</strong
+                >：如果某个号码多次失败，换一个没用过的号码
+              </li>
+              <li>
+                <strong>换个时间段</strong>：等几小时或第二天再试（国内 +86
+                号码每月有验证次数限制）
+              </li>
+              <li>
+                <strong>更换浏览器</strong>：如果用 Chrome 不行，试试 Edge 或
+                Firefox
+              </li>
+            </ol>
+            <p
+              style="
+                margin-top: 15px;
+                background: #fff3cd;
+                padding: 15px;
+                border-radius: 8px;
+              "
+            >
+              <strong>总结：</strong>
+              一直弄不好，大概率是魔法不稳定或者浏览器没调好！多试几次或者换个时间段操作。
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">9</span>
+              添加辅助信息（可选）
+            </div>
+            <div class="step-content">
+              <p>验证成功后，Google 会要求补充以下信息（可选填）：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  <strong>Recovery email address</strong>（辅助邮箱）：
+                  <br />用于账号找回和接收通知 <br />可以填 QQ 邮箱、163
+                  邮箱、Outlook 等
+                </li>
+                <li>
+                  <strong>Recovery phone number</strong>（辅助手机号）：
+                  <br />用于账号安全和恢复
+                </li>
+              </ul>
+              <p style="margin-top: 15px">
+                如果不想填，可以点击 <strong>Skip</strong> 跳过。
+              </p>
+              <p>建议至少填写一个辅助邮箱，方便以后找回账号。</p>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 关于辅助邮箱：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>优先使用国际通用邮箱：Outlook、ProtonMail、Yahoo</li>
+              <li>QQ 邮箱、163 邮箱也可以用，但要检查垃圾箱</li>
+              <li>
+                如果 QQ/163 邮箱未收到验证邮件，检查存储空间，删除旧邮件释放容量
+              </li>
+            </ul>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">10</span>
+              同意隐私和条款
+            </div>
+            <div class="step-content">
+              <p>最后一步，Google 会显示隐私权和条款页面：</p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  向下滚动页面，阅读 Google 的
+                  <strong>Privacy and Terms</strong>
+                </li>
+                <li>
+                  可以选择个性化设置：
+                  <ul style="margin-left: 30px; margin-top: 5px">
+                    <li><strong>Express</strong>（快速）：Google 推荐的设置</li>
+                    <li><strong>Manual</strong>（手动）：自定义隐私选项</li>
+                  </ul>
+                </li>
+                <li>
+                  查看并调整（可选）：
+                  <ul style="margin-left: 30px; margin-top: 5px">
+                    <li>Web & App Activity（网络和应用活动）</li>
+                    <li>Location History（位置记录）</li>
+                    <li>Personalized ads（个性化广告）</li>
+                  </ul>
+                </li>
+                <li>
+                  滚动到页面底部，点击 <strong>I agree</strong>（我同意）或
+                  <strong>Create account</strong>（创建账号）
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>四、注册成功！开始使用</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">11</span>
+              恭喜注册成功！
+            </div>
+            <div class="step-content">
+              <p>🎉 <strong>您的 Google 账号已成功创建！</strong></p>
+              <p
+                style="
+                  margin-top: 15px;
+                  background: #d4edda;
+                  padding: 20px;
+                  border-radius: 8px;
+                "
+              >
+                <strong>有了 Google 账号，您可以：</strong><br />
+                ✅ 使用 Gmail 邮箱收发邮件<br />
+                ✅ 观看 YouTube 视频并订阅频道<br />
+                ✅ 使用 Google Play 下载应用<br />
+                ✅ 使用 Google Drive 云存储（15GB 免费）<br />
+                ✅ 使用 Google Photos 备份照片<br />
+                ✅ 登录 Instagram、Twitter(X)、TikTok 等海外 APP<br />
+                ✅ 访问 ChatGPT、Claude 等 AI 工具
+              </p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">12</span>
+              把浏览器改回中文
+            </div>
+            <div class="step-content">
+              <p>注册成功后，可以把浏览器改回中文界面：</p>
+              <ol style="margin-left: 50px; margin-top: 10px">
+                <li>打开 Chrome 或 Edge 浏览器</li>
+                <li>进入 <strong>Settings → Languages</strong></li>
+                <li>添加 <strong>中文（简体）</strong></li>
+                <li>将中文移到顶部</li>
+                <li>勾选 "Display Chrome in this language"</li>
+                <li>重启浏览器</li>
+              </ol>
+              <p style="margin-top: 10px">
+                浏览器会恢复中文界面，不影响 Google 账号使用。
+              </p>
+            </div>
+          </div>
+
+          <h3>五、账号安全设置（重要！）</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">13</span>
+              增强账号安全性
+            </div>
+            <div class="step-content">
+              <p>为了保护您的 Google 账号，建议完成以下设置：</p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  <strong>启用两步验证（强烈推荐）</strong>： <br />• 访问
+                  <code>myaccount.google.com/security</code> <br />• 找到
+                  "2-Step Verification" 并启用 <br />• 使用手机验证码或 Google
+                  Authenticator 应用
+                </li>
+                <li style="margin-top: 10px">
+                  <strong>添加辅助邮箱</strong>： <br />•
+                  在账号设置中添加备用邮箱地址 <br />•
+                  用于账号恢复和接收重要通知
+                </li>
+                <li style="margin-top: 10px">
+                  <strong>定期更改密码</strong>： <br />• 建议每 3-6
+                  个月更换一次密码 <br />• 使用强密码，不要与其他网站相同
+                </li>
+                <li style="margin-top: 10px">
+                  <strong>检查账号活动</strong>： <br />•
+                  定期查看最近的账号活动和登录设备 <br />• 删除不认识的设备授权
+                </li>
+                <li style="margin-top: 10px">
+                  <strong>完善个人资料</strong>： <br />• 上传头像照片 <br />•
+                  填写个人简介（可选）
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>💡 账号使用提示：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>首次登录后，建议立即修改一些基本设置，如头像、个人资料等</li>
+              <li>如果长期不使用，Google 可能会回收账号，建议定期登录</li>
+              <li>避免使用账号进行违规操作，以免被封禁</li>
+              <li>妥善保管您的密码，不要与他人分享</li>
+              <li>不要在不安全的网络环境下登录账号</li>
+            </ul>
+          </div>
+
+          <h3>六、常见问题全面解答</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">❓</span>
+              注册相关问题
+            </div>
+            <div class="step-content">
+              <p>
+                <strong
+                  >Q1: 为什么一直提示"此电话号码无法用于进行验证"？</strong
+                >
+              </p>
+              <p style="margin-left: 20px">A: 这是最常见的问题，主要原因：</p>
+              <ul style="margin-left: 40px">
+                <li>没有使用全局模式，或节点不稳定</li>
+                <li>浏览器语言没改成英文</li>
+                <li>该手机号当月验证次数已用完</li>
+                <li>IP 地址被 Google 标记为可疑</li>
+              </ul>
+              <p style="margin-left: 20px">
+                <strong>解决方法：</strong
+                >确保全局模式+英文浏览器+美国节点，清除缓存后用无痕模式重试，或换个时间段。
+              </p>
+
+              <p style="margin-top: 15px">
+                <strong>Q2: 可以使用中国大陆手机号注册吗？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 可以！只要方法正确：</p>
+              <ul style="margin-left: 40px">
+                <li>使用全局模式的美国节点</li>
+                <li>浏览器改成英文界面</li>
+                <li>国内 +86 号码成功率很高</li>
+                <li>每个号码每月有验证次数限制，不要频繁尝试</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q3: 注册后是否需要一直挂代理使用？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 分情况：</p>
+              <ul style="margin-left: 40px">
+                <li>
+                  <strong>访问 Google 服务时</strong
+                  >：需要代理（Gmail、YouTube、Drive 等）
+                </li>
+                <li><strong>平时使用手机</strong>：不需要一直开着代理</li>
+                <li>
+                  <strong>登录其他海外 APP</strong
+                  >：可能需要代理（Instagram、Twitter 等）
+                </li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q4: 一个手机号可以注册几个 Google 账号？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 理论上没有严格限制，但：</p>
+              <ul style="margin-left: 40px">
+                <li>短时间内用同一号码注册多个账号会被限制</li>
+                <li>建议间隔一段时间（至少几天）再注册下一个</li>
+                <li>每个号码每月验证次数有限</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q5: 忘记密码怎么办？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 通过以下方式找回：</p>
+              <ul style="margin-left: 40px">
+                <li>访问 <code>accounts.google.com/recovery</code></li>
+                <li>输入邮箱地址或手机号</li>
+                <li>通过辅助手机号或辅助邮箱接收验证码</li>
+                <li>如果都没有，可能需要回答安全问题或视频验证</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q6: 为什么要改浏览器语言？不改会怎样？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 这是提高成功率的关键：</p>
+              <ul style="margin-left: 40px">
+                <li>中文界面容易被 Google 识别为来自中国大陆</li>
+                <li>会触发更严格的验证机制</li>
+                <li>改成英文后，Google 会认为是美国用户注册</li>
+                <li>大大提高手机验证的成功率</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q7: 注册时年龄填小了怎么办？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 年龄设置后无法修改！会导致：</p>
+              <ul style="margin-left: 40px">
+                <li>YouTube 部分视频无法观看</li>
+                <li>Google Play 购买功能受限</li>
+                <li>某些服务无法使用</li>
+                <li>唯一解决办法：重新注册一个新账号</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q8: 可以用 QQ 邮箱或 163 邮箱作为辅助邮箱吗？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 可以，但要注意：</p>
+              <ul style="margin-left: 40px">
+                <li>验证邮件可能进垃圾箱，记得检查</li>
+                <li>邮箱存储空间要充足，否则收不到邮件</li>
+                <li>建议优先使用 Outlook、Yahoo 等国际邮箱</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q9: 注册成功后多久可以正常使用？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 立即可用！</p>
+              <ul style="margin-left: 40px">
+                <li>注册成功后马上就能使用 Gmail</li>
+                <li>可以立即登录 YouTube、Google Play 等服务</li>
+                <li>建议先完善账号设置，启用两步验证</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q10: 账号会不会被封？如何避免？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 正常使用一般不会被封，注意：</p>
+              <ul style="margin-left: 40px">
+                <li>不要用账号发送垃圾邮件</li>
+                <li>不要在 YouTube 发布违规内容</li>
+                <li>不要频繁切换登录地区和设备</li>
+                <li>启用两步验证增强安全性</li>
+                <li>定期登录使用，避免长期闲置</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">❓</span>
+              使用相关问题
+            </div>
+            <div class="step-content">
+              <p><strong>Q11: Gmail 邮箱可以收发国内邮件吗？</strong></p>
+              <p style="margin-left: 20px">A: 完全可以！</p>
+              <ul style="margin-left: 40px">
+                <li>可以给 QQ、163、126 等国内邮箱发邮件</li>
+                <li>国内邮箱也能给你的 Gmail 发邮件</li>
+                <li>访问 Gmail 需要代理，但收发邮件没问题</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q12: 可以在手机上使用 Google 账号吗？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 可以！</p>
+              <ul style="margin-left: 40px">
+                <li>
+                  <strong>Android 手机</strong>：在设置中添加 Google 账号即可
+                </li>
+                <li>
+                  <strong>iPhone</strong>：下载 Gmail、YouTube 等 APP 登录
+                </li>
+                <li>使用时需要开启手机代理</li>
+                <li>参考本教程的 Android 和 iOS 代理设置部分</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q13: Google Drive 有多少免费空间？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 每个账号免费 15GB 存储空间</p>
+              <ul style="margin-left: 40px">
+                <li>Gmail、Google Drive、Google Photos 共享 15GB</li>
+                <li>可以付费升级：100GB ($1.99/月)、200GB ($2.99/月)</li>
+                <li>或升级到 Google One 获得更多空间</li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q14: 可以用 Google 账号登录哪些服务？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 非常多！包括但不限于：</p>
+              <ul style="margin-left: 40px">
+                <li>
+                  <strong>Google 自家服务</strong
+                  >：Gmail、YouTube、Drive、Photos、Maps、Play Store
+                </li>
+                <li>
+                  <strong>社交媒体</strong>：可用 Google 登录
+                  Instagram、Pinterest、Reddit 等
+                </li>
+                <li>
+                  <strong>AI 工具</strong>：ChatGPT、Claude、Midjourney 等
+                </li>
+                <li>
+                  <strong>其他服务</strong>：Spotify、Netflix、Discord 等支持
+                  Google 登录
+                </li>
+              </ul>
+
+              <p style="margin-top: 15px">
+                <strong>Q15: 如何在电脑上同步 Chrome 浏览器？</strong>
+              </p>
+              <p style="margin-left: 20px">A: 登录 Google 账号即可同步：</p>
+              <ul style="margin-left: 40px">
+                <li>点击 Chrome 右上角的头像图标</li>
+                <li>点击"开启同步功能"</li>
+                <li>登录你的 Google 账号</li>
+                <li>书签、历史记录、密码、扩展程序都会自动同步</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">💡</span>
+              终极提示：实在注册不了怎么办？
+            </div>
+            <div class="step-content">
+              <p style="background: #fff3cd; padding: 20px; border-radius: 8px">
+                <strong>如果按照教程操作多次仍然失败，可能的原因：</strong
+                ><br /><br />
+
+                <strong>1. 代理问题（90%的失败原因）</strong><br />
+                • 没有使用全局模式<br />
+                • 节点质量差或不稳定<br />
+                • IP 被 Google 标记<br />
+                <strong>解决：</strong>更换高质量的代理服务商，选择原生 IP
+                节点<br /><br />
+
+                <strong>2. 浏览器环境问题</strong><br />
+                • 使用了国产浏览器<br />
+                • 浏览器没改成英文<br />
+                • 缓存和 Cookie 干扰<br />
+                <strong>解决：</strong>使用 Chrome
+                最新版，改成英文，无痕模式操作<br /><br />
+
+                <strong>3. 手机号问题</strong><br />
+                • 该号码当月验证次数已用完<br />
+                • 号码之前被其他人用于注册过多次<br />
+                <strong>解决：</strong
+                >换一个干净的手机号，或等下个月再试<br /><br />
+
+                <strong>4. 操作时机问题</strong><br />
+                • 某些时段 Google 验证更严格<br />
+                <strong>解决：</strong
+                >换个时间段，比如美国时间的白天（北京时间晚上）<br /><br />
+
+                <strong>终极方案：</strong><br />
+                如果实在注册不了，可以考虑：<br />
+                • 找朋友帮忙注册（在网络环境好的地方）<br />
+                • 使用虚拟手机号服务（但有一定风险）<br />
+                • 或者购买现成的 Google 账号（谨慎选择可靠来源）
+              </p>
+            </div>
+          </div>
+
+          <div class="warning">
+            <strong>⚠️ 重要提醒：</strong>
+            <ul style="margin-left: 20px; margin-top: 10px">
+              <li>
+                注册成功后，请立即启用<strong>两步验证</strong>保护账号安全
+              </li>
+              <li>不要将账号借给他人使用，可能导致账号被封</li>
+              <li>定期登录使用，避免因长期不活跃被回收</li>
+              <li>妥善保管账号密码和辅助验证信息</li>
+              <li>遵守 Google 服务条款，不要进行违规操作</li>
+            </ul>
+          </div>
+
+          <h3>七、注册成功后的推荐操作</h3>
+
+          <div class="step">
+            <div class="step-title">
+              <span class="step-number">✅</span>
+              建议立即完成的设置
+            </div>
+            <div class="step-content">
+              <p><strong>1. 完善个人资料</strong></p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>访问 <code>myaccount.google.com</code></li>
+                <li>上传头像照片</li>
+                <li>填写个人简介（可选）</li>
+                <li>设置显示名称</li>
+              </ul>
+
+              <p style="margin-top: 20px">
+                <strong>2. 启用两步验证（强烈推荐！）</strong>
+              </p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>前往 <code>myaccount.google.com/security</code></li>
+                <li>找到 "2-Step Verification"</li>
+                <li>点击 "Get started"</li>
+                <li>
+                  选择验证方式：
+                  <ul style="margin-left: 30px; margin-top: 5px">
+                    <li><strong>短信验证码</strong>（最简单）</li>
+                    <li><strong>Google Authenticator</strong>（更安全）</li>
+                    <li><strong>安全密钥</strong>（最安全但需硬件）</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <p style="margin-top: 20px">
+                <strong>3. 设置账号恢复选项</strong>
+              </p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>添加辅助邮箱地址</li>
+                <li>确认辅助手机号正确</li>
+                <li>设置安全问题（如果有）</li>
+              </ul>
+
+              <p style="margin-top: 20px"><strong>4. 检查隐私设置</strong></p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>前往 <code>myaccount.google.com/privacy</code></li>
+                <li>
+                  查看并调整：
+                  <ul style="margin-left: 30px; margin-top: 5px">
+                    <li>网络和应用活动记录</li>
+                    <li>位置记录</li>
+                    <li>YouTube 历史记录</li>
+                    <li>广告个性化设置</li>
+                  </ul>
+                </li>
+                <li>根据个人需求开启或关闭</li>
+              </ul>
+
+              <p style="margin-top: 20px">
+                <strong>5. 探索 Google 服务</strong>
+              </p>
+              <ul style="margin-left: 50px; margin-top: 10px">
+                <li>
+                  <strong>Gmail</strong>：访问
+                  <code>mail.google.com</code> 使用邮箱
+                </li>
+                <li><strong>YouTube</strong>：订阅喜欢的频道</li>
+                <li><strong>Google Drive</strong>：上传文件到云端</li>
+                <li><strong>Google Photos</strong>：备份手机照片</li>
+                <li><strong>Google Calendar</strong>：管理日程安排</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tip">
+            <strong>🎉 恭喜您成功注册 Google 账号！</strong>
+            <p style="margin-top: 10px">
+              现在您可以畅享 Google 的各种服务，探索更广阔的互联网世界了！<br />
+              记得收藏本教程，以后可能还会用到。 祝您使用愉快！
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2025 科学上网与 Google 账号注册教程</p>
+        <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8">
+          本教程仅供学习交流使用，请遵守当地法律法规<br />
+          合理使用网络工具，访问正规网站内容
+        </p>
+        <p style="margin-top: 15px; font-size: 0.85em">
+          教程更新时间：2025 年 10 月<br />
+          如有问题，建议多尝试几次或换个时间段操作
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
